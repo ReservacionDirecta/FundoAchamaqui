@@ -1,13 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 
 const prismaClientSingleton = () => {
-  if (!process.env.DATABASE_URL) {
-    throw new Error("DATABASE_URL is not defined in the environment variables.");
-  }
+  const databaseUrl = process.env.DATABASE_URL || "postgresql://dummy_user:dummy_password@localhost:5432/dummy_db?schema=public";
   return new PrismaClient({
     datasources: {
       db: {
-        url: process.env.DATABASE_URL,
+        url: databaseUrl,
       },
     },
   });

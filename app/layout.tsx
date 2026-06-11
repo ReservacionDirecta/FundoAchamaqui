@@ -5,6 +5,7 @@ import "./styles/webflow.css";
 import "./styles/fundoachamaqui.webflow.css";
 import Script from "next/script";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
   title: "Hotel Fundo Achamaqui | Chachapoyas - Refugio en la Ceja de Selva",
@@ -48,9 +49,11 @@ export default function RootLayout({
       <body className="body">
         <LanguageProvider>
           {children}
+          <WhatsAppWidget />
         </LanguageProvider>
       </body>
     </html>
   );
 }
+
 

@@ -33,14 +33,13 @@ export default function Home() {
               Cupón de descuento: <span className="text-span-2"><strong>escapechacha20</strong></span><br />
             </h1>
           </div>
-          <div id="sirvoy" className="html-embed w-embed w-script">
-            <Script 
-              id="sirvoy-widget"
-              async 
-              data-form-id="a10e4ddb7d5915cb" 
-              src="https://secured.sirvoy.com/widget/sirvoy.js" 
-            />
-          </div>
+          <div 
+            id="sirvoy" 
+            className="html-embed w-embed w-script"
+            dangerouslySetInnerHTML={{
+              __html: '<script async="" data-form-id="a10e4ddb7d5915cb" src="https://secured.sirvoy.com/widget/sirvoy.js"></script>'
+            }}
+          />
         </div>
         <section className="section naturaleza">
           <div className="w-layout-blockcontainer base-container w-container">

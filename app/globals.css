@@ -47,3 +47,9 @@ a {
     color-scheme: dark;
   }
 }
+
+.book-banner-wrap {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+

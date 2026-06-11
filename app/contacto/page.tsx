@@ -1,8 +1,48 @@
+"use client";
+
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Algo salió mal. Por favor intenta de nuevo.");
+      }
+
+      setStatus({ type: "success", text: "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto." });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err: any) {
+      setStatus({ type: "error", text: err.message || "Error al enviar el mensaje." });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -51,11 +91,53 @@ export default function ContactUs() {
             <div className="contacts-form-wrapper">
               <h3 className="contacts-form-title">Completa nuestro formulario en línea y te responderemos a la brevedad.<br /></h3>
               <div className="form-block-contacts w-form">
-                <form id="email-form" className="form-contacts">
-                  <input className="contacts-input w-input" placeholder="Nombre" type="text" required />
-                  <input className="contacts-input w-input" placeholder="Email" type="email" required />
-                  <textarea placeholder="Mensaje" required className="contacts-textarea w-input"></textarea>
-                  <input type="submit" className="primary-button full-width-mobile w-button" value="Enviar" />
+                <form id="email-form" className="form-contacts" onSubmit={handleSubmit}>
+                  <input 
+                    className="contacts-input w-input" 
+                    placeholder="Nombre" 
+                    type="text" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required 
+                  />
+                  <input 
+                    className="contacts-input w-input" 
+                    placeholder="Email" 
+                    type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required 
+                  />
+                  <textarea 
+                    placeholder="Mensaje" 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required 
+                    className="contacts-textarea w-input"
+                  ></textarea>
+                  
+                  {status && (
+                    <div 
+                      style={{ 
+                        padding: "12px", 
+                        marginBottom: "20px", 
+                        borderRadius: "5px", 
+                        fontSize: "14px",
+                        backgroundColor: status.type === "success" ? "#e6f4ea" : "#fce8e6",
+                        color: status.type === "success" ? "#137333" : "#c5221f",
+                        border: `1px solid ${status.type === "success" ? "#34a853" : "#ea4335"}`
+                      }}
+                    >
+                      {status.text}
+                    </div>
+                  )}
+
+                  <input 
+                    type="submit" 
+                    className="primary-button full-width-mobile w-button" 
+                    value={loading ? "Enviando..." : "Enviar"} 
+                    disabled={loading}
+                  />
                 </form>
               </div>
             </div>
@@ -66,3 +148,4 @@ export default function ContactUs() {
     </>
   );
 }
+

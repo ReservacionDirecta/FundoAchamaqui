@@ -35,7 +35,7 @@ export default function Navbar() {
               <Link href="/" className="hidden-desktop w-nav-brand" onClick={closeMenu}>
                 <img src="/images/logo-titulo-negro2x.png" loading="lazy" height="30" alt="Logo" className="logo-header" />
               </Link>
-              <div className="nav-close-button w-nav-button" onClick={closeMenu} style={{ display: "block", cursor: "pointer" }}>
+              <div className="nav-close-button w-nav-button" onClick={closeMenu} style={{ cursor: "pointer" }}>
                 <img src="/images/x_icon_1x_icon.webp" loading="lazy" alt="" className="nav-close-button-icon" />
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
           <div className="div-block-42">
             {/* Cart component would go here if needed */}
           </div>
-          <div className="menu-button-2 w-nav-button" onClick={openMenu} style={{ display: "block", cursor: "pointer" }}>
+          <div className="menu-button-2 w-nav-button" onClick={openMenu} style={{ cursor: "pointer" }}>
             <img src="/images/Burger-button_1Burger-button.webp" loading="lazy" alt="" height="16" className="image-burger-2" />
           </div>
         </div>

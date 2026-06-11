@@ -53,3 +53,87 @@ a {
   margin-top: 0 !important;
 }
 
+/* --- PREMIUM MICRO-INTERACTIONS & MICRO-ANIMATIONS --- */
+
+/* Smooth Hover for Buttons */
+.primary-button, .w-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.primary-button:hover, .w-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(140, 115, 85, 0.15), 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+}
+.primary-button:active, .w-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Navigation Links */
+.nav-link {
+  transition: color 0.3s ease, transform 0.2s ease !important;
+}
+.nav-link:hover {
+  color: #8c7355 !important;
+  transform: translateY(-1px);
+}
+
+/* Service Card Hover Interactions */
+.service-home {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.service-home:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(140, 115, 85, 0.2);
+}
+.service-home img.service-img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.service-home:hover img.service-img {
+  transform: scale(1.06);
+}
+
+/* Testimonial Cards */
+.testimonials-item-wrapper {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  border-radius: 12px;
+}
+.testimonials-item-wrapper:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Feature Grid Information */
+.hotel-info {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  border-radius: 8px;
+  padding: 15px !important;
+}
+.hotel-info:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Images Zooming */
+.big-img, .absolute-img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.big-img:hover {
+  transform: scale(1.03);
+}
+.absolute-img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* Booking Widget Floating Container Transition */
+.book-banner-wrap {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.book-banner-wrap:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+

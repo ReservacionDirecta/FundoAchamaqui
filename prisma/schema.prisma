@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  slug      String     @unique
+  rooms     Room[]
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Amenity {
+  id    String @id @default(cuid())
+  name  String
+  icon  String // URL or Lucide icon name
+  rooms Room[]
+}
+
+model Room {
+  id           String    @id @default(cuid())
+  name         String
+  slug         String    @unique
+  description  String    @db.Text
+  price        Float
+  capacity     Int       @default(2)
+  mainImage    String
+  images       String[]  // Array of URLs
+  amenities    Amenity[]
+  categoryId   String?
+  category     Category? @relation(fields: [categoryId], references: [id])
+  houseRules   String?   @db.Text
+  cancellation String?   @db.Text
+  isAvailable  Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String    @db.Text
+  content     String    @db.Text
+  mainImage   String
+  publishedAt DateTime  @default(now())
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Activity {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String   @db.Text
+  image       String
+  location    String?
+  duration    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

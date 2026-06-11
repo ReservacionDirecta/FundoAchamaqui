@@ -4,6 +4,7 @@ import "./styles/normalize.css";
 import "./styles/webflow.css";
 import "./styles/fundoachamaqui.webflow.css";
 import Script from "next/script";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Hotel Fundo Achamaqui | Chachapoyas - Refugio en la Ceja de Selva",
@@ -44,7 +45,12 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="body">{children}</body>
+      <body className="body">
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
+

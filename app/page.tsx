@@ -1,8 +1,13 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <>
       <Navbar />
@@ -17,10 +22,10 @@ export default function Home() {
                 style={{ opacity: 1 }} 
                 loading="lazy" 
               />
-              <h6 className="white-text small-text">Bienvenido a</h6>
-              <h1 className="banner-heading-home-1">Fundo Achamaqui</h1>
+              <h6 className="white-text small-text">{t("hero_welcome")}</h6>
+              <h1 className="banner-heading-home-1">{t("hero_title")}</h1>
               <p className="white-paragraph banner-paragraph">
-                El refugio de tu próxima aventura en <strong>Chachapoyas</strong>
+                {t("hero_subtitle")}
               </p>
             </div>
           </div>
@@ -29,8 +34,8 @@ export default function Home() {
         <div className="book-banner-wrap" style={{ opacity: 1 }}>
           <div className="booking-engine">
             <h1 className="white-text coupon">
-              ¡Sumérgete en la belleza de Chachapoyas con un 20% de descuento en el Hotel Fundo Achamaqui! Tu refugio en la Ceja de Selva Peruana.<br />‍<br />
-              Cupón de descuento: <span className="text-span-2"><strong>escapechacha20</strong></span><br />
+              {t("coupon_text")}<br />‍<br />
+              <span className="text-span-2"><strong>{t("coupon_code")}</strong></span><br />
             </h1>
           </div>
           <div 
@@ -46,10 +51,10 @@ export default function Home() {
             <div className="about-section" style={{ opacity: 1 }}>
               <div className="left-about-wrap">
                 <img className="stars-img" src="/images/219-2191012_3-star-vector-transparent-3-stars-png.png" alt="Stars" loading="lazy" />
-                <h2 className="heading-4">Naturaleza y comodidad <br />se unen en<br /><strong>Fundo Achamaqui.</strong></h2>
-                <p className="paragraph">Enclavado en la belleza natural de la provincia de Chachapoyas, Fundo Achamaqui te ofrece una experiencia única de relajación y aventura. Descubre la magia de la región Amazonas en nuestro acogedor hotel.</p>
+                <h2 className="heading-4">{t("about_title")}</h2>
+                <p className="paragraph">{t("about_paragraph")}</p>
                 <div className="button-section-wrap">
-                  <a href="/nosotros" className="primary-button">Leer Más</a>
+                  <a href="/nosotros" className="primary-button">{t("about_btn")}</a>
                 </div>
               </div>
               <div id="w-node-b1dfaac2-7851-155f-84bd-443661f2c77c-83eba5a0" className="right-img" style={{ opacity: 1 }}>
@@ -76,20 +81,20 @@ export default function Home() {
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="w-layout-grid about-hotel">
               <div className="hotel-info" style={{ opacity: 1 }}>
-                <h6 className="white-text">Excelente Ubicación</h6>
-                <p className="white-paragraph">Aprox. 30 min desde el aeropuerto</p>
+                <h6 className="white-text">{t("feat_location_title")}</h6>
+                <p className="white-paragraph">{t("feat_location_desc")}</p>
               </div>
               <div className="hotel-info" style={{ opacity: 1 }}>
-                <h6 className="white-text">Habitaciones Disponibles</h6>
-                <p className="white-paragraph">Parejas / Grupos / Familias</p>
+                <h6 className="white-text">{t("feat_rooms_title")}</h6>
+                <p className="white-paragraph">{t("feat_rooms_desc")}</p>
               </div>
               <div className="hotel-info" style={{ opacity: 1 }}>
-                <h6 className="white-text">sala de eventos</h6>
-                <p className="white-paragraph">Conferencias / Bodas / Retiros</p>
+                <h6 className="white-text">{t("feat_events_title")}</h6>
+                <p className="white-paragraph">{t("feat_events_desc")}</p>
               </div>
               <div className="hotel-info" style={{ opacity: 1 }}>
-                <h6 className="white-text">wifi gratis</h6>
-                <p className="white-paragraph">Wifi 24/7 en áreas comúnes</p>
+                <h6 className="white-text">{t("feat_wifi_title")}</h6>
+                <p className="white-paragraph">{t("feat_wifi_desc")}</p>
               </div>
             </div>
           </div>
@@ -99,12 +104,12 @@ export default function Home() {
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="title-wrap">
               <div className="div-block-8 div-block-9 left-subtitle" style={{ opacity: 1 }}>
-                <h6 className="heading-2">¿Por qué elegirnos?<br /></h6>
+                <h6 className="heading-2">{t("services_subtitle")}<br /></h6>
               </div>
               <div className="right-title">
-                <h2 style={{ opacity: 1 }}>Nuestros Servicios</h2>
+                <h2 style={{ opacity: 1 }}>{t("services_title")}</h2>
                 <p className="paragraph-2" style={{ opacity: 1 }}>
-                  En Fundo Achamaqui, la naturaleza y la comodidad se entrelazan en un refugio de tranquilidad a orillas del río Utcubamba. Nuestras acogedoras habitaciones ofrecen vistas panorámicas, mientras que nuestro restaurante te invita a saborear la auténtica cocina peruana.
+                  {t("services_paragraph")}
                 </p>
               </div>
             </div>
@@ -126,7 +131,7 @@ export default function Home() {
               </div>
             </div>
             <div className="button-margin" style={{ opacity: 1 }}>
-              <a href="/actividades" className="primary-button">Leer más</a>
+              <a href="/actividades" className="primary-button">{t("about_btn")}</a>
             </div>
           </div>
         </section>
@@ -135,10 +140,10 @@ export default function Home() {
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="title-wrap testimonial">
               <div className="div-block-8 div-block-9 left-subtitle light" style={{ opacity: 1 }}>
-                <h6 className="heading-2">Reviews<br /></h6>
+                <h6 className="heading-2">{t("reviews_subtitle")}<br /></h6>
               </div>
               <div className="right-title" style={{ opacity: 1 }}>
-                <h2 className="white-text">Testimonios</h2>
+                <h2 className="white-text">{t("reviews_title")}</h2>
               </div>
             </div>
             <div className="testimonials-slider-con">

@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
             <p>Nos alegra mucho tenerte en nuestra comunidad. A partir de ahora, serás el primero en enterarte de nuestras ofertas exclusivas, eventos especiales y novedades sobre el hotel.</p>
             <p>Pronto recibirás nuestras novedades directo en tu bandeja de entrada.</p>
             <div style="margin: 30px 0; text-align: center;">
-              <a href="https://fundoachamaqui.pe" style="background-color: #8c7355; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; display: inline-block;">Visitar Sitio Web</a>
+              <a href="https://fundoachamaqui.com" style="background-color: #8c7355; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; display: inline-block;">Visitar Sitio Web</a>
             </div>
             <p style="font-size: 13px; color: #777777; border-top: 1px solid #eeeeee; padding-top: 20px; margin-top: 30px;">
               Si no solicitaste esta suscripción, puedes ignorar este correo.

@@ -39,13 +39,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_PE",
-    url: "https://fundoachamaqui.pe",
+    url: "https://fundoachamaqui.com",
     title: "Hotel Fundo Achamaqui | Chachapoyas - Refugio en la Ceja de Selva",
     description: "Refugio de lujo junto al río Utcubamba. Disfruta de la naturaleza exuberante, confort premium y experiencias culturales únicas en Chachapoyas.",
     siteName: "Fundo Achamaqui",
     images: [
       {
-        url: "https://fundoachamaqui.pe/images/logo-titulo-negro2x.png",
+        url: "https://fundoachamaqui.com/images/logo-titulo-negro2x.png",
         width: 1200,
         height: 630,
         alt: "Hotel Fundo Achamaqui",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hotel Fundo Achamaqui | Chachapoyas - Refugio en la Ceja de Selva",
     description: "Refugio de lujo junto al río Utcubamba en Chachapoyas.",
-    images: ["https://fundoachamaqui.pe/images/logo-titulo-negro2x.png"],
+    images: ["https://fundoachamaqui.com/images/logo-titulo-negro2x.png"],
   },
   icons: {
     icon: "/images/favicon.png",

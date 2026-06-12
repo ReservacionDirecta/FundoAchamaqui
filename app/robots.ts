@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin/", "/api/"],
     },
-    sitemap: "https://fundoachamaqui.pe/sitemap.xml",
+    sitemap: "https://fundoachamaqui.com/sitemap.xml",
   };
 }

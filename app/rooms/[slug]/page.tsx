@@ -1,9 +1,46 @@
 import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RoomCard from "@/components/RoomCard";
 import { notFound } from "next/navigation";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = await params;
+  const room = await prisma.room.findUnique({
+    where: { slug }
+  });
+  if (!room) return {};
+  return {
+    title: `${room.name} | Hotel Fundo Achamaqui`,
+    description: room.description.substring(0, 160),
+    openGraph: {
+      title: `${room.name} - Hotel Fundo Achamaqui`,
+      description: room.description.substring(0, 160),
+      images: [room.mainImage],
+    }
+  };
+}
+
 export const dynamic = 'force-dynamic';
+
+const getIconUrl = (icon: string) => {
+  switch (icon.toLowerCase()) {
+    case 'wifi':
+      return '/images/wifi-solid.svg';
+    case 'shower':
+      return '/images/shower-solid.svg';
+    case 'tv':
+      return '/images/tv-solid.svg';
+    case 'coffee':
+      return '/images/mug-saucer-solid.svg';
+    case 'check':
+      return '/images/spray-can-sparkles-solid.svg';
+    default:
+      return '/images/wifi-solid.svg';
+  }
+};
 
 export default async function RoomDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
@@ -16,6 +53,15 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
   if (!room) {
     notFound();
   }
+
+  // Fetch other rooms for the bottom carousel/grid
+  const otherRooms = await prisma.room.findMany({
+    where: {
+      NOT: { id: room.id },
+    },
+    take: 3,
+    include: { amenities: true },
+  });
 
   return (
     <>
@@ -39,7 +85,13 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
               <div className="amenities-wrapper">
                 {room.amenities.map((amenity) => (
                   <div key={amenity.id} className="amenities-wrap">
-                    {/* Icon mapping would happen here */}
+                    <img 
+                      src={getIconUrl(amenity.icon)} 
+                      loading="lazy" 
+                      alt="" 
+                      className="icon-rooms" 
+                      style={{ width: "24px", height: "24px", marginRight: "10px" }}
+                    />
                     <p>{amenity.name}</p>
                   </div>
                 ))}
@@ -62,7 +114,35 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
           </div>
         </section>
 
-        {/* Other rooms section could be added here */}
+        {otherRooms.length > 0 && (
+          <section className="section light-background nuevo">
+            <div className="w-layout-blockcontainer base-container w-container">
+              <div className="title-wrap">
+                <div className="div-block-8 div-block-9 left-subtitle">
+                  <h6 className="heading-2">Habitaciones<br /></h6>
+                </div>
+                <div className="right-title">
+                  <h2>Otras Habitaciones<br /></h2>
+                  <p>Descubre todas las habitaciones que Fundo Achamaqui tiene para ti en tu próxima aventura en Chachapoyas.<br /></p>
+                </div>
+              </div>
+              <div className="w-layout-grid grid">
+                {otherRooms.map((r) => (
+                  <RoomCard 
+                    key={r.id}
+                    name={r.name}
+                    slug={r.slug}
+                    price={r.price}
+                    capacity={r.capacity}
+                    image={r.mainImage}
+                    description={r.description.substring(0, 100) + '...'}
+                    amenities={r.amenities}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>

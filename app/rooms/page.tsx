@@ -4,11 +4,19 @@ import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import RoomCard from "@/components/RoomCard";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Habitaciones & Suites | Hotel Fundo Achamaqui",
+  description: "Descubre el confort y la elegancia en cada una de nuestras habitaciones en Chachapoyas. Diseñadas para tu descanso junto al río Utcubamba.",
+};
+
 export const dynamic = 'force-dynamic';
 
 export default async function RoomsPage() {
   const rooms = await prisma.room.findMany({
     orderBy: { createdAt: "desc" },
+    include: { amenities: true },
   });
 
   return (
@@ -35,15 +43,17 @@ export default async function RoomsPage() {
             </div>
             
             {rooms.length > 0 ? (
-              <div className="w-layout-grid grid-3">
+              <div className="w-layout-grid grid">
                 {rooms.map((room) => (
                   <RoomCard 
                     key={room.id}
                     name={room.name}
                     slug={room.slug}
                     price={room.price}
+                    capacity={room.capacity}
                     image={room.mainImage}
                     description={room.description.substring(0, 100) + '...'}
+                    amenities={room.amenities}
                   />
                 ))}
               </div>

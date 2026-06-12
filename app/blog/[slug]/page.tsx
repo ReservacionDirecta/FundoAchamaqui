@@ -4,6 +4,25 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await prisma.blogPost.findUnique({
+    where: { slug }
+  });
+  if (!post) return {};
+  return {
+    title: `${post.title} | Blog Fundo Achamaqui`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} - Blog Fundo Achamaqui`,
+      description: post.excerpt,
+      images: [post.mainImage],
+    }
+  };
+}
+
 export const dynamic = 'force-dynamic';
 
 export default async function BlogPostDetailPage({ params }: { params: { slug: string } }) {

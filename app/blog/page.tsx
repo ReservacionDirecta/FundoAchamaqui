@@ -4,6 +4,13 @@ import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog & Noticias | Hotel Fundo Achamaqui",
+  description: "Explora la magia, leyendas y atractivos turísticos de Chachapoyas y la región Amazonas en nuestro blog oficial.",
+};
+
 export const dynamic = 'force-dynamic';
 
 export default async function BlogPage() {

@@ -6,6 +6,8 @@ import HeroBanner from "@/components/HeroBanner";
 import React from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 
+import BookingWidget from "@/components/BookingWidget";
+
 export default function ReservarPage() {
   const { t } = useLanguage();
 
@@ -52,13 +54,7 @@ export default function ReservarPage() {
                   <span className="text-span-2"><strong>{t("coupon_code")}</strong></span><br />
                 </h1>
               </div>
-              <div 
-                id="sirvoy" 
-                className="html-embed w-embed w-script"
-                dangerouslySetInnerHTML={{
-                  __html: '<script async="" data-form-id="a10e4ddb7d5915cb" src="https://secured.sirvoy.com/widget/sirvoy.js"></script>'
-                }}
-              />
+              <BookingWidget />
             </div>
           </div>
         </section>

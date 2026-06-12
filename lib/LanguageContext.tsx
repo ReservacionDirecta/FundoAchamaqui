@@ -57,6 +57,10 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Reviews
     reviews_subtitle: "Reseñas",
     reviews_title: "Testimonios",
+
+    // Gallery
+    gallery_title: "Explora Nuestra Galería",
+    gallery_desc: "Descubre la belleza de Fundo Achamaqui y Chachapoyas a través de imágenes que cuentan historias. Nuestra galería te transportará a un mundo de paisajes impresionantes, aventuras emocionantes y momentos inolvidables en este rincón de Chachapoyas. ¡Ven y sumérgete en la magia de Fundo Achamaqui a través de nuestra galería de fotos!",
   },
   en: {
     // Navbar
@@ -102,17 +106,41 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Reviews
     reviews_subtitle: "Reviews",
     reviews_title: "Testimonials",
+
+    // Gallery
+    gallery_title: "Explore Our Gallery",
+    gallery_desc: "Discover the beauty of Fundo Achamaqui and Chachapoyas through images that tell stories. Our gallery will transport you to a world of breathtaking landscapes, exciting adventures, and unforgettable moments in this corner of Chachapoyas. Come and immerse yourself in the magic of Fundo Achamaqui through our photo gallery!",
   },
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>("es");
+  const [dbSettings, setDbSettings] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const savedLang = localStorage.getItem("language") as Language;
     if (savedLang === "es" || savedLang === "en") {
       setLanguageState(savedLang);
     }
+
+    // Fetch dynamic CMS settings from the DB
+    const loadCmsSettings = async () => {
+      try {
+        const res = await fetch("/api/cms");
+        const data = await res.json();
+        if (data.success && data.settings) {
+          const settingsMap: Record<string, string> = {};
+          data.settings.forEach((s: any) => {
+            settingsMap[s.key] = s.value;
+          });
+          setDbSettings(settingsMap);
+        }
+      } catch (err) {
+        console.error("Failed to load CMS settings dynamically:", err);
+      }
+    };
+
+    loadCmsSettings();
   }, []);
 
   const setLanguage = (lang: Language) => {
@@ -121,6 +149,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = (key: string): string => {
+    // 1. Try localized key from DB (e.g. es_hero_title)
+    const dbKey = `${language}_${key}`;
+    if (dbSettings[dbKey] !== undefined) {
+      return dbSettings[dbKey];
+    }
+
+    // 2. Try direct key from DB (e.g. contact_phone)
+    if (dbSettings[key] !== undefined) {
+      return dbSettings[key];
+    }
+
+    // 3. Fallback to static dictionary
     return dictionary[language][key] || dictionary["es"][key] || key;
   };
 

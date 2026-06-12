@@ -1,0 +1,42 @@
+# Hotel Fundo Achamaqui - Website Directory & System Information
+
+This file provides structure, schemas, and API documentation for LLMs and crawler agents indexing this application.
+
+## Overview
+Fundo Achamaqui is a premium eco-hotel located in Chachapoyas, Peru. The web application is built on Next.js (App Router), styled with Tailwind CSS / Webflow stylesheets, and backed by a PostgreSQL database with Prisma.
+
+## Key Sections
+- **Homepage (`/`)**: Main welcome banner, active room booking discounts, core amenities, and customer testimonials.
+- **Accommodations (`/alojamiento`)**: General details of hotel accommodations.
+- **Rooms Directory (`/rooms`)**: Comprehensive list of rooms. Each room links to its slug (`/rooms/[slug]`).
+- **Activities (`/actividades`)**: Exploration details in the Amazon/Chachapoyas area.
+- **Gallery (`/galeria`)**: Hoverable image grid from Fundo Achamaqui.
+- **Nosotros (`/nosotros`)**: Hotel history, mission statement, and static/dynamic image album.
+- **Contacto (`/contacto`)**: Dynamic address, interactive map link, email, social links, and an inline contact form.
+- **Reservar (`/reservar`)**: Secure booking screen embedding the dynamic Sirvoy hotel booking engine widget.
+- **Admin Panel (`/admin`)**: Core content management system dashboard for updating images, videos, texts, links, and general configurations.
+- **Admin Blog (`/admin/blog`)**: CMS list view to create, update, and delete blog posts.
+
+## API Endpoints
+
+### 1. CMS Content Configuration (`/api/cms`)
+- **GET**: Lists all customizable setting key-values from the database.
+- **POST**: Upserts or updates a specific setting key-value.
+  - Body: `{ "key": "string", "value": "string" }`
+
+### 2. Contact Message (`/api/contact`)
+- **POST**: Submits a contact inquiry. Sends an email using Resend to the hotel administration.
+  - Body: `{ "name": "string", "email": "string", "message": "string" }`
+
+### 3. Newsletter Subscription (`/api/subscribe`)
+- **POST**: Saves email to the subscriber table and shoots a confirmation email via Resend.
+  - Body: `{ "email": "string" }`
+
+## Database Models (Prisma)
+- **Room**: Room name, slug, description, price, capacity, main image, multiple details images, amenities, house rules, and availability status.
+- **Category**: Accommodation classification groups (e.g. Standard, Suite) mapping to rooms and blog posts.
+- **Amenity**: Feature list with corresponding icons.
+- **BlogPost**: Headline, slug, excerpt, raw HTML content, main image, publication date, and associated categories.
+- **Activity**: Activity name, slug, description, image, duration, and location details.
+- **Subscriber**: Persisted newsletter subscriber list emails.
+- **CmsSetting**: Direct configuration settings key-value store.

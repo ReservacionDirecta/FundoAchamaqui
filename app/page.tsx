@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import { useLanguage } from "@/lib/LanguageContext";
+import BookingWidget from "@/components/BookingWidget";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -38,13 +39,7 @@ export default function Home() {
               <span className="text-span-2"><strong>{t("coupon_code")}</strong></span><br />
             </h1>
           </div>
-          <div 
-            id="sirvoy" 
-            className="html-embed w-embed w-script"
-            dangerouslySetInnerHTML={{
-              __html: '<script async="" data-form-id="a10e4ddb7d5915cb" src="https://secured.sirvoy.com/widget/sirvoy.js"></script>'
-            }}
-          />
+          <BookingWidget />
         </div>
         <section className="section naturaleza">
           <div className="w-layout-blockcontainer base-container w-container">

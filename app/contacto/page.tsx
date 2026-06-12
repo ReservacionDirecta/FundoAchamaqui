@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function ContactUs() {
+  const { t } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -71,15 +73,15 @@ export default function ContactUs() {
                 <h6>Chachapoyas - Perú</h6>
                 <div className="contacts-detail">
                   <p className="contacts-icon"></p>
-                  <a href="#" target="_blank" className="footer-links contact">Fundo Achamaqui, Chachapoyas, Región Amazonas, Perú</a>
+                  <a href={t("contact_map_url")} target="_blank" rel="noopener noreferrer" className="footer-links contact">{t("contact_address")}</a>
                 </div>
                 <div className="contacts-detail">
                   <p className="contacts-icon"></p>
-                  <a href="tel:+51943398035" className="footer-links contact">Whatsapp (+51) 943 398 035</a>
+                  <a href={`tel:${t("contact_phone").replace(/\s+/g, "")}`} className="footer-links contact">Whatsapp {t("contact_phone")}</a>
                 </div>
                 <div className="contacts-detail">
                   <p className="contacts-icon"></p>
-                  <a href="mailto:info@fundoachamaqui.com" className="footer-links contact">info@fundoachamaqui.com</a>
+                  <a href={`mailto:${t("contact_email")}`} className="footer-links contact">{t("contact_email")}</a>
                 </div>
               </div>
             </div>

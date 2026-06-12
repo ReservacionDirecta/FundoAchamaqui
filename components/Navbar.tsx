@@ -74,8 +74,10 @@ export default function Navbar() {
         }
         
         .logo-header {
-          height: 38px;
-          width: auto;
+          height: 38px !important;
+          width: auto !important;
+          max-width: 260px !important;
+          object-fit: contain !important;
           transition: transform 0.3s ease;
         }
         .logo-link:hover .logo-header {

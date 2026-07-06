@@ -34,24 +34,10 @@ export default function Navbar() {
           text-decoration: none;
           padding: 8px 14px;
           white-space: nowrap;
-          transition: color 0.3s ease, transform 0.2s ease;
-          position: relative;
-        }
-        .nav-link-custom::after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          bottom: 0;
-          left: 14px;
-          background-color: #8c7355;
-          transition: width 0.3s ease;
+          transition: color 0.3s ease;
         }
         .nav-link-custom:hover {
           color: #8c7355;
-        }
-        .nav-link-custom:hover::after {
-          width: calc(100% - 28px);
         }
         
         .book-btn-custom {

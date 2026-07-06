@@ -90,27 +90,7 @@
 
 .nav-link-custom,
 .nav-link {
-  position: relative;
   transition: color 0.2s ease;
-}
-
-.nav-link-custom::after,
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 1.5px;
-  background: var(--primary-color, #8c7355);
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-link-custom:hover::after,
-.nav-link:hover::after {
-  width: 100%;
-  left: 0;
 }
 
 /* ── Micro-interaction: footer links ── */

@@ -8,6 +8,7 @@ import Script from "next/script";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import LoadScreen from "@/components/LoadScreen";
 import { getCmsSettingsKeys } from "@/lib/cms";
 
 export const metadata: Metadata = {
@@ -220,6 +221,7 @@ export default async function RootLayout({
         )}
 
         <LanguageProvider>
+          <LoadScreen />
           <RevealOnScroll />
           {children}
           <WhatsAppWidget />

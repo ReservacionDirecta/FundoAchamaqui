@@ -1490,7 +1490,7 @@ blockquote {
         0 0,
         50% -35%;
     background-repeat: repeat, no-repeat;
-    background-size: auto, contain;
+    background-size: auto, cover;
     background-attachment: scroll, fixed;
     justify-content: center;
     align-items: center;

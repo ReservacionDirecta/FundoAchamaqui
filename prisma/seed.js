@@ -62,7 +62,7 @@ async function main() {
       description: 'Disfruta de la máxima comodidad en nuestra habitación Matrimonial King, con vista al jardín y todas las amenidades necesarias para un descanso perfecto.',
       price: 250,
       capacity: 2,
-      mainImage: '/images/IMG_20230823_151840.jpg',
+      mainImage: '/images/IMG_20230823_144940.jpg',
       categoryId: catHabitaciones.id,
       houseRules: 'Check-in: 15:00, Check-out: 12:00. No fumar en la habitación.',
       cancellation: 'Cancelación gratuita hasta 48 horas antes de la llegada.',
@@ -73,7 +73,7 @@ async function main() {
       description: 'Elegancia y confort en nuestra habitación Matrimonial Queen. Ideal para parejas que buscan un ambiente acogedor y relajante.',
       price: 230,
       capacity: 2,
-      mainImage: '/images/IMG_20230823_144310.jpg',
+      mainImage: '/images/IMG_20230823_151045-1.jpg',
       categoryId: catHabitaciones.id,
     },
     {
@@ -82,7 +82,7 @@ async function main() {
       description: 'Nuestra habitación doble es ideal para amigos o familiares, ofreciendo dos camas cómodas y un ambiente relajante.',
       price: 220,
       capacity: 2,
-      mainImage: '/images/IMG_20230823_144422.jpg',
+      mainImage: '/images/IMG_20230823_144310.jpg',
       categoryId: catHabitaciones.id,
     },
     {
@@ -91,7 +91,7 @@ async function main() {
       description: 'Habitación amplia con tres camas, perfecta para grupos pequeños que buscan comodidad y cercanía.',
       price: 300,
       capacity: 3,
-      mainImage: '/images/received_341214391902150.jpeg',
+      mainImage: '/images/IMG_20230823_145548_DxO-1082x1440.jpg',
       categoryId: catHabitaciones.id,
     },
     {

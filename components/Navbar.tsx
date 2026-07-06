@@ -26,13 +26,14 @@ export default function Navbar() {
       <style jsx global>{`
         .nav-link-custom {
           font-family: var(--font-lexend, sans-serif);
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
           color: #2f4137;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0.5px;
           text-decoration: none;
-          padding: 8px 16px;
+          padding: 8px 14px;
+          white-space: nowrap;
           transition: color 0.3s ease, transform 0.2s ease;
           position: relative;
         }
@@ -42,7 +43,7 @@ export default function Navbar() {
           width: 0;
           height: 2px;
           bottom: 0;
-          left: 16px;
+          left: 14px;
           background-color: #8c7355;
           transition: width 0.3s ease;
         }
@@ -50,7 +51,7 @@ export default function Navbar() {
           color: #8c7355;
         }
         .nav-link-custom:hover::after {
-          width: calc(100% - 32px);
+          width: calc(100% - 28px);
         }
         
         .book-btn-custom {
@@ -119,8 +120,8 @@ export default function Navbar() {
           boxShadow: "0 4px 30px rgba(0,0,0,0.02)"
         }}
       >
-        <div className="nav-base-container w-container" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-          <div className="nav-menu-wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", padding: "12px 0" }}>
+        <div className="nav-base-container w-container" style={{ width: "100%", maxWidth: "1320px", margin: "0 auto", padding: "0 32px" }}>
+          <div className="nav-menu-wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", padding: "14px 0" }}>
             
             {/* Logo Left */}
             <Link href="/" className="logo-link w-nav-brand" onClick={closeMenu} style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
@@ -138,7 +139,7 @@ export default function Navbar() {
               className="desktop-navigation"
               style={{
                 alignItems: "center",
-                gap: "8px"
+                gap: "4px"
               }}
             >
               {menuItems.map((item) => (
@@ -147,12 +148,12 @@ export default function Navbar() {
                 </Link>
               ))}
               
-              <Link href="/reservar" className="book-btn-custom" style={{ marginLeft: "10px" }}>
+              <Link href="/reservar" className="book-btn-custom" style={{ marginLeft: "16px" }}>
                 {t("nav_book")}
               </Link>
-              
+
               {/* Language Switcher */}
-              <div style={{ display: "flex", alignItems: "center", marginLeft: "15px", gap: "2px", borderLeft: "1px solid rgba(0,0,0,0.1)", paddingLeft: "12px" }}>
+              <div style={{ display: "flex", alignItems: "center", marginLeft: "16px", gap: "2px", borderLeft: "1px solid rgba(0,0,0,0.08)", paddingLeft: "14px" }}>
                 <button 
                   onClick={() => setLanguage("es")}
                   style={{

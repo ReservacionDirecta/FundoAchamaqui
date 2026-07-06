@@ -20,6 +20,27 @@ const ALL_IMAGES = [
   "/images/IMG_20230821_093503-648x1440.jpg",
   "/images/IMG_20230822_162646-1920x1440.jpg",
   "/images/IMG_20230820_145404-811x1440.jpg",
+  "/images/IMG_20230822_141537.jpg",
+  "/images/IMG_20230822_141539.jpg",
+  "/images/IMG_20230822_141541.jpg",
+  "/images/IMG_20230822_141542.jpg",
+  "/images/IMG_20230822_141551.jpg",
+  "/images/IMG_20230822_141553.jpg",
+  "/images/IMG_20230822_141601.jpg",
+  "/images/IMG_20230822_161622.jpg",
+  "/images/IMG_20230823_143925.jpg",
+  "/images/IMG_20230823_143927.jpg",
+  "/images/IMG_20230823_143938.jpg",
+  "/images/IMG_20230823_143940.jpg",
+  "/images/IMG_20230823_143955.jpg",
+  "/images/IMG_20230823_144010.jpg",
+  "/images/IMG_20230823_144013.jpg",
+  "/images/IMG_20230823_144024.jpg",
+  "/images/IMG_20230823_144028.jpg",
+  "/images/IMG_20230823_144036.jpg",
+  "/images/IMG_20230823_144105.jpg",
+  "/images/IMG_20230823_145728.jpg",
+  "/images/VID_20230823_143805.jpg",
 ];
 
 export default function GaleriaPage() {
@@ -71,14 +92,16 @@ export default function GaleriaPage() {
               <div 
                 key={index} 
                 className="w-layout-cell" 
-                style={{ 
+                style={{
                   opacity: 1,
                   borderRadius: "12px",
                   overflow: "hidden",
                   boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
                   cursor: "pointer",
                   aspectRatio: "4/3",
-                  transition: "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease"
+                  transition: "transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
+                  willChange: "transform",
+                  transform: "translateZ(0)"
                 }}
                 onClick={() => openLightbox(index)}
                 onMouseEnter={(e) => {

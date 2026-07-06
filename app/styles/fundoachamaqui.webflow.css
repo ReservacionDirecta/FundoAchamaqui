@@ -1429,7 +1429,7 @@ blockquote {
         50% 100%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1460,7 +1460,7 @@ blockquote {
         50% 45%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -1475,7 +1475,7 @@ blockquote {
         50% 161%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -1491,7 +1491,7 @@ blockquote {
         50% -35%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -1505,7 +1505,7 @@ blockquote {
         50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
 }
 
 .section.img {
@@ -1519,7 +1519,7 @@ blockquote {
         50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
 }
 
 .section.services-banner {
@@ -1530,7 +1530,7 @@ blockquote {
         50% 199%;
     background-repeat: repeat, no-repeat;
     background-size: auto, 100%;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
 }
 
 .section.shop-banner {
@@ -1546,7 +1546,7 @@ blockquote {
         50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
 }
 
 .section.rooms-banner {
@@ -1558,7 +1558,7 @@ blockquote {
         50% 78%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
 }
 
 .section.room-details {
@@ -3373,6 +3373,8 @@ blockquote {
     padding-bottom: 15px;
     position: sticky;
     top: 0;
+    will-change: transform;
+    z-index: 999;
 }
 
 .hidden-desktop {
@@ -3837,7 +3839,7 @@ blockquote {
         50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
-    background-attachment: scroll, fixed;
+    background-attachment: scroll, scroll;
     min-height: 100vh;
     position: relative;
 }
@@ -4129,7 +4131,7 @@ blockquote {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -6412,7 +6414,7 @@ blockquote {
             50%;
         background-repeat: repeat, no-repeat;
         background-size: auto, cover;
-        background-attachment: scroll, fixed;
+        background-attachment: scroll, scroll;
         min-height: 100vh;
         margin-top: 0;
         padding-top: 80px;

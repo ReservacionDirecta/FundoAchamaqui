@@ -194,7 +194,10 @@ export default async function RootLayout({
         </Script>
       </head>
       <body className="body">
-        <script dangerouslySetInnerHTML={{__html:"(function(){var d=document,b=d.body;b.style.overflow='hidden';b.style.background='#faf7f2';var o=d.createElement('div');o.id='loadscreen';o.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#faf7f2;';o.innerHTML='<img src=\"/images/logo-titulo-negro2x.png\" width=\"260\" height=\"38\" style=\"height:38px;width:260px;object-fit:contain;animation:lp 1.5s ease-in-out infinite;\">';var s=d.createElement('style');s.textContent='@keyframes lp{0%,100%{opacity:.7;transform:scale(.97);filter:drop-shadow(0 2px 8px rgba(140,115,85,.15))}50%{opacity:1;transform:scale(1);filter:drop-shadow(0 6px 20px rgba(140,115,85,.35))}}';d.head.appendChild(s);b.appendChild(o);setTimeout(function(){o.style.transition='clip-path 0.8s cubic-bezier(0.4,0,0.2,1)';o.style.clipPath='circle(0% at 50% 50%)';setTimeout(function(){o.remove();s.remove();b.style.overflow='';b.style.background='';},850);},1800);})();"}} />
+        {/* Loadscreen */}
+        <Script id="loadscreen-script" strategy="beforeInteractive">
+          {`(function(){var d=document,b=document.body;b.style.overflow='hidden';b.style.background='#faf7f2';var o=d.createElement('div');o.id='loadscreen';o.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#faf7f2;';o.innerHTML='<img src="/images/logo-titulo-negro2x.png" width="260" height="38" style="height:38px;width:260px;object-fit:contain;animation:lp 1.5s ease-in-out infinite;">';var s=d.createElement('style');s.textContent='@keyframes lp{0%,100%{opacity:.7;transform:scale(.97);filter:drop-shadow(0 2px 8px rgba(140,115,85,.15))}50%{opacity:1;transform:scale(1);filter:drop-shadow(0 6px 20px rgba(140,115,85,.35))}}';d.head.appendChild(s);b.appendChild(o);setTimeout(function(){o.style.transition='clip-path 0.8s cubic-bezier(0.4,0,0.2,1)';o.style.clipPath='circle(0% at 50% 50%)';setTimeout(function(){o.remove();s.remove();b.style.overflow='';b.style.background='';},850);},1800);})();`}
+        </Script>
         {/* Google Tag Manager (noscript) */}
         {gtmId && (
           <noscript>

@@ -35,7 +35,7 @@ const getIconUrl = (icon: string) => {
 
 export default function RoomCard({ name, slug, price, capacity, image, description, amenities = [] }: RoomCardProps) {
   return (
-    <div className="tarjeta">
+    <div className="tarjeta reveal-scale">
       <div className="relative div-block-34">
         <Link href={`/rooms/${slug}`} className="recent-link w-inline-block">
           <img 

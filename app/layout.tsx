@@ -3,9 +3,11 @@ import "./globals.css";
 import "./styles/normalize.css";
 import "./styles/webflow.css";
 import "./styles/fundoachamaqui.webflow.css";
+import "./animations.css";
 import Script from "next/script";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import { getCmsSettingsKeys } from "@/lib/cms";
 
 export const metadata: Metadata = {
@@ -218,6 +220,7 @@ export default async function RootLayout({
         )}
 
         <LanguageProvider>
+          <RevealOnScroll />
           {children}
           <WhatsAppWidget />
         </LanguageProvider>

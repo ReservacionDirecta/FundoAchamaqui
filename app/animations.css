@@ -1,0 +1,215 @@
+/* ── Entrance animations (scroll-triggered via IntersectionObserver) ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── Fade-up variant (subtler) ── */
+
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scale-in (for cards appearing) ── */
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Micro-interaction: buttons ── */
+
+.primary-button,
+.primary-button-white,
+.book-btn-custom {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.primary-button:active,
+.primary-button-white:active,
+.book-btn-custom:active {
+  transform: scale(0.96);
+}
+
+.primary-button:hover,
+.primary-button-white:hover,
+.book-btn-custom:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Micro-interaction: room cards ── */
+
+.tarjeta {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* ── Micro-interaction: nav links ── */
+
+.nav-link-custom,
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link-custom::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary-color, #8c7355);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-custom:hover::after,
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ── Micro-interaction: footer links ── */
+
+.footer-links {
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links:hover {
+  padding-left: 4px;
+}
+
+/* ── Micro-interaction: icon-room items ── */
+
+.icon-room {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-room:hover {
+  transform: scale(1.15);
+}
+
+/* ── Micro-interaction: lightbox nav buttons ── */
+
+/* (handled inline in galería, no CSS needed) */
+
+/* ── Micro-interaction: service images ── */
+
+.service-img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.service-home:hover .service-img {
+  transform: scale(1.03);
+}
+
+/* ── Micro-interaction: blog cards ── */
+
+.blog-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Subtle pulse for WhatsApp widget ── */
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 3s ease-in-out infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+  50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); }
+}
+
+/* ── Section title underline animation ── */
+
+.title-wrap h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.title-wrap h2::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color, #8c7355);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title-wrap.visible h2::after {
+  width: 40px;
+}
+
+/* ── Banner title stagger ── */
+
+.banner-title,
+.banner-paragraph,
+.banner-subtitle {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.banner-title.visible,
+.banner-paragraph.visible,
+.banner-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.banner-paragraph { transition-delay: 0.15s; }
+.banner-subtitle { transition-delay: 0.3s; }

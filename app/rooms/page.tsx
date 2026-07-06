@@ -32,7 +32,7 @@ export default async function RoomsPage() {
 
         <section className="section light-background">
           <div className="w-layout-blockcontainer base-container w-container">
-            <div className="title-wrap">
+            <div className="title-wrap reveal">
               <div className="div-block-8 div-block-9 left-subtitle">
                 <h6 className="heading-2">Habitaciones<br /></h6>
               </div>

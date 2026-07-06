@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <section className="section naturaleza">
           <div className="w-layout-blockcontainer base-container w-container">
-            <div className="about-section" style={{ opacity: 1 }}>
+            <div className="about-section reveal" style={{ opacity: 1 }}>
               <div className="left-about-wrap">
                 <img className="stars-img" src="/images/219-2191012_3-star-vector-transparent-3-stars-png.png" alt="Stars" loading="lazy" />
                 <h2 className="heading-4">{t("about_title")}</h2>
@@ -75,19 +75,19 @@ export default function Home() {
         <section className="section img">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="w-layout-grid about-hotel">
-              <div className="hotel-info" style={{ opacity: 1 }}>
+              <div className="hotel-info reveal-fade reveal-delay-1" style={{ opacity: 1 }}>
                 <h6 className="white-text">{t("feat_location_title")}</h6>
                 <p className="white-paragraph">{t("feat_location_desc")}</p>
               </div>
-              <div className="hotel-info" style={{ opacity: 1 }}>
+              <div className="hotel-info reveal-fade reveal-delay-2" style={{ opacity: 1 }}>
                 <h6 className="white-text">{t("feat_rooms_title")}</h6>
                 <p className="white-paragraph">{t("feat_rooms_desc")}</p>
               </div>
-              <div className="hotel-info" style={{ opacity: 1 }}>
+              <div className="hotel-info reveal-fade reveal-delay-3" style={{ opacity: 1 }}>
                 <h6 className="white-text">{t("feat_events_title")}</h6>
                 <p className="white-paragraph">{t("feat_events_desc")}</p>
               </div>
-              <div className="hotel-info" style={{ opacity: 1 }}>
+              <div className="hotel-info reveal-fade reveal-delay-4" style={{ opacity: 1 }}>
                 <h6 className="white-text">{t("feat_wifi_title")}</h6>
                 <p className="white-paragraph">{t("feat_wifi_desc")}</p>
               </div>
@@ -109,17 +109,17 @@ export default function Home() {
               </div>
             </div>
             <div className="w-layout-grid services-wrap-home-1">
-              <div className="service-home" style={{ opacity: 1 }}>
+              <div className="service-home reveal-scale reveal-delay-1" style={{ opacity: 1 }}>
                 <img src="/images/IMG_20230823_145150.jpg" loading="lazy" alt="Habitaciones" className="service-img" />
                 <h4 className="mt-20"><strong>Habitaciones</strong></h4>
                 <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
               </div>
-              <div className="service-home" style={{ opacity: 1 }}>
+              <div className="service-home reveal-scale reveal-delay-2" style={{ opacity: 1 }}>
                 <img src="/images/IMG_20231010_082516_478.webp" loading="lazy" alt="Gastronomía" className="service-img" />
                 <h4 className="mt-20"><strong>Gastronomía<br />Achamaqui</strong></h4>
                 <p>Sabores auténticos de la región en nuestro restaurante. Degusta platos peruanos tradicionales y cocina internacional.</p>
               </div>
-              <div className="service-home" style={{ opacity: 1 }}>
+              <div className="service-home reveal-scale reveal-delay-3" style={{ opacity: 1 }}>
                 <img src="/images/received_1753229811842785.jpeg" loading="lazy" alt="Actividades" className="service-img" />
                 <h4 className="mt-20"><strong>Actividades y Aventuras</strong></h4>
                 <p>Embárcate en una aventura para descubrir la riqueza de la región. Te aguardan la majestuosa Catarata Gocta y la imponente Fortaleza de Kuélap.</p>

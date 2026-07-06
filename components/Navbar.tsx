@@ -34,6 +34,7 @@ export default function Navbar() {
           text-decoration: none;
           padding: 8px 14px;
           white-space: nowrap;
+          border-bottom: none !important;
           transition: color 0.3s ease;
         }
         .nav-link-custom:hover {

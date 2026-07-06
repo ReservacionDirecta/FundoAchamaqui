@@ -71,7 +71,7 @@ export default async function AboutUs() {
                     style={{ 
                       opacity: 1, 
                       overflow: "hidden", 
-                      borderRadius: "12px", 
+                      borderRadius: "8px", 
                       height: "280px",
                       position: "relative"
                     }}

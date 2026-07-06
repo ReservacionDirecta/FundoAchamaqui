@@ -53,7 +53,7 @@ export default function Newsletter() {
         padding: "30px 20px",
         background: "rgba(255, 255, 255, 0.03)",
         border: "1px solid rgba(255, 255, 255, 0.08)",
-        borderRadius: "16px",
+        borderRadius: "8px",
         textAlign: "center",
         boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.15)",
         backdropFilter: "blur(4px)",
@@ -100,7 +100,7 @@ export default function Newsletter() {
             flex: "1",
             minWidth: "240px",
             padding: "12px 18px",
-            borderRadius: "30px",
+            borderRadius: "6px",
             border: "1px solid rgba(255, 255, 255, 0.15)",
             background: "rgba(0, 0, 0, 0.2)",
             color: "#ffffff",
@@ -116,7 +116,7 @@ export default function Newsletter() {
           disabled={status === "loading"}
           style={{
             padding: "12px 28px",
-            borderRadius: "30px",
+            borderRadius: "6px",
             border: "none",
             backgroundColor: "#8c7355",
             color: "#ffffff",

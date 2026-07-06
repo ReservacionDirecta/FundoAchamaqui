@@ -123,7 +123,7 @@ export default function ContactUs() {
                       style={{ 
                         padding: "12px", 
                         marginBottom: "20px", 
-                        borderRadius: "5px", 
+                        borderRadius: "6px", 
                         fontSize: "14px",
                         backgroundColor: status.type === "success" ? "#e6f4ea" : "#fce8e6",
                         color: status.type === "success" ? "#137333" : "#c5221f",

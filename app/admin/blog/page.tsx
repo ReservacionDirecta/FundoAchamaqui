@@ -140,7 +140,7 @@ export default function BlogCMSPage() {
             <div 
               style={{ 
                 backgroundColor: "#fff", 
-                borderRadius: "12px", 
+                borderRadius: "8px", 
                 padding: "30px", 
                 boxShadow: "0 10px 30px rgba(0,0,0,0.05)", 
                 marginBottom: "40px",
@@ -240,7 +240,7 @@ export default function BlogCMSPage() {
                   key={post.id} 
                   style={{ 
                     backgroundColor: "#fff", 
-                    borderRadius: "10px", 
+                      borderRadius: "8px",
                     padding: "20px", 
                     display: "flex", 
                     justifyContent: "space-between", 
@@ -281,7 +281,7 @@ export default function BlogCMSPage() {
               ))}
             </div>
           ) : (
-            <div style={{ textAlign: "center", padding: "40px", backgroundColor: "#fff", borderRadius: "10px" }}>
+            <div style={{ textAlign: "center", padding: "40px", backgroundColor: "#fff", borderRadius: "8px" }}>
               No hay entradas de blog creadas. ¡Crea tu primera entrada!
             </div>
           )}

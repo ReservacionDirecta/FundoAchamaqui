@@ -174,7 +174,7 @@ pre.w-code-block code > span {
   left: auto !important;
   color: #aaadb0 !important;
   background-color: #fff !important;
-  border-radius: 3px !important;
+  border-radius: 6px !important;
   padding: 6px !important;
   font-size: 12px !important;
   line-height: 14px !important;
@@ -782,7 +782,7 @@ textarea.w-select {
   text-align: center;
   background: white;
   border: #758696 solid 1px;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 .w-widget-twitter-count-shim * {
   pointer-events: none;

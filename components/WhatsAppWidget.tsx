@@ -72,7 +72,7 @@ export default function WhatsAppWidget() {
             width: "320px",
             backgroundColor: "rgba(255, 255, 255, 0.96)",
             backdropFilter: "blur(10px)",
-            borderRadius: "12px",
+            borderRadius: "8px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
             padding: "20px",
             color: "#333",
@@ -109,7 +109,7 @@ export default function WhatsAppWidget() {
                 style={{
                   width: "100%",
                   padding: "8px",
-                  borderRadius: "5px",
+                  borderRadius: "6px",
                   border: "1px solid #ccc",
                   fontSize: "13px",
                   backgroundColor: "#fff",
@@ -139,7 +139,7 @@ export default function WhatsAppWidget() {
                     style={{
                       width: "100%",
                       padding: "8px",
-                      borderRadius: "5px",
+                      borderRadius: "6px",
                       border: "1px solid #ccc",
                       fontSize: "13px",
                     }}
@@ -159,7 +159,7 @@ export default function WhatsAppWidget() {
                     style={{
                       width: "100%",
                       padding: "8px",
-                      borderRadius: "5px",
+                      borderRadius: "6px",
                       border: "1px solid #ccc",
                       fontSize: "13px",
                     }}
@@ -181,7 +181,7 @@ export default function WhatsAppWidget() {
                       style={{
                         width: "100%",
                         padding: "8px",
-                        borderRadius: "5px",
+                        borderRadius: "6px",
                         border: "1px solid #ccc",
                         fontSize: "13px",
                       }}
@@ -200,7 +200,7 @@ export default function WhatsAppWidget() {
                       style={{
                         width: "100%",
                         padding: "8px",
-                        borderRadius: "5px",
+                        borderRadius: "6px",
                         border: "1px solid #ccc",
                         fontSize: "13px",
                       }}
@@ -223,7 +223,7 @@ export default function WhatsAppWidget() {
                     width: "100%",
                     height: "80px",
                     padding: "8px",
-                    borderRadius: "5px",
+                    borderRadius: "6px",
                     border: "1px solid #ccc",
                     fontSize: "13px",
                     resize: "none",

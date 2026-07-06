@@ -94,7 +94,7 @@ export default function GaleriaPage() {
                 className="w-layout-cell" 
                 style={{
                   opacity: 1,
-                  borderRadius: "12px",
+                  borderRadius: "8px",
                   overflow: "hidden",
                   boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
                   cursor: "pointer",
@@ -223,7 +223,7 @@ export default function GaleriaPage() {
                   maxWidth: "100%",
                   maxHeight: "80vh",
                   objectFit: "contain",
-                  borderRadius: "4px",
+                  borderRadius: "8px",
                   boxShadow: "0 10px 40px rgba(0,0,0,0.5)"
                 }}
               />

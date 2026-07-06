@@ -121,7 +121,7 @@ export default function AdminDashboard() {
                 padding: "10px 20px",
                 backgroundColor: "#2f4137",
                 color: "#ffffff",
-                borderRadius: "4px",
+                borderRadius: "6px",
                 textDecoration: "none",
                 fontSize: "14px",
                 fontWeight: "600",

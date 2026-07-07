@@ -27,7 +27,7 @@ const ATTRACTIONS = [
     id: "karajia",
     title: "Sarcófagos de Karajía",
     subtitle: "Centinelas de la Eternidad",
-    image: "/images/received_1753229811842785.jpeg",
+    image: "/images/sarcofagos-karajia.png",
     excerpt: "Imponentes tumbas antropomorfas incrustadas en los acantilados verticales de la provincia de Luya.",
     content: `<p>Los Sarcófagos de Karajía representan un rito funerario singular e imponente: cápsulas de arcilla y paja de hasta 2.5 metros de altura colocadas en la cara vertical de gigantescos acantilados. Estos monumentos funerarios miran hacia el abismo, albergando en su interior los restos de los gobernantes más distinguidos del reino de los Chachapoyas.</p>
     <p>Una excursión que te conectará con el misticismo del pasado prehispánico de la región. El mirador ofrece una vista impresionante de los sarcófagos incrustados en la pared rocosa.</p>
@@ -37,7 +37,7 @@ const ATTRACTIONS = [
     id: "laguna-condores",
     title: "Laguna de los Cóndores",
     subtitle: "El Santuario en las Nubes",
-    image: "/images/DJI_0111_DxO-1920x1440.jpg",
+    image: "/images/laguna-de-los-condores-trekking-amazon-expediton.webp",
     excerpt: "Un espejo de agua sagrado oculto entre montañas, donde los Chachapoyas dejaron a sus ancestrales gobernantes.",
     content: `<p>La Laguna de los Cóndores es un cuerpo de agua sagrado ubicado a más de 3,000 metros de altitud, rodeado de imponentes montañas cubiertas de bosque nublado. En 1997, pescadores locales descubrieron en los acantilados circundantes más de 200 momias prehispánicas en mausoleos de arcilla, junto con quipus, textiles y cerámicas de extraordinaria calidad.</p>
     <p>El viaje hasta la laguna es una aventura en sí misma: varias horas de caminata por senderos que atraviesan bosques de nebrina, cruces de ríos y paisajes de ensueño. Los guías locales de las comunidades cercanas comparten las leyendas ancestrales que han protegido este lugar sagrado durante siglos.</p>

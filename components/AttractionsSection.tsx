@@ -36,12 +36,22 @@ const ATTRACTIONS = [
   {
     id: "laguna-condores",
     title: "Laguna de los Cóndores",
-    subtitle: "Museo de Leymebamba",
+    subtitle: "El Santuario en las Nubes",
+    image: "/images/DJI_0111_DxO-1920x1440.jpg",
+    excerpt: "Un espejo de agua sagrado oculto entre montañas, donde los Chachapoyas dejaron a sus ancestrales gobernantes.",
+    content: `<p>La Laguna de los Cóndores es un cuerpo de agua sagrado ubicado a más de 3,000 metros de altitud, rodeado de imponentes montañas cubiertas de bosque nublado. En 1997, pescadores locales descubrieron en los acantilados circundantes más de 200 momias prehispánicas en mausoleos de arcilla, junto con quipus, textiles y cerámicas de extraordinaria calidad.</p>
+    <p>El viaje hasta la laguna es una aventura en sí misma: varias horas de caminata por senderos que atraviesan bosques de nebrina, cruces de ríos y paisajes de ensueño. Los guías locales de las comunidades cercanas comparten las leyendas ancestrales que han protegido este lugar sagrado durante siglos.</p>
+    <p>Las piezas rescatadas se exhiben en el Museo de Leymebamba, pero la laguna en sí misma sigue siendo un santuario natural donde el tiempo parece haberse detenido.</p>`,
+  },
+  {
+    id: "museo-leymebamba",
+    title: "Museo de Leymebamba",
+    subtitle: "Guardián del Legado Chachapoyas",
     image: "/images/casa-hacienda-achamaqui.jpg",
-    excerpt: "Un recorrido fascinante por el santuario que resguarda más de 200 momias perfectamente preservadas del legado Chachapoyas.",
+    excerpt: "Santuario de más de 200 momias perfectamente preservadas y la colección arqueológica más importante del norte peruano.",
     content: `<p>El Museo de Leymebamba es mundialmente reconocido por albergar la extraordinaria colección arqueológica rescatada de la Laguna de los Cóndores en 1997. Sus salas resguardan más de 200 momias prehispánicas en excelente estado de conservación, así como quipus, finos textiles y cerámicas pre-incas e incas.</p>
-    <p>El museo ofrece una ventana única a las antiguas técnicas funerarias y la cosmovisión andino-amazónica de esta misteriosa civilización.</p>
-    <p>La laguna en sí misma, ubicada a varias horas de sendero desde la comunidad de Cavernas, es un paisaje de ensueño rodeado de montañas cubiertas de bosque nublado.</p>`,
+    <p>El museo ofrece una ventana única a las antiguas técnicas funerarias y la cosmovisión andino-amazónica de esta misteriosa civilización. Las momias, algunas con expresiones faciales aún visibles, te transportan a un mundo donde lo sagrado y lo natural se entrelazan.</p>
+    <p>Ubicado en la ciudad de Leymebamba, a aproximadamente 2 horas en coche desde Chachapoyas, el museo es una parada indispensable para cualquier visitante de la región.</p>`,
   },
   {
     id: "quiocta",
@@ -106,7 +116,6 @@ export default function AttractionsSection() {
             className="attractions-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
               gap: "24px",
               marginTop: "40px",
             }}

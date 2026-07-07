@@ -47,7 +47,7 @@ const ATTRACTIONS = [
     id: "museo-leymebamba",
     title: "Museo de Leymebamba",
     subtitle: "Guardián del Legado Chachapoyas",
-    image: "/images/casa-hacienda-achamaqui.jpg",
+    image: "/images/museo-leymebamba.jpg",
     excerpt: "Santuario de más de 200 momias perfectamente preservadas y la colección arqueológica más importante del norte peruano.",
     content: `<p>El Museo de Leymebamba es mundialmente reconocido por albergar la extraordinaria colección arqueológica rescatada de la Laguna de los Cóndores en 1997. Sus salas resguardan más de 200 momias prehispánicas en excelente estado de conservación, así como quipus, finos textiles y cerámicas pre-incas e incas.</p>
     <p>El museo ofrece una ventana única a las antiguas técnicas funerarias y la cosmovisión andino-amazónica de esta misteriosa civilización. Las momias, algunas con expresiones faciales aún visibles, te transportan a un mundo donde lo sagrado y lo natural se entrelazan.</p>
@@ -57,7 +57,7 @@ const ATTRACTIONS = [
     id: "quiocta",
     title: "Cavernas de Quiocta",
     subtitle: "Viaje al Corazón de la Tierra",
-    image: "/images/received_341214391902150.jpeg",
+    image: "/images/cavernas-quiocta.jpg",
     excerpt: "Explora un fascinante mundo subterráneo colmado de milenarias estalactitas y estalagmitas arqueológicas.",
     content: `<p>La caverna de Quiocta ofrece una expedición espeleológica inolvidable a lo largo de 500 metros de galería subterránea. Alumbrados por linternas, descubrirás asombrosas esculturas naturales talladas por el agua durante millones de años, además de antiguos vestigios óseos funerarios dejados por las civilizaciones pre-incas.</p>
     <p>La entrada se encuentra a pocos kilómetros de la ciudad de Chachapoyas, en la comunidad de Lámud. Los guías locales te acompañarán durante toda la exploración subterránea.</p>
@@ -67,7 +67,7 @@ const ATTRACTIONS = [
     id: "huancas",
     title: "Cañón del Sonche",
     subtitle: "Huancas y Alfarería",
-    image: "/images/DJI_0050_DxO-1080x1440.jpg",
+    image: "/images/canyon-de-sonche-chachapoyas.jpg",
     excerpt: "Un pintoresco pueblo de artesanas alfareras asentado al borde de uno de los cañones más espectaculares del norte peruano.",
     content: `<p>Huancas, ubicado a pocos minutos de la ciudad de Chachapoyas, es un pueblo reconocido por su arraigada tradición de alfarería artesanal, elaborada a mano por las mujeres huanquinas. Muy cerca del pueblo se encuentra el imponente mirador del Cañón del Sonche, con profundidades que superan los 900 metros.</p>
     <p>Es el lugar perfecto para comprar cerámica local única y disfrutar de vistas panorámicas impresionantes que te dejarán sin aliento.</p>
@@ -77,7 +77,7 @@ const ATTRACTIONS = [
     id: "bosque-neblina",
     title: "Bosque de Neblina",
     subtitle: "Valle de Urcos",
-    image: "/images/dji_fly_20230823_092730_87_1692800992341_pano_optimized-EDIT-1.jpg",
+    image: "/images/standard_bosques-de-neblina-1-sernanp.jpg",
     excerpt: "El singular ecosistema que protege especies emblemáticas como el colibrí cola de espátula y el oso de anteojos.",
     content: `<p>La provincia de Chachapoyas goza de los mágicos bosques de neblina de Urcos, un ecosistema permanentemente envuelto en bruma que alberga orquídeas salvajes, bromelias y helechos gigantes. Este hábitat es el hogar del famoso colibrí cola de espátula, una de las aves más raras del planeta.</p>
     <p>Los senderos ecologísticos te permiten adentrarte en este mundo mágico donde la niebla se mezcla con los rayos del sol creando paisajes etéreos.</p>
@@ -87,7 +87,7 @@ const ATTRACTIONS = [
     id: "jalca-grande",
     title: "Jalca Grande",
     subtitle: "El Templo de Piedra",
-    image: "/images/IMG_20230823_145548_DxO-1082x1440.jpg",
+    image: "/images/jalca-grande.jpg",
     excerpt: "La capital folklórica de la región que resguarda la iglesia colonial de piedra más antigua y tradiciones prehispánicas vivas.",
     content: `<p>Jalca Grande destaca como el distrito histórico por excelencia de la provincia de Chachapoyas. Su joya es la iglesia de piedra de San Juan Bautista, que muestra elementos arquitectónicos prehispánicos mezclados con la influencia del catolicismo español.</p>
     <p>Sus tejedoras aún practican la elaboración de mantas tradicionales usando telares de cintura prehispánicos, manteniendo vivas técnicas ancestrales que datan de más de 1,000 años de antigüedad.</p>

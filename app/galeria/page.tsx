@@ -78,7 +78,8 @@ export default function GaleriaPage() {
         />
 
         <div className="section" style={{ padding: "80px 5%" }}>
-          <div 
+          <div
+            className="gallery-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",

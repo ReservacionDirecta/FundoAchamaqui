@@ -103,6 +103,7 @@ export default function AttractionsSection() {
           </div>
 
           <div
+            className="attractions-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
@@ -206,6 +207,7 @@ export default function AttractionsSection() {
           onClick={() => setActiveModal(null)}
         >
           <div
+            className="attraction-modal"
             style={{
               backgroundColor: "#fff",
               borderRadius: "12px",
@@ -224,7 +226,7 @@ export default function AttractionsSection() {
               const attr = ATTRACTIONS.find((a) => a.id === activeModal)!;
               return (
                 <>
-                  <div style={{ position: "relative", height: "240px", overflow: "hidden" }}>
+                  <div className="attraction-modal-hero" style={{ position: "relative", height: "240px", overflow: "hidden" }}>
                     <img
                       src={attr.image}
                       alt={attr.title}

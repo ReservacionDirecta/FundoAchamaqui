@@ -4,6 +4,7 @@ import "./styles/normalize.css";
 import "./styles/webflow.css";
 import "./styles/fundoachamaqui.webflow.css";
 import "./animations.css";
+import "./mobile.css";
 import Script from "next/script";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import WhatsAppWidget from "@/components/WhatsAppWidget";

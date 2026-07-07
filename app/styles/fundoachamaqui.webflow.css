@@ -1520,9 +1520,9 @@ blockquote {
         linear-gradient(#00000080, #00000080), url("/images/360901013.jpg");
     background-position:
         0 0,
-        50% 199%;
+        50% 50%;
     background-repeat: repeat, no-repeat;
-    background-size: auto, 100%;
+    background-size: auto, cover;
     background-attachment: scroll, scroll;
 }
 
@@ -7490,8 +7490,8 @@ blockquote {
             linear-gradient(#0000, #0000), url("/images/360901013.jpg");
         background-position:
             0 0,
-            50% -50%;
-        background-size: auto, auto;
+            50% 50%;
+        background-size: auto, cover;
     }
 
     .section.vertical {

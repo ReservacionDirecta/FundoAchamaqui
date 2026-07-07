@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
+import AttractionsSection from "@/components/AttractionsSection";
 import prisma from "@/lib/prisma";
 
 export const dynamic = 'force-dynamic';
@@ -8,7 +9,6 @@ export const dynamic = 'force-dynamic';
 export default async function ActividadesPage() {
   const activities = await prisma.activity.findMany();
 
-  // Fallback data based on actividades.html
   const fallbackActivities = [
     {
       name: "Trekkings y la caminata al sarcófago de Fundo Achamaqui",
@@ -17,26 +17,26 @@ export default async function ActividadesPage() {
     },
     {
       name: "Restaurant: Sabores de la Selva",
-      description: "Nuestro restaurante y bar te esperan con una deliciosa variedad de comidas locales y amazónicas, así como una cuidadosa selección de vinos nacionales e internacionales. ¡Satisface tus sentidos con los sabores auténticos de la región!",
+      description: "Nuestro restaurante y bar te esperan con una deliciosa variedad de comidas locales y amazónicas, así como una cuidadosa selección de vinos nacionales e internacionales.",
       image: "/images/360900551_DxO.jpg",
     },
     {
-      name: "Piscina: Relajación en el Agua (En Mantenimiento)",
+      name: "Piscina: Relajación en el Agua",
       description: "Refréscate y relájate en nuestra piscina, donde podrás disfrutar de un chapuzón revitalizante mientras te rodeas de la belleza natural que nos rodea.",
       image: "/images/casa-hacienda-achamaqui.jpg",
     },
     {
-      name: "Descubre la Magia del Río Utcubamba en Fundo Achamaqui",
-      description: "Te brindamos una experiencia única junto al Río Utcubamba. Deja que las aguas te lleven a un estado de relajación y conexión con la naturaleza que no encontrarás en ningún otro lugar. ¡Bienvenido a tu escape junto al río en Fundo Achamaqui!",
+      name: "Descubre la Magia del Río Utcubamba",
+      description: "Te brindamos una experiencia única junto al Río Utcubamba. Deja que las aguas te lleven a un estado de relajación y conexión con la naturaleza.",
       image: "/images/DJI_0111_DxO-1920x1440.jpg",
     },
     {
-      name: "Convivencia con la Naturaleza:",
-      description: "Disfruta de la vida en la selva de manera única. Conoce a nuestros animales, desde majestuosos caballos hasta tranquilas vacas. Sumérgete en la experiencia de nuestro huerto orgánico y reconecta con la naturaleza.",
+      name: "Convivencia con la Naturaleza",
+      description: "Disfruta de la vida en la selva de manera única. Conoce a nuestros animales, desde majestuosos caballos hasta tranquilas vacas. Sumérgete en la experiencia de nuestro huerto orgánico.",
       image: "/images/received_1753229811842785.jpeg",
     },
     {
-      name: "Secretos de Chachapoyas:",
+      name: "Secretos de Chachapoyas",
       description: "Nuestros consejos locales personalizados te llevarán a explorar los tesoros ocultos de Chachapoyas, una región llena de misterio y belleza por descubrir.",
       image: "/images/DJI_0050_DxO-1080x1440.jpg",
     },
@@ -52,12 +52,12 @@ export default async function ActividadesPage() {
     <>
       <Navbar />
       <main>
-        <HeroBanner 
-          title="Actividades" 
+        <HeroBanner
+          title="Actividades"
           paragraph="En Fundo Achamaqui, tu aventura comienza en la comodidad de nuestro alojamiento de lujo en plena selva."
           className="services-banner"
         />
-        
+
         <section className="section light-background">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="w-layout-grid services-wrap-home-1 services">
@@ -71,6 +71,8 @@ export default async function ActividadesPage() {
             </div>
           </div>
         </section>
+
+        <AttractionsSection />
 
         <section className="section img">
           <div className="w-layout-blockcontainer base-container w-container">

@@ -1481,7 +1481,7 @@ blockquote {
         url("/images/Vista-aerea-achamaqui-1.jpg");
     background-position:
         0 0,
-        50% 50%;
+        50% 80%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     background-attachment: scroll, scroll;
@@ -5647,7 +5647,7 @@ blockquote {
     }
 
     .section.portfolio-grid-banner {
-        background-position: 50% 50%;
+        background-position: 50% 80%;
     }
 
     .section.room-details {
@@ -5818,7 +5818,7 @@ blockquote {
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50% 50%;
+            50% 80%;
         background-size: auto, cover;
     }
 
@@ -6691,7 +6691,7 @@ blockquote {
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50% 50%;
+            50% 80%;
         background-size: auto, cover;
     }
 
@@ -7476,7 +7476,7 @@ blockquote {
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50% 50%;
+            50% 80%;
         background-size: auto, cover;
     }
 

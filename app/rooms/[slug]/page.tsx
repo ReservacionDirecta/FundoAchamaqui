@@ -8,19 +8,23 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = await params;
-  const room = await prisma.room.findUnique({
-    where: { slug }
-  });
-  if (!room) return {};
-  return {
-    title: `${room.name} | Hotel Fundo Achamaqui`,
-    description: room.description.substring(0, 160),
-    openGraph: {
-      title: `${room.name} - Hotel Fundo Achamaqui`,
+  try {
+    const room = await prisma.room.findUnique({
+      where: { slug }
+    });
+    if (!room) return {};
+    return {
+      title: `${room.name} | Hotel Fundo Achamaqui`,
       description: room.description.substring(0, 160),
-      images: [room.mainImage],
-    }
-  };
+      openGraph: {
+        title: `${room.name} - Hotel Fundo Achamaqui`,
+        description: room.description.substring(0, 160),
+        images: [room.mainImage],
+      }
+    };
+  } catch (e) {
+    return { title: "Habitación | Hotel Fundo Achamaqui" };
+  }
 }
 
 export const dynamic = 'force-dynamic';
@@ -45,23 +49,31 @@ const getIconUrl = (icon: string) => {
 export default async function RoomDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
-  const room = await prisma.room.findUnique({
-    where: { slug },
-    include: { amenities: true },
-  });
+  let room: any = null;
+  let otherRooms: any[] = [];
+  try {
+    room = await prisma.room.findUnique({
+      where: { slug },
+      include: { amenities: true },
+    });
+
+    if (room) {
+      // Fetch other rooms for the bottom carousel/grid
+      otherRooms = await prisma.room.findMany({
+        where: {
+          NOT: { id: room.id },
+        },
+        take: 3,
+        include: { amenities: true },
+      });
+    }
+  } catch (error) {
+    console.error("Prisma error in RoomDetailPage:", error);
+  }
 
   if (!room) {
     notFound();
   }
-
-  // Fetch other rooms for the bottom carousel/grid
-  const otherRooms = await prisma.room.findMany({
-    where: {
-      NOT: { id: room.id },
-    },
-    take: 3,
-    include: { amenities: true },
-  });
 
   return (
     <>
@@ -83,7 +95,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
             <div className="info-room-wrap">
               <h4>Servicios / Amenities</h4>
               <div className="amenities-wrapper">
-                {room.amenities.map((amenity) => (
+                {room.amenities.map((amenity: any) => (
                   <div key={amenity.id} className="amenities-wrap">
                     <img 
                       src={getIconUrl(amenity.icon)} 

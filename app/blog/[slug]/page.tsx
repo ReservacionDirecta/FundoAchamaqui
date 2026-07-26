@@ -8,19 +8,23 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await prisma.blogPost.findUnique({
-    where: { slug }
-  });
-  if (!post) return {};
-  return {
-    title: `${post.title} | Blog Fundo Achamaqui`,
-    description: post.excerpt,
-    openGraph: {
-      title: `${post.title} - Blog Fundo Achamaqui`,
+  try {
+    const post = await prisma.blogPost.findUnique({
+      where: { slug }
+    });
+    if (!post) return {};
+    return {
+      title: `${post.title} | Blog Fundo Achamaqui`,
       description: post.excerpt,
-      images: [post.mainImage],
-    }
-  };
+      openGraph: {
+        title: `${post.title} - Blog Fundo Achamaqui`,
+        description: post.excerpt,
+        images: [post.mainImage],
+      }
+    };
+  } catch (e) {
+    return { title: "Blog Post | Hotel Fundo Achamaqui" };
+  }
 }
 
 export const dynamic = 'force-dynamic';
@@ -28,9 +32,14 @@ export const dynamic = 'force-dynamic';
 export default async function BlogPostDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
-  const post = await prisma.blogPost.findUnique({
-    where: { slug },
-  });
+  let post: any = null;
+  try {
+    post = await prisma.blogPost.findUnique({
+      where: { slug },
+    });
+  } catch (error) {
+    console.error("Prisma error in BlogPostDetailPage:", error);
+  }
 
   if (!post) {
     notFound();

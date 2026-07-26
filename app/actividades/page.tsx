@@ -7,7 +7,12 @@ import prisma from "@/lib/prisma";
 export const dynamic = 'force-dynamic';
 
 export default async function ActividadesPage() {
-  const activities = await prisma.activity.findMany();
+  let activities: any[] = [];
+  try {
+    activities = await prisma.activity.findMany();
+  } catch (error) {
+    console.error("Failed to fetch activities from Prisma, falling back to static content:", error);
+  }
 
   const fallbackActivities = [
     {

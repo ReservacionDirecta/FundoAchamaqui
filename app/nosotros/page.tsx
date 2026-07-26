@@ -16,14 +16,21 @@ export const dynamic = 'force-dynamic';
 
 export default async function AboutUs() {
   // Fetch latest 3 blog posts
-  const latestPosts = await prisma.blogPost.findMany({
-    orderBy: { publishedAt: "desc" },
-    take: 3,
-  });
+  let latestPosts: any[] = [];
+  let gallerySetting = null;
 
-  const gallerySetting = await prisma.cmsSetting.findUnique({
-    where: { key: "about_gallery_images" }
-  });
+  try {
+    latestPosts = await prisma.blogPost.findMany({
+      orderBy: { publishedAt: "desc" },
+      take: 3,
+    });
+
+    gallerySetting = await prisma.cmsSetting.findUnique({
+      where: { key: "about_gallery_images" }
+    });
+  } catch (error) {
+    console.error("Failed to query database from Nosotros page, using fallbacks:", error);
+  }
 
   const galleryUrls = gallerySetting 
     ? gallerySetting.value.split(",").map(url => url.trim())

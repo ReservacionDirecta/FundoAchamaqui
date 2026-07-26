@@ -14,10 +14,15 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function RoomsPage() {
-  const rooms = await prisma.room.findMany({
-    orderBy: { createdAt: "desc" },
-    include: { amenities: true },
-  });
+  let rooms: any[] = [];
+  try {
+    rooms = await prisma.room.findMany({
+      orderBy: { createdAt: "desc" },
+      include: { amenities: true },
+    });
+  } catch (error) {
+    console.error("Failed to query rooms from database, falling back to empty list:", error);
+  }
 
   return (
     <>

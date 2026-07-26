@@ -14,9 +14,14 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function BlogPage() {
-  const posts = await prisma.blogPost.findMany({
-    orderBy: { publishedAt: "desc" },
-  });
+  let posts: any[] = [];
+  try {
+    posts = await prisma.blogPost.findMany({
+      orderBy: { publishedAt: "desc" },
+    });
+  } catch (error) {
+    console.error("Failed to query blog posts from database, falling back to empty list:", error);
+  }
 
   return (
     <>

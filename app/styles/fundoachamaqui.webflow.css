@@ -1477,11 +1477,11 @@ blockquote {
 .section.portfolio-grid-banner {
     object-position: 50% 50%;
     background-image:
-        linear-gradient(#0006, #0006),
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
         url("/images/Vista-aerea-achamaqui-1.jpg");
     background-position:
         0 0,
-        50% -35%;
+        50% 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     background-attachment: scroll, scroll;
@@ -5647,7 +5647,7 @@ blockquote {
     }
 
     .section.portfolio-grid-banner {
-        background-position: 50% 30%;
+        background-position: 50% 50%;
     }
 
     .section.room-details {
@@ -5814,12 +5814,12 @@ blockquote {
     .section.portfolio-grid-banner {
         object-position: 50% 50%;
         background-image:
-            linear-gradient(#0000, #0000),
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50% 0;
-        background-size: auto, contain;
+            50% 50%;
+        background-size: auto, cover;
     }
 
     .section.primary-color-background {
@@ -6687,11 +6687,11 @@ blockquote {
 
     .section.portfolio-grid-banner {
         background-image:
-            linear-gradient(#0000, #0000),
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50%;
+            50% 50%;
         background-size: auto, cover;
     }
 
@@ -7472,11 +7472,11 @@ blockquote {
 
     .section.portfolio-grid-banner {
         background-image:
-            linear-gradient(#0000, #0000),
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
             url("/images/Vista-aerea-achamaqui-1.jpg");
         background-position:
             0 0,
-            50%;
+            50% 50%;
         background-size: auto, cover;
     }
 

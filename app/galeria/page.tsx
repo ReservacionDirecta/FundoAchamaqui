@@ -6,7 +6,6 @@ import HeroBanner from "@/components/HeroBanner";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useState } from "react";
 
-// Google Photos extracted list & original images combined
 const ALL_IMAGES = [
   "/images/DJI_0033.jpg",
   "/images/DJI_0059.jpg",
@@ -24,18 +23,13 @@ const ALL_IMAGES = [
   "/images/IMG_20230822_141539.jpg",
   "/images/IMG_20230822_141541.jpg",
   "/images/IMG_20230822_141542.jpg",
-  "/images/IMG_20230822_141551.jpg",
   "/images/IMG_20230822_141553.jpg",
   "/images/IMG_20230822_141601.jpg",
   "/images/IMG_20230822_161622.jpg",
-  "/images/IMG_20230823_143925.jpg",
   "/images/IMG_20230823_143927.jpg",
   "/images/IMG_20230823_143938.jpg",
-  "/images/IMG_20230823_143940.jpg",
   "/images/IMG_20230823_143955.jpg",
   "/images/IMG_20230823_144010.jpg",
-  "/images/IMG_20230823_144013.jpg",
-  "/images/IMG_20230823_144024.jpg",
   "/images/IMG_20230823_144028.jpg",
   "/images/IMG_20230823_144036.jpg",
   "/images/IMG_20230823_144105.jpg",

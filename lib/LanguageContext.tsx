@@ -61,6 +61,18 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Gallery
     gallery_title: "Explora Nuestra Galería",
     gallery_desc: "Descubre la belleza de Fundo Achamaqui y Chachapoyas a través de imágenes que cuentan historias. Nuestra galería te transportará a un mundo de paisajes impresionantes, aventuras emocionantes y momentos inolvidables en este rincón de Chachapoyas. ¡Ven y sumérgete en la magia de Fundo Achamaqui a través de nuestra galería de fotos!",
+
+    // Media & Contact defaults (SSR Fallbacks)
+    logo_black_image_url: "/images/logo-titulo-negro2x.png",
+    logo_white_image_url: "/images/logo-titulo-blanco2x.png",
+    contact_phone: "+51 982 836 547",
+    contact_email: "info@fundoachamaqui.com",
+    contact_address: "Km. 39 Carretera Pedro Ruiz, Chachapoyas",
+    contact_map_url: "https://www.google.com/maps/place/Km.+39+Carretera+Pedro+Ruiz,+Chachapoyas",
+    whatsapp_number: "51982836547",
+    facebook_url: "https://www.facebook.com/",
+    instagram_url: "https://www.instagram.com/",
+    twitter_url: "https://twitter.com/",
   },
   en: {
     // Navbar
@@ -110,6 +122,18 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Gallery
     gallery_title: "Explore Our Gallery",
     gallery_desc: "Discover the beauty of Fundo Achamaqui and Chachapoyas through images that tell stories. Our gallery will transport you to a world of breathtaking landscapes, exciting adventures, and unforgettable moments in this corner of Chachapoyas. Come and immerse yourself in the magic of Fundo Achamaqui through our photo gallery!",
+
+    // Media & Contact defaults (SSR Fallbacks)
+    logo_black_image_url: "/images/logo-titulo-negro2x.png",
+    logo_white_image_url: "/images/logo-titulo-blanco2x.png",
+    contact_phone: "+51 982 836 547",
+    contact_email: "info@fundoachamaqui.com",
+    contact_address: "Km. 39 Carretera Pedro Ruiz, Chachapoyas",
+    contact_map_url: "https://www.google.com/maps/place/Km.+39+Carretera+Pedro+Ruiz,+Chachapoyas",
+    whatsapp_number: "51982836547",
+    facebook_url: "https://www.facebook.com/",
+    instagram_url: "https://www.instagram.com/",
+    twitter_url: "https://twitter.com/",
   },
 };
 

@@ -150,9 +150,15 @@
   .newsletter-input {
     min-width: 100% !important;
     width: 100% !important;
+    flex: none !important;
   }
 
   .newsletter-btn {
+    width: 100% !important;
+  }
+
+  form[style*="flexWrap"] input[type="email"] {
+    min-width: 0 !important;
     width: 100% !important;
   }
 
@@ -302,6 +308,10 @@
     grid-template-columns: 1fr !important;
     gap: 12px !important;
     padding: 0 16px;
+  }
+
+  .section[style*="padding: 80px"] {
+    padding: 50px 16px !important;
   }
 
   /* Booking widget */

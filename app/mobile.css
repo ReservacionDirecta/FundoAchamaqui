@@ -216,6 +216,21 @@
     font-size: 12px !important;
   }
 
+  /* Room detail amenities */
+  .amenities-wrapper {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .amenities-wrap {
+    gap: 8px !important;
+  }
+
+  .icon-rooms {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
   /* Blog grid */
   .collection-list-blog-home {
     flex-direction: column !important;
@@ -309,10 +324,14 @@
   /* Booking widget */
   .book-banner-wrap {
     flex-direction: column !important;
+    min-width: 100% !important;
+    padding: 20px 16px !important;
+    margin-top: -60px !important;
+    border-radius: 12px !important;
   }
 
   .booking-engine {
-    padding: 16px !important;
+    padding: 12px !important;
   }
 
   .booking-engine h1 {
@@ -385,6 +404,21 @@
   }
 }
 
+/* Tablet overrides */
+@media (min-width: 601px) and (max-width: 991px) {
+  .amenities-wrapper {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
+  .reservar-trust-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .room-gallery-thumbs {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
 /* Desktop overrides - ensure grids work properly */
 @media (min-width: 768px) {
   .services-wrap-home-1 {
@@ -418,5 +452,16 @@
 
   .review-wrapper {
     grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
+  /* Booking widget desktop: fluid width within container */
+  .book-banner-wrap {
+    min-width: 100% !important;
+    padding: 24px 40px !important;
+    margin-top: -80px !important;
+  }
+
+  .booking-engine {
+    padding: 16px !important;
   }
 }

@@ -690,8 +690,7 @@
 }
 
 .reservar-booking-section {
-  max-width: 860px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .reservar-booking-header {
@@ -802,7 +801,7 @@
   }
 
   .reservar-widget-wrap {
-    padding: 20px 16px;
+    padding: 24px 16px;
   }
 
   .reservar-trust-grid {

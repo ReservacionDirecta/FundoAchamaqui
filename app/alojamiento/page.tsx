@@ -78,7 +78,7 @@ export default function Alojamiento() {
             </div>
             <div className="w-layout-grid review-wrapper">
               <div className="review-wrap" style={{ opacity: 1 }}>
-                <p>“Las habitaciones estaban limpias, muy cómodas y el personal era increíble. Hicieron todo lo posible para ayudarnos a que nuestra estancia fuera agradable. Recomiendo altamente este hotel.&quot;<br /></p>
+                <p>“Las habitaciones estaban impecables, muy cómodas y el personal fue increíble. Hicieron todo lo posible para que nuestra estadía fuera perfecta. Lo recomiendo ampliamente.”</p>
                 <div className="testimonials-quote-author">
                   <div className="author-img-con"><img src="/images/Member-Photo-Close-up-15_1Member-Photo-Close-up-15.webp" loading="lazy" alt="Robert Huamani" className="testimonials-image" /></div>
                   <div className="testimonials-author pt-0">
@@ -87,7 +87,7 @@ export default function Alojamiento() {
                 </div>
               </div>
               <div className="central-review" style={{ opacity: 1 }}>
-                <p>“Estancia muy limpia y cómoda. Personal muy amable, excelente servicio de transporte. Sin duda recomendaría este hotel.&quot;<br /></p>
+                <p>“Una estadía muy limpia y acogedora. El personal es muy amable, excelente servicio de transporte. El hotel está cerca de la terminal. Definitivamente lo recomiendo.”</p>
                 <div className="testimonials-quote-author">
                   <div className="author-img-con"><img src="/images/Member-Photo-Close-up-5_1Member-Photo-Close-up-5.webp" loading="lazy" alt="Nensi Links" className="testimonials-image" /></div>
                   <div className="testimonials-author pt-0">
@@ -96,7 +96,7 @@ export default function Alojamiento() {
                 </div>
               </div>
               <div className="review-wrap right" style={{ opacity: 1 }}>
-                <p>“Las habitaciones estaban limpias, muy cómodas y el personal era increíble. Recomiendo altamente este hotel.&quot;<br /></p>
+                <p>“Un aniversario sorpresa inolvidable en una hermosa hacienda. Desde el momento en que llegamos, el personal nos brindó una cálida bienvenida y nos cuidó en cada detalle.”</p>
                 <div className="testimonials-quote-author">
                   <div className="author-img-con"><img src="/images/Member-Photo-Close-up-4_1Member-Photo-Close-up-4.webp" loading="lazy" alt="Olga Zapata" className="testimonials-image" /></div>
                   <div className="testimonials-author pt-0">

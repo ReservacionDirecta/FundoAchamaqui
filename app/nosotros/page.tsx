@@ -146,7 +146,7 @@ export default async function AboutUs() {
                         </Link>
                         <p>{post.excerpt}</p>
                         <div className="div-block-4 div-block-5 link-blog">
-                          <Link href={`/blog/${post.slug}`}>Read More</Link>
+                          <Link href={`/blog/${post.slug}`}>Leer más</Link>
                         </div>
                       </div>
                     </div>

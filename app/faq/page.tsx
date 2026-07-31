@@ -20,7 +20,7 @@ export default function FAQPage() {
                 <h6 className="heading-2">faq<br /></h6>
               </div>
               <div className="right-title">
-                <h2 style={{ opacity: 1 }}>Preguntas mas comúnes</h2>
+                <h2 style={{ opacity: 1 }}>Preguntas más comunes</h2>
                 <p style={{ opacity: 1 }}>Esperamos que estas respuestas a preguntas frecuentes te sean útiles. Si tienes alguna pregunta adicional o necesitas más detalles, no dudes en contactarnos. Estamos aquí para hacer que tu estadía en Fundo Achamaqui sea inolvidable.<br /></p>
               </div>
             </div>

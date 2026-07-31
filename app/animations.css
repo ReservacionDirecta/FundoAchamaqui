@@ -605,3 +605,212 @@
     font-size: 34px;
   }
 }
+
+/* ── Reservar page ── */
+
+.reservar-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.reservar-room-card {
+  background: #ffffff;
+  border: 1px solid rgba(47, 65, 55, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(47, 65, 55, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservar-room-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(47, 65, 55, 0.1);
+}
+
+.reservar-room-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #efe9df;
+}
+
+.reservar-room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.reservar-room-price {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(20, 30, 25, 0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.reservar-price-amount {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.reservar-price-period {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.reservar-room-body {
+  padding: 14px 16px 16px;
+}
+
+.reservar-room-name {
+  margin: 0 0 4px;
+  color: var(--subtitle-text, #2f4137);
+  font-family: "Gilda Display", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.reservar-room-facts {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(47, 65, 55, 0.65);
+}
+
+.reservar-booking-section {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.reservar-booking-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.reservar-booking-header h2 {
+  margin: 16px 0 8px;
+  font-family: "Gilda Display", serif;
+  font-size: 32px;
+  color: var(--subtitle-text, #2f4137);
+}
+
+.reservar-booking-header p {
+  color: rgba(47, 65, 55, 0.7);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.reservar-coupon-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #8c7355, #a68a6a);
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(140, 115, 85, 0.3);
+}
+
+.reservar-coupon-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  opacity: 0.9;
+}
+
+.reservar-coupon-code {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-family: monospace;
+}
+
+.reservar-widget-wrap {
+  background: #ffffff;
+  border: 1px solid rgba(47, 65, 55, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(47, 65, 55, 0.06);
+}
+
+.reservar-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.reservar-trust-item {
+  text-align: center;
+  padding: 24px 16px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 65, 55, 0.06);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservar-trust-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(47, 65, 55, 0.06);
+}
+
+.reservar-trust-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.reservar-trust-item h4 {
+  margin: 0 0 8px;
+  color: var(--subtitle-text, #2f4137);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.reservar-trust-item p {
+  margin: 0;
+  color: rgba(47, 65, 55, 0.7);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 991px) {
+  .reservar-trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .reservar-rooms-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .reservar-widget-wrap {
+    padding: 20px 16px;
+  }
+
+  .reservar-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reservar-booking-header h2 {
+    font-size: 26px;
+  }
+}

@@ -37,7 +37,7 @@ const dictionary: Record<Language, Record<string, string>> = {
     about_subtitle: "Naturaleza y comodidad",
     about_title: "Naturaleza y comodidad se unen en Fundo Achamaqui.",
     about_paragraph: "Enclavado en la belleza natural de la provincia de Chachapoyas, Fundo Achamaqui te ofrece una experiencia única de relajación y aventura. Descubre la magia de la región Amazonas en nuestro acogedor hotel.",
-    about_btn: "Leer Más",
+    about_btn: "Leer más",
 
     // Services
     services_subtitle: "¿Por qué elegirnos?",
@@ -57,6 +57,14 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Reviews
     reviews_subtitle: "Reseñas",
     reviews_title: "Testimonios",
+    reviews_heading: "Lo que dicen nuestros huéspedes",
+
+    // Reservar page
+    reservar_title: "Reserva tu Estancia",
+    reservar_subtitle: "Disponibilidad",
+    reservar_paragraph: "Elige tu habitación ideal y reserva en línea.",
+    reservar_rooms_title: "Nuestras habitaciones",
+    reservar_rooms_desc: "Cada habitación ofrece comodidad, privacidad y vistas únicas a la naturaleza de Chachapoyas.",
 
     // Gallery
     gallery_title: "Explora Nuestra Galería",
@@ -118,6 +126,14 @@ const dictionary: Record<Language, Record<string, string>> = {
     // Reviews
     reviews_subtitle: "Reviews",
     reviews_title: "Testimonials",
+    reviews_heading: "What our guests say",
+
+    // Reservar page
+    reservar_title: "Book Your Stay",
+    reservar_subtitle: "Availability",
+    reservar_paragraph: "Choose your ideal room and book online.",
+    reservar_rooms_title: "Our Rooms",
+    reservar_rooms_desc: "Each room offers comfort, privacy and unique views of Chachapoyas nature.",
 
     // Gallery
     gallery_title: "Explore Our Gallery",

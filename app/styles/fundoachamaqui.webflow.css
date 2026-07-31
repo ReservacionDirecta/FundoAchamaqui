@@ -23,18 +23,84 @@
 }
 
 :root {
+    /* ── Premium Design System ── */
     --background-white: #faf7f2;
-    --primary-dark: #0e0e0e;
-    --primary: #8f8b5e;
-    --subtitle-text: #f09049;
+    --primary-dark: #1a1a1a;
+    --primary: #8c7355;
+    --subtitle-text: #c9a96e;
     --paragraph-green: #5a7666;
     --primary-light: #f7eee3;
-    --white: white;
-    --light-gray: #f9f9fa;
-    --dark-gray-50: #afafaf80;
-    --black: black;
-    --white-50: #ffffff80;
-    --gray: #e9e9e9;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark-gray-50: rgba(112, 112, 112, 0.5);
+    --black: #000000;
+    --white-50: rgba(255, 255, 255, 0.5);
+    --gray: #e8e8e8;
+
+    /* Premium tokens */
+    --color-bg-primary: #faf7f2;
+    --color-bg-secondary: #f0ebe3;
+    --color-bg-dark: #1a1a1a;
+    --color-bg-card: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #5a5a5a;
+    --color-text-muted: #8a8a8a;
+    --color-text-on-dark: #faf7f2;
+    --color-accent: #c9a96e;
+    --color-accent-hover: #b8944f;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-light: rgba(0, 0, 0, 0.04);
+    --color-shadow: rgba(0, 0, 0, 0.06);
+    --color-shadow-hover: rgba(0, 0, 0, 0.12);
+    --color-overlay: rgba(26, 26, 26, 0.55);
+    --color-overlay-dark: rgba(26, 26, 26, 0.7);
+
+    /* Typography */
+    --font-heading: "Gilda Display", Georgia, serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-size-hero: clamp(2.5rem, 5vw, 4rem);
+    --font-size-h1: clamp(2rem, 4vw, 3rem);
+    --font-size-h2: clamp(1.5rem, 3vw, 2.25rem);
+    --font-size-h3: clamp(1.25rem, 2vw, 1.5rem);
+    --font-size-h4: 1.125rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-tiny: 0.75rem;
+    --line-height-heading: 1.15;
+    --line-height-body: 1.6;
+    --letter-spacing-heading: -0.02em;
+    --letter-spacing-wide: 0.08em;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+    --section-padding: clamp(60px, 8vw, 100px);
+
+    /* Borders & Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast: 0.2s;
+    --duration-normal: 0.35s;
+    --duration-slow: 0.5s;
 }
 
 .w-layout-blockcontainer {

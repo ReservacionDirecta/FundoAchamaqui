@@ -2,20 +2,21 @@ interface HeroBannerProps {
   title: string;
   subtitle?: string;
   paragraph?: string;
-  className: string; // To handle different backgrounds from Webflow CSS
+  className: string;
 }
 
 export default function HeroBanner({ title, subtitle, paragraph, className }: HeroBannerProps) {
   return (
-    <section className={`section ${className}`}>
+    <section className={`section hero-section ${className}`}>
+      <div className="hero-overlay" />
       <div className="w-layout-blockcontainer base-container w-container">
         <div className="banner-title-wrapper">
           {subtitle && (
-            <h6 className="white-text small-text">{subtitle}</h6>
+            <span className="hero-subtitle">{subtitle}</span>
           )}
-          <h1 className="details-page-title">{title}</h1>
+          <h1 className="hero-title">{title}</h1>
           {paragraph && (
-            <p className="white-paragraph">{paragraph}</p>
+            <p className="hero-paragraph">{paragraph}</p>
           )}
         </div>
       </div>

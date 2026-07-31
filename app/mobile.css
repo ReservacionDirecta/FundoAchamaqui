@@ -1,6 +1,55 @@
-/* ── Mobile-first responsive fixes ── */
+/* ── Fluid Responsive System (clamp-based) ── */
+/* Breakpoints: 480 | 600 | 768 | 1024 | 1200 */
 
-/* Base container */
+/* ── Global Fluid Typography ── */
+
+h1 { font-size: clamp(1.75rem, 4vw + 0.5rem, 3.75rem); }
+h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 3rem); }
+h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.875rem); }
+h4 { font-size: clamp(1rem, 1.5vw + 0.25rem, 1.375rem); }
+h5 { font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem); }
+h6 { font-size: clamp(0.75rem, 0.8vw + 0.25rem, 0.875rem); }
+
+p, .body-text {
+  font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
+  line-height: 1.65;
+}
+
+.small-text, .label {
+  font-size: clamp(0.6875rem, 0.4vw + 0.25rem, 0.75rem);
+}
+
+/* ── Hero Section Fluid ── */
+
+.hero-section {
+  min-height: clamp(280px, 40vw, 480px);
+  padding: clamp(60px, 10vw, 110px) 24px clamp(40px, 8vw, 80px);
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 5vw + 0.25rem, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.625rem, 0.5vw + 0.25rem, 0.6875rem);
+  letter-spacing: 0.18em;
+}
+
+.hero-paragraph {
+  font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
+}
+
+/* ── Section Padding Fluid ── */
+
+.section {
+  padding-top: clamp(40px, 7vw, 100px);
+  padding-bottom: clamp(40px, 7vw, 100px);
+}
+
+/* ── Base Container ── */
+
 @media (max-width: 767px) {
   .base-container {
     padding-left: 16px !important;
@@ -10,51 +59,55 @@
   .w-layout-blockcontainer {
     max-width: none !important;
   }
+}
 
-  .section {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
-  }
+/* ── Webflow Heading Overrides ── */
 
-  /* Hero banners */
-  .banner-heading-home-1 {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
+.banner-heading-home-1 {
+  font-size: clamp(1.5rem, 4vw + 0.25rem, 3.25rem) !important;
+  line-height: 1.15 !important;
+}
 
-  .details-page-title {
-    font-size: 28px !important;
-  }
+.details-page-title {
+  font-size: clamp(1.5rem, 4vw + 0.25rem, 3.25rem) !important;
+}
 
-  .white-paragraph {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-  }
+.banner-home-1 h1 {
+  font-size: clamp(1.5rem, 4vw + 0.25rem, 3.75rem) !important;
+}
 
-  .banner-title-wrapper {
-    padding: 0 !important;
-  }
+.white-paragraph {
+  font-size: clamp(0.8125rem, 0.5vw + 0.5rem, 1rem) !important;
+  line-height: 1.65 !important;
+}
 
-  /* Title wraps */
-  .title-wrap {
-    flex-direction: column !important;
-    text-align: center;
-    gap: 12px !important;
-  }
+/* ── Title Wraps ── */
 
-  .right-title {
-    text-align: center;
-  }
+.title-wrap {
+  flex-direction: column !important;
+  text-align: center;
+  gap: clamp(8px, 1.5vw, 16px) !important;
+}
 
-  .title-wrap h2 {
-    font-size: 24px !important;
-  }
+.title-wrap h2 {
+  font-size: clamp(1.5rem, 3vw + 0.25rem, 2.5rem) !important;
+}
 
-  .left-subtitle {
-    text-align: center;
-  }
+.right-title {
+  text-align: center;
+}
 
-  /* Services grid */
+.left-subtitle {
+  text-align: center;
+}
+
+.heading-4 {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 1.5rem) !important;
+}
+
+/* ── Services Grid ── */
+
+@media (max-width: 767px) {
   .services-wrap-home-1 {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
@@ -66,19 +119,28 @@
   }
 
   .service-home .service-img {
-    height: 200px !important;
+    height: clamp(160px, 25vw, 220px) !important;
     object-fit: cover;
   }
 
   .service-home h4 {
-    font-size: 18px !important;
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem) !important;
   }
 
   .service-home p {
-    font-size: 14px !important;
+    font-size: clamp(0.8125rem, 0.5vw + 0.5rem, 0.875rem) !important;
   }
+}
 
-  /* About section */
+@media (min-width: 768px) {
+  .services-wrap-home-1 {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+/* ── About Section ── */
+
+@media (max-width: 767px) {
   .about-section {
     flex-direction: column !important;
     gap: 24px !important;
@@ -93,30 +155,36 @@
   .right-img {
     width: 100% !important;
   }
+}
 
-  .heading-4 {
-    font-size: 24px !important;
-  }
+/* ── Feature Grid ── */
 
-  /* Feature grid */
+.about-hotel {
+  grid-template-columns: 1fr !important;
+  gap: clamp(8px, 1.5vw, 16px) !important;
+}
+
+@media (min-width: 768px) {
   .about-hotel {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr 1fr !important;
   }
+}
 
-  .hotel-info {
-    text-align: center;
-  }
+.hotel-info {
+  text-align: center;
+}
 
-  .hotel-info h6 {
-    font-size: 12px !important;
-  }
+.hotel-info h6 {
+  font-size: clamp(0.6875rem, 0.6vw + 0.25rem, 0.8125rem) !important;
+}
 
-  .hotel-info p {
-    font-size: 13px !important;
-  }
+.hotel-info p {
+  font-size: clamp(0.75rem, 0.5vw + 0.375rem, 0.875rem) !important;
+}
 
-  /* Buttons */
+/* ── Buttons ── */
+
+@media (max-width: 767px) {
   .button-section-wrap,
   .button-margin {
     display: flex;
@@ -128,8 +196,11 @@
     max-width: 280px;
     text-align: center;
   }
+}
 
-  /* Testimonials */
+/* ── Testimonials ── */
+
+@media (max-width: 767px) {
   .testimonials-slider-con {
     margin-left: 0 !important;
     width: 100% !important;
@@ -137,11 +208,18 @@
   }
 
   .testimonials-quote {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
+    font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem) !important;
+    line-height: 1.65 !important;
   }
 
-  /* Newsletter */
+  .testimonials-quote-author {
+    margin-top: 32px !important;
+  }
+}
+
+/* ── Newsletter ── */
+
+@media (max-width: 767px) {
   .newsletter-form {
     flex-direction: column !important;
     gap: 12px !important;
@@ -156,34 +234,44 @@
   .newsletter-btn {
     width: 100% !important;
   }
+}
 
-  form[style*="flexWrap"] input[type="email"] {
-    min-width: 0 !important;
-    width: 100% !important;
-  }
+/* ── Attractions Grid ── */
 
-  /* Attractions grid */
+@media (max-width: 767px) {
   .attractions-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
-  /* Modal */
   .attraction-modal {
     width: 95% !important;
     max-height: 90vh !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
   }
 
   .attraction-modal-hero {
-    height: 180px !important;
+    height: clamp(140px, 22vw, 180px) !important;
   }
 
   .attraction-modal-hero h3 {
-    font-size: 20px !important;
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.375rem) !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .attraction-modal {
+    width: 98% !important;
   }
 
-  /* Room cards */
+  .attraction-modal-hero {
+    height: clamp(120px, 20vw, 150px) !important;
+  }
+}
+
+/* ── Room Cards ── */
+
+@media (max-width: 767px) {
   .w-layout-grid.grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
@@ -195,16 +283,16 @@
   }
 
   .room-card-body {
-    padding: 18px 18px 16px !important;
-    gap: 12px !important;
+    padding: clamp(14px, 2vw, 22px) clamp(14px, 2vw, 22px) clamp(12px, 2vw, 20px) !important;
+    gap: clamp(10px, 1.5vw, 14px) !important;
   }
 
   .room-name {
-    font-size: 20px !important;
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.375rem) !important;
   }
 
   .room-card-description {
-    font-size: 13px !important;
+    font-size: clamp(0.75rem, 0.5vw + 0.375rem, 0.875rem) !important;
   }
 
   .amenities-list {
@@ -213,10 +301,13 @@
   }
 
   .amenity-item {
-    font-size: 12px !important;
+    font-size: clamp(0.6875rem, 0.4vw + 0.375rem, 0.8125rem) !important;
   }
+}
 
-  /* Room detail amenities */
+/* ── Room Detail ── */
+
+@media (max-width: 767px) {
   .amenities-wrapper {
     grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
@@ -227,36 +318,101 @@
   }
 
   .icon-rooms {
-    width: 22px !important;
-    height: 22px !important;
+    width: clamp(18px, 3vw, 24px) !important;
+    height: clamp(18px, 3vw, 24px) !important;
   }
 
-  /* Blog grid */
+  .room-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .room-detail-aside {
+    position: static !important;
+  }
+
+  .room-booking-card {
+    padding: clamp(16px, 3vw, 28px) clamp(16px, 3vw, 24px) !important;
+  }
+
+  .room-gallery-main {
+    border-radius: clamp(8px, 1.5vw, 14px) !important;
+  }
+
+  .room-gallery-thumbs {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .room-gallery-thumb {
+    border-radius: clamp(6px, 1vw, 10px) !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+  .amenities-wrapper {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
+  .room-gallery-thumbs {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ── Blog ── */
+
+@media (max-width: 767px) {
   .collection-list-blog-home {
     flex-direction: column !important;
     gap: 20px !important;
   }
 
   .blog-img {
-    height: 200px !important;
+    height: clamp(160px, 22vw, 200px) !important;
     object-fit: cover;
   }
 
   .info-blog-home {
-    padding: 12px !important;
+    padding: clamp(10px, 1.5vw, 14px) !important;
   }
 
   .blog-name {
-    font-size: 18px !important;
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .collection-list-blog-home {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
   }
 
-  /* WhatsApp widget */
-  [style*="position: fixed"][style*="bottom: 25px"] {
-    bottom: 16px !important;
-    right: 16px !important;
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
   }
+}
 
-  /* Footer */
+/* ── WhatsApp Widget ── */
+
+.whatsapp-widget-container {
+  bottom: clamp(16px, 3vw, 25px) !important;
+  right: clamp(16px, 3vw, 25px) !important;
+}
+
+.whatsapp-fab {
+  width: clamp(50px, 8vw, 60px) !important;
+  height: clamp(50px, 8vw, 60px) !important;
+}
+
+.whatsapp-fab svg {
+  width: clamp(50px, 8vw, 60px) !important;
+  height: clamp(50px, 8vw, 60px) !important;
+}
+
+/* ── Footer ── */
+
+@media (max-width: 767px) {
   .footer-wrapper {
     flex-direction: column !important;
     gap: 24px !important;
@@ -276,10 +432,13 @@
   }
 
   .footer-copyright {
-    font-size: 12px !important;
+    font-size: clamp(0.6875rem, 0.4vw + 0.25rem, 0.75rem) !important;
   }
+}
 
-  /* Contact form */
+/* ── Contact ── */
+
+@media (max-width: 767px) {
   .contacts-content-wrapper {
     flex-direction: column !important;
   }
@@ -300,33 +459,26 @@
   .contacts-textarea {
     width: 100% !important;
   }
+}
 
-  /* Blog detail */
-  .banner-home-1 {
-    min-height: 300px !important;
-  }
+/* ── Gallery ── */
 
-  .banner-home-1 h1 {
-    font-size: 28px !important;
-  }
-
-  /* Gallery */
+@media (max-width: 767px) {
   .gallery-grid {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
     padding: 0 16px;
   }
+}
 
-  .section[style*="padding: 80px"] {
-    padding: 50px 16px !important;
-  }
+/* ── Booking Widget ── */
 
-  /* Booking widget */
+@media (max-width: 767px) {
   .book-banner-wrap {
     flex-direction: column !important;
     min-width: 100% !important;
-    padding: 20px 16px !important;
-    margin-top: -60px !important;
+    padding: clamp(14px, 2vw, 20px) 16px !important;
+    margin-top: clamp(-80px, -10vw, -60px) !important;
     border-radius: 12px !important;
   }
 
@@ -335,16 +487,98 @@
   }
 
   .booking-engine h1 {
-    font-size: 20px !important;
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.375rem) !important;
   }
 
-  /* Stars */
-  .stars-banner,
-  .stars-img {
-    max-width: 80px !important;
+  .reservar-widget-wrap {
+    padding: clamp(16px, 3vw, 24px) clamp(12px, 2vw, 16px) !important;
   }
 
-  /* Review wrapper */
+  .reservar-booking-header h2 {
+    font-size: clamp(1.375rem, 3vw + 0.25rem, 1.75rem) !important;
+  }
+
+  .reservar-booking-header p {
+    font-size: clamp(0.8125rem, 0.5vw + 0.5rem, 0.9375rem) !important;
+  }
+
+  .reservar-coupon-code {
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.375rem) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .book-banner-wrap {
+    min-width: 100% !important;
+    padding: 24px 40px !important;
+    margin-top: -80px !important;
+  }
+
+  .booking-engine {
+    padding: 16px !important;
+  }
+
+  .room-detail-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr) !important;
+    gap: 36px !important;
+    margin-top: 40px !important;
+  }
+
+  .w-layout-grid.grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .w-layout-grid.grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Reservar Trust Grid ── */
+
+@media (max-width: 600px) {
+  .reservar-trust-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .reservar-trust-item {
+    padding: clamp(16px, 3vw, 24px) clamp(12px, 2vw, 16px) !important;
+  }
+
+  .reservar-trust-item h4 {
+    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1rem) !important;
+  }
+
+  .reservar-trust-item p {
+    font-size: clamp(0.6875rem, 0.5vw + 0.375rem, 0.8125rem) !important;
+  }
+
+  .reservar-rooms-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .reservar-room-name {
+    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.125rem) !important;
+  }
+
+  .reservar-room-facts {
+    font-size: clamp(0.6875rem, 0.5vw + 0.375rem, 0.8125rem) !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+  .reservar-trust-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Reviews ── */
+
+@media (max-width: 767px) {
   .review-wrapper {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
@@ -354,114 +588,91 @@
   .review-wrap {
     padding: 16px !important;
   }
+}
 
-  /* Admin */
+@media (min-width: 768px) {
+  .review-wrapper {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+/* ── Stars ── */
+
+@media (max-width: 767px) {
+  .stars-banner,
+  .stars-img {
+    max-width: clamp(60px, 10vw, 80px) !important;
+  }
+}
+
+/* ── Admin ── */
+
+@media (max-width: 767px) {
   .admin-grid {
     grid-template-columns: 1fr !important;
   }
 }
 
+/* ── Room Cards ── */
+
+@media (max-width: 767px) {
+  .room-image {
+    height: clamp(160px, 22vw, 200px) !important;
+  }
+}
+
+/* ── Banner Home ── */
+
+@media (max-width: 767px) {
+  .banner-home-1 {
+    min-height: clamp(220px, 35vw, 300px) !important;
+  }
+
+  .section[style*="padding: 80px"] {
+    padding: clamp(32px, 6vw, 50px) 16px !important;
+  }
+}
+
+/* ── Small phones (≤479px) ── */
+
 @media (max-width: 479px) {
   .section {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
+    padding-top: clamp(28px, 6vw, 40px) !important;
+    padding-bottom: clamp(28px, 6vw, 40px) !important;
   }
 
-  .banner-heading-home-1 {
-    font-size: 24px !important;
+  .reservar-rooms-grid {
+    grid-template-columns: 1fr !important;
   }
 
-  .details-page-title {
-    font-size: 24px !important;
-  }
-
-  .title-wrap h2 {
-    font-size: 22px !important;
-  }
-
-  h4 {
-    font-size: 16px !important;
-  }
-
-  p {
-    font-size: 13px !important;
-  }
-
-  .white-paragraph {
-    font-size: 13px !important;
-  }
-
-  .attraction-modal {
-    width: 98% !important;
-  }
-
-  .attraction-modal-hero {
-    height: 150px !important;
-  }
-
-  .room-image {
-    height: 180px !important;
+  .amenities-list {
+    grid-template-columns: 1fr !important;
   }
 }
 
-/* Tablet overrides */
-@media (min-width: 601px) and (max-width: 991px) {
-  .amenities-wrapper {
-    grid-template-columns: 1fr 1fr 1fr !important;
-  }
+/* ── Large desktop (≥1440px) ── */
 
-  .reservar-trust-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  .room-gallery-thumbs {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-}
-
-/* Desktop overrides - ensure grids work properly */
-@media (min-width: 768px) {
-  .services-wrap-home-1 {
-    grid-template-columns: 1fr 1fr 1fr !important;
-  }
-
-  .about-hotel {
-    grid-template-columns: 1fr 1fr !important;
+@media (min-width: 1440px) {
+  .hero-section {
+    min-height: 520px;
   }
 
   .w-layout-grid.grid {
-    grid-template-columns: 1fr 1fr 1fr !important;
-    gap: 28px !important;
+    gap: 32px !important;
   }
+}
 
-  @media (max-width: 1199px) {
-    .w-layout-grid.grid {
-      grid-template-columns: 1fr 1fr !important;
-    }
-  }
+/* ── Smooth transitions ── */
 
-  .attractions-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
-  }
-
-  .collection-list-blog-home {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 24px !important;
-  }
-
-  .review-wrapper {
-    grid-template-columns: 1fr 1fr 1fr !important;
-  }
-
-  /* Booking widget desktop: fluid width within container */
-  .book-banner-wrap {
-    min-width: 100% !important;
-    padding: 24px 40px !important;
-    margin-top: -80px !important;
-  }
-
-  .booking-engine {
-    padding: 16px !important;
+@media (prefers-reduced-motion: no-preference) {
+  .tarjeta,
+  .service-home,
+  .reservar-room-card,
+  .reservar-trust-item,
+  .collection-blog-item,
+  .testimonials-item-wrapper,
+  .hotel-info {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

@@ -46,8 +46,26 @@ export default async function ReservarPage() {
           className="contacts-banner"
         />
 
+        <section className="section">
+          <div className="w-layout-blockcontainer base-container w-container">
+            <div className="reservar-booking-section">
+              <div className="reservar-booking-header reveal">
+                <div className="reservar-coupon-badge">
+                  <span className="reservar-coupon-label">Cupón de descuento</span>
+                  <span className="reservar-coupon-code">ACHAMAQUI2025</span>
+                </div>
+                <h2>Completa tu reserva</h2>
+                <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
+              </div>
+              <div className="reservar-widget-wrap">
+                <BookingWidget />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {rooms.length > 0 && (
-          <section className="section" style={{ paddingBottom: 0 }}>
+          <section className="section light-background" style={{ paddingTop: 0 }}>
             <div className="w-layout-blockcontainer base-container w-container">
               <div className="title-wrap reveal">
                 <div className="div-block-8 div-block-9 left-subtitle">
@@ -87,24 +105,6 @@ export default async function ReservarPage() {
         )}
 
         <section className="section">
-          <div className="w-layout-blockcontainer base-container w-container">
-            <div className="reservar-booking-section">
-              <div className="reservar-booking-header reveal">
-                <div className="reservar-coupon-badge">
-                  <span className="reservar-coupon-label">Cupón de descuento</span>
-                  <span className="reservar-coupon-code">ACHAMAQUI2025</span>
-                </div>
-                <h2>Completa tu reserva</h2>
-                <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
-              </div>
-              <div className="reservar-widget-wrap">
-                <BookingWidget />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section light-background">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="reservar-trust-grid">
               <div className="reservar-trust-item reveal-scale">

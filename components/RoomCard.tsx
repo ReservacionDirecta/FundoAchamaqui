@@ -35,50 +35,53 @@ const getIconUrl = (icon: string) => {
 
 export default function RoomCard({ name, slug, price, capacity, image, description, amenities = [] }: RoomCardProps) {
   return (
-    <div className="tarjeta reveal-scale">
-      <div className="relative div-block-34">
-        <Link href={`/rooms/${slug}`} className="recent-link w-inline-block">
-          <img 
-            src={image} 
-            loading="lazy" 
-            alt={name} 
-            className="room-image" 
-          />
-        </Link>
+    <article className="tarjeta reveal-scale">
+      <Link href={`/rooms/${slug}`} className="room-card-media" aria-label={`Ver detalles de ${name}`}>
+        <img
+          src={image}
+          loading="lazy"
+          alt={name}
+          className="room-image"
+        />
         <div className="price-room">
-          <div className="price-rooms">
-            Desde S/. {price}/noche para {capacity} Pers.
-          </div>
+          <span className="price-amount">S/. {price}</span>
+          <span className="price-meta">/ noche · {capacity} pers.</span>
         </div>
-      </div>
-      <div className="info-room-wrapper">
-        <div className="left-info-room">
-          <Link href={`/rooms/${slug}`} className="name-room-links w-inline-block">
-            <h5 className="room-name">{name}</h5>
+      </Link>
+
+      <div className="room-card-body">
+        <div className="room-card-header">
+          <Link href={`/rooms/${slug}`} className="name-room-links">
+            <h3 className="room-name">{name}</h3>
           </Link>
-          <p>{description}</p>
         </div>
-        <div className="right-info-room">
-          <div className="rich-text-style w-richtext">
-            <p>
-              {amenities.map(a => a.name).join(", ")}
-            </p>
-          </div>
-          <div className="icon-room-wrapper">
-            {amenities.slice(0, 5).map((amenity) => (
-              <img 
-                key={amenity.id} 
-                src={getIconUrl(amenity.icon)} 
-                loading="lazy" 
-                alt={amenity.name} 
-                className="icon-room" 
-                title={amenity.name}
-              />
+
+        <p className="room-card-description">{description}</p>
+
+        <div className="room-card-amenities">
+          <ul className="amenities-list">
+            {amenities.slice(0, 4).map((amenity) => (
+              <li key={amenity.id} className="amenity-item">
+                <img
+                  src={getIconUrl(amenity.icon)}
+                  loading="lazy"
+                  alt=""
+                  className="amenity-icon"
+                  aria-hidden="true"
+                />
+                <span>{amenity.name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
+
+        <div className="room-card-footer">
+          <Link href={`/rooms/${slug}`} className="room-card-cta">
+            Ver habitación
+            <span className="cta-arrow" aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
-

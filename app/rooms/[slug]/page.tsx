@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RoomCard from "@/components/RoomCard";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 import type { Metadata } from "next";
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         images: [room.mainImage],
       }
     };
-  } catch (e) {
+  } catch {
     return { title: "Habitación | Hotel Fundo Achamaqui" };
   }
 }
@@ -58,7 +59,6 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
     });
 
     if (room) {
-      // Fetch other rooms for the bottom carousel/grid
       otherRooms = await prisma.room.findMany({
         where: {
           NOT: { id: room.id },
@@ -75,6 +75,10 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
     notFound();
   }
 
+  const gallery: string[] = (room.images && room.images.length > 0)
+    ? room.images
+    : [room.mainImage];
+
   return (
     <>
       <Navbar />
@@ -82,12 +86,72 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
         <section className="section room-details">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="div-block-41 title-room">
-              <img src="/images/Stars.png" loading="lazy" alt="Stars" className="stars-img" />
+              <img src="/images/Stars.png" loading="lazy" alt="Estrellas" className="stars-img" />
               <h1>{room.name}</h1>
-              <p>{room.description}</p>
+              <p className="room-details-description">{room.description}</p>
             </div>
           </div>
-          <img alt={room.name} loading="lazy" src={room.mainImage} className="room-big-img" />
+
+          <div className="w-layout-blockcontainer base-container w-container">
+            <div className="room-detail-grid">
+              <div className="room-detail-gallery">
+                <div className="room-gallery-main">
+                  <img
+                    src={gallery[0]}
+                    alt={`${room.name} - vista principal`}
+                    className="room-detail-main-img"
+                  />
+                </div>
+                {gallery.length > 1 && (
+                  <div className="room-gallery-thumbs">
+                    {gallery.slice(1).map((img, i) => (
+                      <div key={i} className="room-gallery-thumb">
+                        <img src={img} alt={`${room.name} - foto ${i + 2}`} loading="lazy" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <aside className="room-detail-aside">
+                <div className="room-booking-card">
+                  <div className="room-price-block">
+                    <span className="room-price-label">Desde</span>
+                    <div className="room-price-value">
+                      <span className="room-price-currency">S/.</span>
+                      <span className="room-price-amount">{room.price}</span>
+                      <span className="room-price-period">/ noche</span>
+                    </div>
+                  </div>
+
+                  <ul className="room-quick-facts">
+                    <li>
+                      <span className="fact-label">Capacidad</span>
+                      <span className="fact-value">{room.capacity} personas</span>
+                    </li>
+                    {room.category && (
+                      <li>
+                        <span className="fact-label">Categoría</span>
+                        <span className="fact-value">{room.category.name}</span>
+                      </li>
+                    )}
+                  </ul>
+
+                  <a
+                    href={`https://wa.me/?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="room-book-btn"
+                  >
+                    Reservar por WhatsApp
+                  </a>
+                  <Link href="/reservar" className="room-book-btn-secondary">
+                    Ver disponibilidad
+                  </Link>
+                </div>
+              </aside>
+            </div>
+          </div>
         </section>
 
         <section className="section">
@@ -97,12 +161,11 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
               <div className="amenities-wrapper">
                 {room.amenities.map((amenity: any) => (
                   <div key={amenity.id} className="amenities-wrap">
-                    <img 
-                      src={getIconUrl(amenity.icon)} 
-                      loading="lazy" 
-                      alt="" 
-                      className="icon-rooms" 
-                      style={{ width: "24px", height: "24px", marginRight: "10px" }}
+                    <img
+                      src={getIconUrl(amenity.icon)}
+                      loading="lazy"
+                      alt=""
+                      className="icon-rooms"
                     />
                     <p>{amenity.name}</p>
                   </div>
@@ -140,7 +203,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
               </div>
               <div className="w-layout-grid grid">
                 {otherRooms.map((r) => (
-                  <RoomCard 
+                  <RoomCard
                     key={r.id}
                     name={r.name}
                     slug={r.slug}

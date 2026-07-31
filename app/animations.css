@@ -814,3 +814,150 @@
     font-size: 26px;
   }
 }
+
+/* ── Room gallery lightbox ── */
+
+.room-gallery-main {
+  position: relative;
+  cursor: pointer;
+}
+
+.room-gallery-expand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(20, 30, 25, 0);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.room-gallery-main:hover .room-gallery-expand {
+  opacity: 1;
+  background: rgba(20, 30, 25, 0.35);
+}
+
+.room-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 15, 12, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.25s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.room-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.room-lightbox-close:hover {
+  opacity: 1;
+}
+
+.room-lightbox-prev,
+.room-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.room-lightbox-prev { left: 20px; }
+.room-lightbox-next { right: 20px; }
+
+.room-lightbox-prev:hover,
+.room-lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.room-lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 88vw;
+  max-height: 88vh;
+}
+
+.room-lightbox-img {
+  max-width: 88vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: lbImgIn 0.3s ease;
+}
+
+@keyframes lbImgIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.room-lightbox-counter {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-family: var(--font-lexend, sans-serif);
+}
+
+@media (max-width: 767px) {
+  .room-lightbox-prev,
+  .room-lightbox-next {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .room-lightbox-prev { left: 10px; }
+  .room-lightbox-next { right: 10px; }
+
+  .room-lightbox-close {
+    top: 14px;
+    right: 14px;
+    font-size: 30px;
+  }
+
+  .room-lightbox-img {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+}

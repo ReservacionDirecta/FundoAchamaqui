@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RoomCard from "@/components/RoomCard";
+import RoomGallery from "@/components/RoomGallery";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -94,24 +95,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
 
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="room-detail-grid">
-              <div className="room-detail-gallery">
-                <div className="room-gallery-main">
-                  <img
-                    src={gallery[0]}
-                    alt={`${room.name} - vista principal`}
-                    className="room-detail-main-img"
-                  />
-                </div>
-                {gallery.length > 1 && (
-                  <div className="room-gallery-thumbs">
-                    {gallery.slice(1).map((img, i) => (
-                      <div key={i} className="room-gallery-thumb">
-                        <img src={img} alt={`${room.name} - foto ${i + 2}`} loading="lazy" />
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <RoomGallery images={gallery} roomName={room.name} />
 
               <aside className="room-detail-aside">
                 <div className="room-booking-card">

@@ -46,20 +46,18 @@ export default async function ReservarPage() {
           className="contacts-banner"
         />
 
-        <section className="section">
-          <div className="w-layout-blockcontainer base-container w-container">
-            <div className="reservar-booking-section">
-              <div className="reservar-booking-header reveal">
-                <div className="reservar-coupon-badge">
-                  <span className="reservar-coupon-label">Cupón de descuento</span>
-                  <span className="reservar-coupon-code">ACHAMAQUI2025</span>
-                </div>
-                <h2>Completa tu reserva</h2>
-                <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
+        <section className="section reservar-booking-section-full">
+          <div className="reservar-booking-section">
+            <div className="reservar-booking-header reveal">
+              <div className="reservar-coupon-badge">
+                <span className="reservar-coupon-label">Cupón de descuento</span>
+                <span className="reservar-coupon-code">ACHAMAQUI2025</span>
               </div>
-              <div className="reservar-widget-wrap">
-                <BookingWidget />
-              </div>
+              <h2>Completa tu reserva</h2>
+              <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
+            </div>
+            <div className="reservar-widget-wrap">
+              <BookingWidget />
             </div>
           </div>
         </section>

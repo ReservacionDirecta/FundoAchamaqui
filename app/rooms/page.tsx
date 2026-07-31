@@ -13,13 +13,24 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
+const ROOM_DISPLAY_ORDER = [
+  "cuadruple-king",
+  "triple",
+  "matrimonial-king",
+  "matrimonial-queen",
+  "doble-twin",
+];
+
 export default async function RoomsPage() {
   let rooms: any[] = [];
   try {
     rooms = await prisma.room.findMany({
-      orderBy: { createdAt: "desc" },
       include: { amenities: true },
     });
+    rooms.sort(
+      (a, b) =>
+        ROOM_DISPLAY_ORDER.indexOf(a.slug) - ROOM_DISPLAY_ORDER.indexOf(b.slug)
+    );
   } catch (error) {
     console.error("Failed to query rooms from database, falling back to empty list:", error);
   }

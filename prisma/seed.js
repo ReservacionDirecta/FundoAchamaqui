@@ -63,6 +63,16 @@ async function main() {
       price: 250,
       capacity: 2,
       mainImage: '/images/IMG_20230823_144940.jpg',
+      images: [
+        '/images/IMG_20230823_144940.jpg',
+        '/images/IMG_20230823_145150.jpg',
+        '/images/IMG_20230823_144010.jpg',
+        '/images/IMG_20230823_144013.jpg',
+        '/images/IMG_20230823_144028.jpg',
+        '/images/IMG_20230823_144024.jpg',
+        '/images/IMG_20230823_150051.jpg',
+        '/images/IMG_20230823_150921-1.jpg',
+      ],
       categoryId: catHabitaciones.id,
       houseRules: 'Check-in: 15:00, Check-out: 12:00. No fumar en la habitación.',
       cancellation: 'Cancelación gratuita hasta 48 horas antes de la llegada.',
@@ -74,6 +84,9 @@ async function main() {
       price: 230,
       capacity: 2,
       mainImage: '/images/IMG_20230823_151045-1.jpg',
+      images: [
+        '/images/IMG_20230823_151045-1.jpg',
+      ],
       categoryId: catHabitaciones.id,
     },
     {
@@ -83,6 +96,10 @@ async function main() {
       price: 220,
       capacity: 2,
       mainImage: '/images/IMG_20230823_144310.jpg',
+      images: [
+        '/images/IMG_20230823_144310.jpg',
+        '/images/IMG_20230823_144422.jpg',
+      ],
       categoryId: catHabitaciones.id,
     },
     {
@@ -92,6 +109,9 @@ async function main() {
       price: 300,
       capacity: 3,
       mainImage: '/images/IMG_20230823_145548_DxO-1082x1440.jpg',
+      images: [
+        '/images/IMG_20230823_145548_DxO-1082x1440.jpg',
+      ],
       categoryId: catHabitaciones.id,
     },
     {
@@ -101,6 +121,13 @@ async function main() {
       price: 400,
       capacity: 4,
       mainImage: '/images/IMG_20230823_143927.jpg',
+      images: [
+        '/images/IMG_20230823_143927.jpg',
+        '/images/IMG_20230823_143925.jpg',
+        '/images/IMG_20230823_143938.jpg',
+        '/images/IMG_20230823_143940.jpg',
+        '/images/IMG_20230823_143955.jpg',
+      ],
       categoryId: catHabitaciones.id,
     },
   ];

@@ -1,29 +1,53 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+const SELECTOR =
+  ".reveal, .reveal-fade, .reveal-scale, .title-wrap, .banner-title, .banner-paragraph, .banner-subtitle";
 
 export default function useReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const els = document.querySelectorAll(
-      ".reveal, .reveal-fade, .reveal-scale, .title-wrap"
-    );
+    let io: IntersectionObserver | null = null;
 
-    if (!els.length) return;
+    const scan = () => {
+      const els = document.querySelectorAll(SELECTOR);
+      els.forEach((el) => {
+        if (!(el as HTMLElement).classList.contains("visible")) {
+          io!.observe(el);
+        }
+      });
+    };
 
-    const io = new IntersectionObserver(
+    io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
-            io.unobserve(e.target);
+            io!.unobserve(e.target);
           }
         });
       },
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
 
-    els.forEach((el) => io.observe(el));
+    scan();
 
-    return () => io.disconnect();
-  }, []);
+    const mo = new MutationObserver(() => {
+      const fresh = document.querySelectorAll(SELECTOR);
+      fresh.forEach((el) => {
+        if (!(el as HTMLElement).classList.contains("visible")) {
+          io!.observe(el);
+        }
+      });
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      mo.disconnect();
+      io?.disconnect();
+    };
+  }, [pathname]);
 }

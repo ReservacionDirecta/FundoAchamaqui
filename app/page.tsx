@@ -65,8 +65,8 @@ export default function Home() {
                     <source src="https://uploads-ssl.webflow.com/651f4dd8f02881a183eba576/6568a4ffe03dd43e6e243cdd_Gocta-transcode.mp4" />
                   </video>
                 </div>
-                <img src="/images/Catarata-Gocta.png" loading="lazy" alt="Gocta" className="big-img" />
-                <img src="/images/Vista-aerea-achamaqui-1.jpg" loading="lazy" alt="Vista Aérea" className="absolute-img" />
+                <img src="/images/Catarata-Gocta.webp" loading="lazy" alt="Gocta" className="big-img" />
+                <img src="/images/Vista-aerea-achamaqui-1.webp" loading="lazy" alt="Vista Aérea" className="absolute-img" />
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
             <div className="w-layout-grid services-wrap-home-1">
               <div className="service-home reveal-scale reveal-delay-1" style={{ opacity: 1 }}>
-                <img src="/images/IMG_20230823_145150.jpg" loading="lazy" alt="Habitaciones" className="service-img" />
+                <img src="/images/IMG_20230823_145150.webp" loading="lazy" alt="Habitaciones" className="service-img" />
                 <h4 className="mt-20"><strong>Habitaciones</strong></h4>
                 <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
               </div>

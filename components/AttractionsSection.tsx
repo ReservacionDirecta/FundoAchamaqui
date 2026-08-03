@@ -17,7 +17,7 @@ const ATTRACTIONS = [
     id: "gocta",
     title: "Catarata Gocta",
     subtitle: "El Misterioso Velo del Gigante",
-    image: "/images/Catarata-Gocta.png",
+    image: "/images/Catarata-Gocta.webp",
     excerpt: "Descubre una de las caídas de agua más altas del mundo, rodeada de exuberante selva y fascinantes leyendas locales.",
     content: `<p>Conocida localmente como 'La Chorrera', la majestuosa Catarata Gocta posee una espectacular caída doble que suma un total de 771 metros de altura. Rodeada de un denso bosque de neblina habitado por el gallito de las rocas y monos de cola amarilla, la caminata a Gocta es una inmersión completa en la biodiversidad del Amazonas.</p>
     <p>A solo 40 minutos en coche desde Fundo Achamaqui se encuentra el pueblo de Cocachimba, el punto de inicio idóneo para recorrer el sendero que lleva al pie de la catarata.</p>

@@ -1544,7 +1544,7 @@ blockquote {
     object-position: 50% 50%;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-        url("/images/Vista-aerea-achamaqui-1.jpg");
+        url("/images/Vista-aerea-achamaqui-1.webp");
     background-position:
         0 0,
         50% 80%;
@@ -1611,7 +1611,7 @@ blockquote {
 .section.rooms-banner {
     background-image:
         linear-gradient(#000000b8, #000000b8),
-        url("/images/IMG_20230823_145150.jpg");
+        url("/images/IMG_20230823_145150.webp");
     background-position:
         0 0,
         50% 78%;
@@ -4191,7 +4191,7 @@ blockquote {
 }
 
 .video-about {
-    background-image: url("/images/Vista-aerea-achamaqui-1.jpg");
+    background-image: url("/images/Vista-aerea-achamaqui-1.webp");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -5873,15 +5873,15 @@ blockquote {
             url("/images/dji_fly_20230823_092730_87_1692800992341_pano_optimized-EDIT-1.jpg");
         background-position:
             0 0,
-            50% -34%;
-        background-size: auto, contain;
+            0% 61%;
+        background-size: auto, cover;
     }
 
     .section.portfolio-grid-banner {
         object-position: 50% 50%;
         background-image:
             linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-            url("/images/Vista-aerea-achamaqui-1.jpg");
+            url("/images/Vista-aerea-achamaqui-1.webp");
         background-position:
             0 0,
             50% 80%;
@@ -6754,7 +6754,7 @@ blockquote {
     .section.portfolio-grid-banner {
         background-image:
             linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-            url("/images/Vista-aerea-achamaqui-1.jpg");
+            url("/images/Vista-aerea-achamaqui-1.webp");
         background-position:
             0 0,
             50% 80%;
@@ -7539,7 +7539,7 @@ blockquote {
     .section.portfolio-grid-banner {
         background-image:
             linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-            url("/images/Vista-aerea-achamaqui-1.jpg");
+            url("/images/Vista-aerea-achamaqui-1.webp");
         background-position:
             0 0,
             50% 80%;

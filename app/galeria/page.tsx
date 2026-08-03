@@ -15,7 +15,7 @@ const ALL_IMAGES = [
   "/images/DJI_0092.jpg",
   "/images/Kuelap.jpg",
   "/images/received_341214391902150.jpeg",
-  "/images/Vista-aerea-achamaqui-1.jpg",
+  "/images/Vista-aerea-achamaqui-1.webp",
   "/images/IMG_20230821_093503-648x1440.jpg",
   "/images/IMG_20230822_162646-1920x1440.jpg",
   "/images/IMG_20230820_145404-811x1440.jpg",

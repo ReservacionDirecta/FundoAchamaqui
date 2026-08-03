@@ -1531,7 +1531,7 @@ blockquote {
         url("/images/dji_fly_20230823_092730_87_1692800992341_pano_optimized-EDIT-1.jpg");
     background-position:
         0 0,
-        50% 161%;
+        0% 50%;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     background-attachment: scroll, scroll;

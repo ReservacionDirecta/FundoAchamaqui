@@ -77,7 +77,14 @@ export default function ContactUs() {
                 </div>
                 <div className="contacts-detail">
                   <p className="contacts-icon"></p>
-                  <a href={`tel:${t("contact_phone").replace(/\s+/g, "")}`} className="footer-links contact">Whatsapp {t("contact_phone")}</a>
+                  <a
+                    href={`https://wa.me/${(t("whatsapp_number") || t("contact_phone")).replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-links contact"
+                  >
+                    Whatsapp {t("contact_phone")}
+                  </a>
                 </div>
                 <div className="contacts-detail">
                   <p className="contacts-icon"></p>

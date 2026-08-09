@@ -28,7 +28,14 @@ export default function Footer() {
           <div className="footer-links-wrapper">
             <h6 className="subtitle-footer">{t("language") === "en" ? "RESERVATIONS" : "RESERVACIONES"}</h6>
             <div className="info-footer">
-              <a href={`tel:${t("contact_phone").replace(/\s+/g, "")}`} className="footer-links">{t("contact_phone")}</a>
+              <a
+                href={`https://wa.me/${(t("whatsapp_number") || t("contact_phone")).replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-links"
+              >
+                {t("contact_phone")}
+              </a>
               <a href={`mailto:${t("contact_email")}`} className="footer-links">{t("contact_email")}</a>
             </div>
           </div>

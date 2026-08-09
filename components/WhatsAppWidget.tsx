@@ -16,7 +16,8 @@ export default function WhatsAppWidget() {
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const phoneNumber = "51943398035"; // WhatsApp hotel number
+    const rawWaNumber = t("whatsapp_number");
+    const phoneNumber = rawWaNumber ? rawWaNumber.replace(/\D/g, "") : "51954754650";
     let text = "";
 
     if (inquiryType === "booking") {

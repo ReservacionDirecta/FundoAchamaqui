@@ -29,7 +29,7 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   // Links & General Config
   {
     key: "contact_phone",
-    value: "+51 982 836 547",
+    value: "+51 954 754 650",
     description: "Teléfono de contacto de reservas",
   },
   {
@@ -49,7 +49,7 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   },
   {
     key: "whatsapp_number",
-    value: "51982836547",
+    value: "51954754650",
     description: "Número de WhatsApp para contacto directo (con código de país, sin espacios ni símbolos)",
   },
   {

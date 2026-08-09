@@ -122,7 +122,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
                   </ul>
 
                   <a
-                    href={`https://wa.me/?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
+                    href={`https://wa.me/51954754650?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="room-book-btn"

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getBlogPosts, createBlogPost, updateBlogPost, deleteBlogPost } from "@/app/actions/blog";
+import { logout } from "@/app/actions/auth";
 
 interface BlogPost {
   id: string;
@@ -30,17 +31,24 @@ export default function BlogCMSPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
   const fetchPosts = async () => {
     setLoading(true);
     const data = await getBlogPosts();
-    // Convert Dates to strings if needed
-    setPosts(data as any);
+    setPosts(data);
     setLoading(false);
   };
+
+  useEffect(() => {
+    let cancelled = false;
+    getBlogPosts().then((data) => {
+      if (cancelled) return;
+      setPosts(data);
+      setLoading(false);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleOpenCreate = () => {
     setEditingPost(null);
@@ -127,13 +135,32 @@ export default function BlogCMSPage() {
               <h6 style={{ color: "#8c7355", textTransform: "uppercase", letterSpacing: "2px", fontWeight: "bold" }}>CMS Panel</h6>
               <h2 style={{ fontFamily: "var(--font-gilda, serif)", fontSize: "36px", color: "#2f4137" }}>Administración de Blog</h2>
             </div>
-            <button 
-              onClick={handleOpenCreate}
-              className="primary-button"
-              style={{ padding: "12px 24px", cursor: "pointer", border: "none" }}
-            >
-              + Nueva Entrada
-            </button>
+            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+              <button
+                onClick={handleOpenCreate}
+                className="primary-button"
+                style={{ padding: "12px 24px", cursor: "pointer", border: "none" }}
+              >
+                + Nueva Entrada
+              </button>
+              <form action={logout}>
+                <button
+                  type="submit"
+                  style={{
+                    padding: "12px 24px",
+                    backgroundColor: "transparent",
+                    color: "#2f4137",
+                    border: "1px solid #2f4137",
+                    borderRadius: "6px",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    cursor: "pointer",
+                  }}
+                >
+                  Cerrar sesión
+                </button>
+              </form>
+            </div>
           </div>
 
           {isFormOpen && (

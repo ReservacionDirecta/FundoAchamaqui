@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { logout } from "@/app/actions/auth";
 
 interface CmsSetting {
   id: string;
@@ -16,7 +17,7 @@ export default function AdminDashboard() {
   const [settings, setSettings] = useState<CmsSetting[]>([]);
   const [loading, setLoading] = useState(true);
   const [updatingKey, setUpdatingKey] = useState<string | null>(null);
-  const [feedback, setFeedback] = useState<{ [key: string]: { type: "success" | "error"; text: string } }>({});
+  const [feedback, setFeedback] = useState<{ [key: string]: { type: "success" | "error"; text: string } | undefined }>({});
   const [activeTab, setActiveTab] = useState<"content" | "navigation">("content");
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function AdminDashboard() {
   const handleUpdate = async (key: string, value: string) => {
     setUpdatingKey(key);
     // Clear feedback for this key
-    setFeedback((prev) => ({ ...prev, [key]: null as any }));
+    setFeedback((prev) => ({ ...prev, [key]: undefined }));
 
     try {
       const res = await fetch("/api/cms", {
@@ -66,10 +67,10 @@ export default function AdminDashboard() {
       } else {
         throw new Error(data.error || "Error al actualizar");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       setFeedback((prev) => ({
         ...prev,
-        [key]: { type: "error", text: err.message || "Error al actualizar" },
+        [key]: { type: "error", text: err instanceof Error ? err.message : "Error al actualizar" },
       }));
     } finally {
       setUpdatingKey(null);
@@ -132,6 +133,23 @@ export default function AdminDashboard() {
               >
                 📝 Administrar Blog
               </Link>
+              <form action={logout}>
+                <button
+                  type="submit"
+                  style={{
+                    padding: "10px 20px",
+                    backgroundColor: "transparent",
+                    color: "#2f4137",
+                    border: "1px solid #2f4137",
+                    borderRadius: "6px",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    cursor: "pointer",
+                  }}
+                >
+                  Cerrar sesión
+                </button>
+              </form>
             </div>
           </div>
 

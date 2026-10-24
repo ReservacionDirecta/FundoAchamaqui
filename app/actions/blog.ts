@@ -1,7 +1,17 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { requireAdmin } from "@/lib/session";
 import { revalidatePath } from "next/cache";
+
+async function assertAdmin(): Promise<{ success: false; error: string } | null> {
+  try {
+    await requireAdmin();
+    return null;
+  } catch {
+    return { success: false as const, error: "No autorizado" };
+  }
+}
 
 export async function getBlogPosts() {
   return prisma.blogPost.findMany({
@@ -16,6 +26,8 @@ export async function createBlogPost(formData: {
   content: string;
   mainImage: string;
 }) {
+  const denied = await assertAdmin();
+  if (denied) return denied;
   try {
     const post = await prisma.blogPost.create({
       data: {
@@ -29,9 +41,9 @@ export async function createBlogPost(formData: {
     revalidatePath("/blog");
     revalidatePath("/nosotros");
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating blog post:", error);
-    return { success: false, error: error.message || "Failed to create post" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to create post" };
   }
 }
 
@@ -45,6 +57,8 @@ export async function updateBlogPost(
     mainImage: string;
   }
 ) {
+  const denied = await assertAdmin();
+  if (denied) return denied;
   try {
     const post = await prisma.blogPost.update({
       where: { id },
@@ -60,13 +74,15 @@ export async function updateBlogPost(
     revalidatePath(`/blog/${post.slug}`);
     revalidatePath("/nosotros");
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error updating blog post:", error);
-    return { success: false, error: error.message || "Failed to update post" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to update post" };
   }
 }
 
 export async function deleteBlogPost(id: string) {
+  const denied = await assertAdmin();
+  if (denied) return denied;
   try {
     const post = await prisma.blogPost.delete({
       where: { id },
@@ -74,8 +90,8 @@ export async function deleteBlogPost(id: string) {
     revalidatePath("/blog");
     revalidatePath("/nosotros");
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error deleting blog post:", error);
-    return { success: false, error: error.message || "Failed to delete post" };
+    return { success: false, error: error instanceof Error ? error.message : "Failed to delete post" };
   }
 }

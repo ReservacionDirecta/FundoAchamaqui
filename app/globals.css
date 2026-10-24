@@ -467,3 +467,11 @@ p {
   outline-offset: 2px;
   border-radius: var(--radius-sm, 6px);
 }
+
+/* ── Home banner vertical offset (≥1280px) ── */
+
+@media screen and (min-width: 1280px) {
+  .banner-home-1-wrapper {
+    top: -135px !important;
+  }
+}

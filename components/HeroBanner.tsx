@@ -12,11 +12,11 @@ export default function HeroBanner({ title, subtitle, paragraph, className }: He
       <div className="w-layout-blockcontainer base-container w-container">
         <div className="banner-title-wrapper">
           {subtitle && (
-            <span className="hero-subtitle">{subtitle}</span>
+            <span className="hero-subtitle banner-subtitle">{subtitle}</span>
           )}
-          <h1 className="hero-title">{title}</h1>
+          <h1 className="hero-title banner-title">{title}</h1>
           {paragraph && (
-            <p className="hero-paragraph">{paragraph}</p>
+            <p className="hero-paragraph banner-paragraph">{paragraph}</p>
           )}
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function Navbar() {
           font-family: var(--font-lexend, sans-serif);
           font-size: 13px;
           font-weight: 500;
-          color: #2f4137;
+          color: var(--subtitle-text);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           text-decoration: none;
@@ -38,7 +38,7 @@ export default function Navbar() {
           transition: color 0.3s ease;
         }
         .nav-link-custom:hover {
-          color: #8c7355;
+          color: var(--primary-color);
         }
         
         .book-btn-custom {
@@ -46,7 +46,7 @@ export default function Navbar() {
           font-size: 14px;
           font-weight: 600;
           color: #ffffff !important;
-          background-color: #8c7355;
+          background-color: var(--primary-color);
           text-transform: uppercase;
           letter-spacing: 1px;
           text-decoration: none;
@@ -56,7 +56,7 @@ export default function Navbar() {
           transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
         .book-btn-custom:hover {
-          background-color: #725b41;
+          background-color: var(--primary-color-dark);
           transform: translateY(-1px);
           box-shadow: 0 6px 18px rgba(140, 115, 85, 0.3);
         }
@@ -146,7 +146,7 @@ export default function Navbar() {
                   style={{
                     background: "none",
                     border: "none",
-                    color: language === "es" ? "#8c7355" : "#777777",
+                    color: language === "es" ? "var(--primary-color)" : "#777777",
                     fontWeight: language === "es" ? "700" : "500",
                     cursor: "pointer",
                     fontSize: "12px",
@@ -163,7 +163,7 @@ export default function Navbar() {
                   style={{
                     background: "none",
                     border: "none",
-                    color: language === "en" ? "#8c7355" : "#777777",
+                    color: language === "en" ? "var(--primary-color)" : "#777777",
                     fontWeight: language === "en" ? "700" : "500",
                     cursor: "pointer",
                     fontSize: "12px",
@@ -203,7 +203,7 @@ export default function Navbar() {
                 style={{
                   width: "18px",
                   height: "2px",
-                  backgroundColor: "#2f4137",
+                  backgroundColor: "var(--subtitle-text)",
                   borderRadius: "2px",
                   transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), translate 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                   transform: isOpen ? "rotate(45deg) translate(5px, 5px)" : "none"
@@ -213,7 +213,7 @@ export default function Navbar() {
                 style={{
                   width: isOpen ? "0px" : "14px",
                   height: "2px",
-                  backgroundColor: "#2f4137",
+                  backgroundColor: "var(--subtitle-text)",
                   borderRadius: "2px",
                   alignSelf: "center",
                   transition: "width 0.3s ease, opacity 0.3s ease",
@@ -224,7 +224,7 @@ export default function Navbar() {
                 style={{
                   width: "18px",
                   height: "2px",
-                  backgroundColor: "#2f4137",
+                  backgroundColor: "var(--subtitle-text)",
                   borderRadius: "2px",
                   transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), translate 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                   transform: isOpen ? "rotate(-45deg) translate(5px, -5px)" : "none"
@@ -269,7 +269,7 @@ export default function Navbar() {
                 fontFamily: "var(--font-lexend, sans-serif)",
                 fontSize: "20px",
                 fontWeight: "500",
-                color: "#2f4137",
+                color: "var(--subtitle-text)",
                 textAlign: "center",
                 padding: "10px 0",
                 letterSpacing: "0.5px",
@@ -293,7 +293,7 @@ export default function Navbar() {
               fontSize: "18px",
               fontWeight: "600",
               color: "#ffffff",
-              backgroundColor: "#8c7355",
+              backgroundColor: "var(--primary-color)",
               textAlign: "center",
               padding: "14px 0",
               borderRadius: "35px",
@@ -326,7 +326,7 @@ export default function Navbar() {
               style={{
                 background: "none",
                 border: "none",
-                color: language === "es" ? "#8c7355" : "#777777",
+                color: language === "es" ? "var(--primary-color)" : "#777777",
                 fontWeight: language === "es" ? "bold" : "normal",
                 cursor: "pointer",
                 fontSize: "14px",
@@ -342,7 +342,7 @@ export default function Navbar() {
               style={{
                 background: "none",
                 border: "none",
-                color: language === "en" ? "#8c7355" : "#777777",
+                color: language === "en" ? "var(--primary-color)" : "#777777",
                 fontWeight: language === "en" ? "bold" : "normal",
                 cursor: "pointer",
                 fontSize: "14px",

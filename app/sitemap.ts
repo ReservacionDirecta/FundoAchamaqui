@@ -17,6 +17,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/nosotros",
     "/testimonios",
     "/faq",
+    "/reservar",
+    "/politicas-de-reserva",
+    "/politica-de-privacidad",
+    "/terminos-y-condiciones",
+    "/libro-de-reclamaciones",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

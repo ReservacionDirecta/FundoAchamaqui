@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
 import BookingWidget from "@/components/BookingWidget";
+import Link from "next/link";
 
 import type { Metadata } from "next";
 
@@ -50,8 +51,8 @@ export default async function ReservarPage() {
           <div className="reservar-booking-section">
             <div className="reservar-booking-header reveal">
               <div className="reservar-coupon-badge">
-                <span className="reservar-coupon-label">Cupón de descuento</span>
-                <span className="reservar-coupon-code">ACHAMAQUI2025</span>
+                <span className="reservar-coupon-label">Cupón 10% OFF (Hasta 28/02/2027)</span>
+                <span className="reservar-coupon-code">FACEBOOK</span>
               </div>
               <h2>Completa tu reserva</h2>
               <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
@@ -76,7 +77,7 @@ export default async function ReservarPage() {
               </div>
               <div className="reservar-rooms-grid">
                 {rooms.map((room) => (
-                  <div key={room.id} className="reservar-room-card">
+                  <Link key={room.id} href={`/rooms/${room.slug}`} className="reservar-room-card">
                     <div className="reservar-room-img-wrap">
                       <img
                         src={room.mainImage}
@@ -95,7 +96,7 @@ export default async function ReservarPage() {
                         <span>{room.capacity} personas</span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

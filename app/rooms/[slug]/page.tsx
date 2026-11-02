@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { getCmsSettingsKeys } from "@/lib/cms";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RoomCard from "@/components/RoomCard";
@@ -56,7 +57,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
   try {
     room = await prisma.room.findUnique({
       where: { slug },
-      include: { amenities: true },
+      include: { amenities: true, category: true },
     });
 
     if (room) {
@@ -75,6 +76,9 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
   if (!room) {
     notFound();
   }
+
+  const cms = await getCmsSettingsKeys(["whatsapp_number", "contact_phone"]);
+  const whatsappNumber = (cms["whatsapp_number"] || cms["contact_phone"] || "51954754650").replace(/\D/g, "");
 
   const gallery: string[] = (room.images && room.images.length > 0)
     ? room.images
@@ -122,7 +126,7 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
                   </ul>
 
                   <a
-                    href={`https://wa.me/51954754650?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
+                    href={`https://wa.me/${whatsappNumber}?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="room-book-btn"

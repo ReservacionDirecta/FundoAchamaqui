@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
-import AttractionsSection from "@/components/AttractionsSection";
+import MuseumTour from "@/components/MuseumTour";
 import prisma from "@/lib/prisma";
+import type { Activity } from "@prisma/client";
 
 export const dynamic = 'force-dynamic';
 
 export default async function ActividadesPage() {
-  let activities: any[] = [];
+  let activities: Activity[] = [];
   try {
     activities = await prisma.activity.findMany();
   } catch (error) {
@@ -77,7 +78,7 @@ export default async function ActividadesPage() {
           </div>
         </section>
 
-        <AttractionsSection />
+        <MuseumTour />
 
         <section className="section img">
           <div className="w-layout-blockcontainer base-container w-container">

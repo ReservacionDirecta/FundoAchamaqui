@@ -28,10 +28,13 @@ const dictionary: Record<Language, Record<string, string>> = {
     hero_welcome: "Bienvenido a",
     hero_title: "Fundo Achamaqui",
     hero_subtitle: "El refugio de tu próxima aventura en Chachapoyas",
+    hero_cta_book: "Reservar",
+    hero_cta_rooms: "Ver habitaciones",
+    card_cta: "Descubrir",
 
     // Booking coupon
-    coupon_text: "¡Sumérgete en la belleza de Chachapoyas con un 20% de descuento en el Hotel Fundo Achamaqui! Tu refugio en la Ceja de Selva Peruana.",
-    coupon_code: "Cupón de descuento: escapechacha20",
+    coupon_text: "¡Disfruta de la magia de Chachapoyas con un 10% de descuento en el Hotel Fundo Achamaqui! Válido para reservas del 19/06/2026 al 28/02/2027.",
+    coupon_code: "Cupón de descuento: FACEBOOK (10% OFF)",
 
     // Home Section About
     about_subtitle: "Naturaleza y comodidad",
@@ -81,6 +84,33 @@ const dictionary: Record<Language, Record<string, string>> = {
     facebook_url: "https://www.facebook.com/",
     instagram_url: "https://www.instagram.com/",
     twitter_url: "https://twitter.com/",
+
+    // Footer & Site Index
+    footer_about_hotel: "Un refugio natural a orillas del río Utcubamba en Chachapoyas. Confort, gastronomía auténtica y aventuras inolvidables en la selva alta peruana.",
+    footer_site_index: "Índice del Sitio",
+    footer_explore: "Explorar",
+    footer_reservations_title: "Reservas",
+    footer_legal_title: "Protección Legal",
+    footer_nav_home: "Inicio",
+    footer_nav_about: "El Hotel / Nosotros",
+    footer_nav_accommodation: "Alojamiento",
+    footer_nav_rooms: "Habitaciones",
+    footer_nav_activities: "Actividades y Tours",
+    footer_nav_gallery: "Galería de Fotos",
+    footer_nav_faq: "Preguntas Frecuentes",
+    footer_nav_testimonials: "Testimonios",
+    footer_nav_blog: "Blog & Novedades",
+    footer_nav_contact: "Contacto",
+    footer_nav_book: "Reservar Ahora",
+    footer_policy_booking: "Políticas de Reserva y Cancelación",
+    footer_policy_privacy: "Política de Privacidad y Manejo de Datos",
+    footer_policy_terms: "Términos y Condiciones",
+    footer_complaints_book: "Libro de Reclamaciones",
+    footer_location: "Ubicación",
+    footer_follow_us: "Síguenos",
+    footer_hours_title: "Horario de Recepción",
+    footer_hours_val: "Lunes a Domingo: 06:00 - 22:00",
+    footer_rights_text: "Todos los Derechos Reservados",
   },
   en: {
     // Navbar
@@ -97,10 +127,13 @@ const dictionary: Record<Language, Record<string, string>> = {
     hero_welcome: "Welcome to",
     hero_title: "Fundo Achamaqui",
     hero_subtitle: "The refuge of your next adventure in Chachapoyas",
+    hero_cta_book: "Book now",
+    hero_cta_rooms: "View rooms",
+    card_cta: "Discover",
 
     // Booking coupon
-    coupon_text: "Immerse yourself in the beauty of Chachapoyas with a 20% discount at Hotel Fundo Achamaqui! Your refuge in the Peruvian high jungle.",
-    coupon_code: "Discount Code: escapechacha20",
+    coupon_text: "Experience the magic of Chachapoyas with a 10% discount at Hotel Fundo Achamaqui! Valid for bookings from 19/06/2026 to 28/02/2027.",
+    coupon_code: "Discount Code: FACEBOOK (10% OFF)",
 
     // Home Section About
     about_subtitle: "Nature & Comfort",
@@ -150,6 +183,33 @@ const dictionary: Record<Language, Record<string, string>> = {
     facebook_url: "https://www.facebook.com/",
     instagram_url: "https://www.instagram.com/",
     twitter_url: "https://twitter.com/",
+
+    // Footer & Site Index
+    footer_about_hotel: "A natural sanctuary on the banks of the Utcubamba River in Chachapoyas. Comfort, authentic Peruvian gastronomy, and unforgettable adventures in the high jungle.",
+    footer_site_index: "Site Index",
+    footer_explore: "Explore",
+    footer_reservations_title: "Reservations",
+    footer_legal_title: "Legal Protection",
+    footer_nav_home: "Home",
+    footer_nav_about: "The Hotel / About Us",
+    footer_nav_accommodation: "Accommodations",
+    footer_nav_rooms: "Rooms",
+    footer_nav_activities: "Activities & Tours",
+    footer_nav_gallery: "Photo Gallery",
+    footer_nav_faq: "Frequently Asked Questions",
+    footer_nav_testimonials: "Testimonials",
+    footer_nav_blog: "Blog & News",
+    footer_nav_contact: "Contact",
+    footer_nav_book: "Book Now",
+    footer_policy_booking: "Booking & Cancellation Policies",
+    footer_policy_privacy: "Privacy Policy & Data Handling",
+    footer_policy_terms: "Terms & Conditions",
+    footer_complaints_book: "Complaints Book",
+    footer_location: "Location",
+    footer_follow_us: "Follow Us",
+    footer_hours_title: "Front Desk Hours",
+    footer_hours_val: "Monday to Sunday: 06:00 - 22:00",
+    footer_rights_text: "All Rights Reserved",
   },
 };
 

@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import BookingWidget from "@/components/BookingWidget";
 
@@ -14,7 +15,7 @@ export default function Home() {
       <main>
         <section className="banner-home-1">
           <div className="w-layout-blockcontainer base-container w-container">
-            <div className="div-block-20 banner-home-1-wrapper">
+            <div className="div-block-20 banner-home-1-wrapper" data-parallax="0.08">
               <img 
                 className="stars-banner" 
                 src="/images/219-2191012_3-star-vector-transparent-3-stars-png.png" 
@@ -27,6 +28,10 @@ export default function Home() {
               <p className="white-paragraph banner-paragraph">
                 {t("hero_subtitle")}
               </p>
+              <div className="banner-cta-row">
+                <Link href="/reservar" className="primary-button">{t("hero_cta_book")}</Link>
+                <Link href="/rooms" className="primary-button-white">{t("hero_cta_rooms")}</Link>
+              </div>
             </div>
           </div>
         </section>
@@ -48,10 +53,10 @@ export default function Home() {
                 <h2 className="heading-4">{t("about_title")}</h2>
                 <p className="paragraph">{t("about_paragraph")}</p>
                 <div className="button-section-wrap">
-                  <a href="/nosotros" className="primary-button">{t("about_btn")}</a>
+                  <Link href="/nosotros" className="primary-button">{t("about_btn")}</Link>
                 </div>
               </div>
-              <div id="w-node-b1dfaac2-7851-155f-84bd-443661f2c77c-83eba5a0" className="right-img" style={{ opacity: 1 }}>
+              <div id="w-node-b1dfaac2-7851-155f-84bd-443661f2c77c-83eba5a0" className="right-img" style={{ opacity: 1 }} data-parallax="0.05">
                 <div className="background-video w-background-video w-background-video-atom">
                   <video 
                     id="e565245e-818f-a130-0088-41b7bdc75076-video" 
@@ -108,24 +113,27 @@ export default function Home() {
               </div>
             </div>
             <div className="w-layout-grid services-wrap-home-1">
-              <div className="service-home reveal-scale reveal-delay-1">
+              <Link href="/rooms" className="service-home reveal-scale reveal-delay-1">
                 <img src="/images/IMG_20230823_145150.webp" loading="lazy" alt="Habitaciones" className="service-img" />
                 <h4 className="mt-20"><strong>Habitaciones</strong></h4>
                 <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
-              </div>
-              <div className="service-home reveal-scale reveal-delay-2">
+                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+              </Link>
+              <Link href="/actividades" className="service-home reveal-scale reveal-delay-2">
                 <img src="/images/IMG_20231010_082516_478.webp" loading="lazy" alt="Gastronomía" className="service-img" />
                 <h4 className="mt-20"><strong>Gastronomía<br />Achamaqui</strong></h4>
                 <p>Sabores auténticos de la región en nuestro restaurante. Degusta platos peruanos tradicionales y cocina internacional.</p>
-              </div>
-              <div className="service-home reveal-scale reveal-delay-3">
+                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+              </Link>
+              <Link href="/actividades" className="service-home reveal-scale reveal-delay-3">
                 <img src="/images/received_1753229811842785.jpeg" loading="lazy" alt="Actividades" className="service-img" />
                 <h4 className="mt-20"><strong>Actividades y Aventuras</strong></h4>
                 <p>Embárcate en una aventura para descubrir la riqueza de la región. Te aguardan la majestuosa Catarata Gocta y la imponente Fortaleza de Kuélap.</p>
-              </div>
+                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+              </Link>
             </div>
             <div className="button-margin" style={{ opacity: 1 }}>
-              <a href="/actividades" className="primary-button">{t("about_btn")}</a>
+              <Link href="/actividades" className="primary-button">{t("about_btn")}</Link>
             </div>
           </div>
         </section>

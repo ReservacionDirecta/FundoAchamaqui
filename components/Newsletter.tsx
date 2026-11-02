@@ -108,7 +108,7 @@ export default function Newsletter() {
             outline: "none",
             transition: "border-color 0.3s",
           }}
-          onFocus={(e) => e.target.style.borderColor = "#8c7355"}
+          onFocus={(e) => e.target.style.borderColor = "var(--primary-color)"}
           onBlur={(e) => e.target.style.borderColor = "rgba(255, 255, 255, 0.15)"}
         />
         <button
@@ -118,7 +118,7 @@ export default function Newsletter() {
             padding: "12px 28px",
             borderRadius: "6px",
             border: "none",
-            backgroundColor: "#8c7355",
+            backgroundColor: "var(--primary-color)",
             color: "#ffffff",
             fontSize: "14px",
             fontWeight: "600",
@@ -126,8 +126,8 @@ export default function Newsletter() {
             transition: "background-color 0.3s, transform 0.2s",
             boxShadow: "0 4px 15px rgba(140, 115, 85, 0.2)"
           }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#725b41"}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#8c7355"}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--primary-color-dark)"}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "var(--primary-color)"}
         >
           {status === "loading" 
             ? (t("language") === "en" ? "Sending..." : "Enviando...") 

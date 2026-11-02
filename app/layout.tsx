@@ -9,7 +9,9 @@ import Script from "next/script";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Parallax from "@/components/Parallax";
 import LoadScreen from "@/components/LoadScreen";
+import HotheliaBookingModal from "@/components/HotheliaBookingModal";
 import { getCmsSettingsKeys } from "@/lib/cms";
 
 export const metadata: Metadata = {
@@ -227,8 +229,10 @@ export default async function RootLayout({
 
         <LanguageProvider>
           <RevealOnScroll />
+          <Parallax />
           {children}
           <WhatsAppWidget />
+          <HotheliaBookingModal />
         </LanguageProvider>
       </body>
     </html>

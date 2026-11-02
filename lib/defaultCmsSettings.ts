@@ -108,12 +108,12 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   },
   {
     key: "es_coupon_text",
-    value: "¡Sumérgete en la belleza de Chachapoyas con un 20% de descuento en el Hotel Fundo Achamaqui! Tu refugio en la Ceja de Selva Peruana.",
+    value: "¡Disfruta de la magia de Chachapoyas con un 10% de descuento en el Hotel Fundo Achamaqui! Válido para reservas del 19/06/2026 al 28/02/2027.",
     description: "Texto del cupón de descuento de reservas (Español)",
   },
   {
     key: "es_coupon_code",
-    value: "Cupón de descuento: escapechacha20",
+    value: "Cupón de descuento: FACEBOOK (10% OFF)",
     description: "Código de cupón de descuento visible (Español)",
   },
   {
@@ -150,12 +150,12 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   },
   {
     key: "en_coupon_text",
-    value: "Immerse yourself in the beauty of Chachapoyas with a 20% discount at Hotel Fundo Achamaqui! Your refuge in the Peruvian high jungle.",
+    value: "Experience the magic of Chachapoyas with a 10% discount at Hotel Fundo Achamaqui! Valid for bookings from 19/06/2026 to 28/02/2027.",
     description: "Texto del cupón de descuento de reservas (Inglés)",
   },
   {
     key: "en_coupon_code",
-    value: "Discount Code: escapechacha20",
+    value: "Discount Code: FACEBOOK (10% OFF)",
     description: "Código de cupón de descuento visible (Inglés)",
   },
   {

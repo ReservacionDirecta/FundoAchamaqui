@@ -36,7 +36,7 @@ export default async function AdminLoginPage({
               style={{
                 fontFamily: "var(--font-gilda, serif)",
                 fontSize: "34px",
-                color: "#2f4137",
+                color: "var(--subtitle-text)",
                 margin: "0 0 8px 0",
               }}
             >

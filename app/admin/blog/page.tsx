@@ -132,8 +132,8 @@ export default function BlogCMSPage() {
         <div className="w-layout-blockcontainer base-container w-container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
             <div>
-              <h6 style={{ color: "#8c7355", textTransform: "uppercase", letterSpacing: "2px", fontWeight: "bold" }}>CMS Panel</h6>
-              <h2 style={{ fontFamily: "var(--font-gilda, serif)", fontSize: "36px", color: "#2f4137" }}>Administración de Blog</h2>
+              <h6 style={{ color: "var(--primary-color)", textTransform: "uppercase", letterSpacing: "2px", fontWeight: "bold" }}>CMS Panel</h6>
+              <h2 style={{ fontFamily: "var(--font-gilda, serif)", fontSize: "36px", color: "var(--subtitle-text)" }}>Administración de Blog</h2>
             </div>
             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
               <button
@@ -149,8 +149,8 @@ export default function BlogCMSPage() {
                   style={{
                     padding: "12px 24px",
                     backgroundColor: "transparent",
-                    color: "#2f4137",
-                    border: "1px solid #2f4137",
+                    color: "var(--subtitle-text)",
+                    border: "1px solid var(--subtitle-text)",
                     borderRadius: "6px",
                     fontSize: "14px",
                     fontWeight: "600",
@@ -174,7 +174,7 @@ export default function BlogCMSPage() {
                 border: "1px solid rgba(140, 115, 85, 0.15)"
               }}
             >
-              <h3 style={{ marginBottom: "20px", color: "#2f4137" }}>
+              <h3 style={{ marginBottom: "20px", color: "var(--subtitle-text)" }}>
                 {editingPost ? "Editar Entrada" : "Nueva Entrada"}
               </h3>
               
@@ -283,7 +283,7 @@ export default function BlogCMSPage() {
                       style={{ width: "80px", height: "60px", objectFit: "cover", borderRadius: "6px" }} 
                     />
                     <div>
-                      <h4 style={{ color: "#2f4137", marginBottom: "4px" }}>{post.title}</h4>
+                      <h4 style={{ color: "var(--subtitle-text)", marginBottom: "4px" }}>{post.title}</h4>
                       <p style={{ color: "#777", fontSize: "13px" }}>
                         /{post.slug} • {new Date(post.publishedAt).toLocaleDateString()}
                       </p>
@@ -293,7 +293,7 @@ export default function BlogCMSPage() {
                   <div style={{ display: "flex", gap: "10px" }}>
                     <button 
                       onClick={() => handleOpenEdit(post)}
-                      style={{ padding: "8px 16px", borderRadius: "6px", border: "1px solid #8c7355", color: "#8c7355", background: "none", cursor: "pointer" }}
+                      style={{ padding: "8px 16px", borderRadius: "6px", border: "1px solid var(--primary-color)", color: "var(--primary-color)", background: "none", cursor: "pointer" }}
                     >
                       Editar
                     </button>

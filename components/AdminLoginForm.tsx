@@ -50,7 +50,7 @@ export default function AdminLoginForm({ next }: { next: string }) {
         />
       </div>
       {state?.error && (
-        <p role="alert" style={{ margin: 0, fontSize: "14px", color: "#c62828", fontWeight: "600" }}>
+        <p role="alert" style={{ margin: 0, fontSize: "14px", color: "var(--color-error)", fontWeight: "600" }}>
           {state.error}
         </p>
       )}

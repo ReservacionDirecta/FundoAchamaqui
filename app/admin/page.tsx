@@ -112,15 +112,15 @@ export default function AdminDashboard() {
           {/* Header */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "40px", flexWrap: "wrap", gap: "20px" }}>
             <div>
-              <h6 style={{ color: "#8c7355", textTransform: "uppercase", letterSpacing: "2px", fontWeight: "bold", margin: 0 }}>Panel CMS</h6>
-              <h2 style={{ fontFamily: "var(--font-gilda, serif)", fontSize: "36px", color: "#2f4137", margin: "5px 0 0 0" }}>Administración General</h2>
+              <h6 style={{ color: "var(--primary-color)", textTransform: "uppercase", letterSpacing: "2px", fontWeight: "bold", margin: 0 }}>Panel CMS</h6>
+              <h2 style={{ fontFamily: "var(--font-gilda, serif)", fontSize: "36px", color: "var(--subtitle-text)", margin: "5px 0 0 0" }}>Administración General</h2>
             </div>
             
             {/* Quick Links */}
             <div style={{ display: "flex", gap: "10px" }}>
               <Link href="/admin/blog" style={{
                 padding: "10px 20px",
-                backgroundColor: "#2f4137",
+                backgroundColor: "var(--subtitle-text)",
                 color: "#ffffff",
                 borderRadius: "6px",
                 textDecoration: "none",
@@ -139,8 +139,8 @@ export default function AdminDashboard() {
                   style={{
                     padding: "10px 20px",
                     backgroundColor: "transparent",
-                    color: "#2f4137",
-                    border: "1px solid #2f4137",
+                    color: "var(--subtitle-text)",
+                    border: "1px solid var(--subtitle-text)",
                     borderRadius: "6px",
                     fontSize: "14px",
                     fontWeight: "600",
@@ -161,8 +161,8 @@ export default function AdminDashboard() {
                 padding: "12px 24px",
                 background: "none",
                 border: "none",
-                borderBottom: activeTab === "content" ? "3px solid #8c7355" : "none",
-                color: activeTab === "content" ? "#8c7355" : "#777777",
+                borderBottom: activeTab === "content" ? "3px solid var(--primary-color)" : "none",
+                color: activeTab === "content" ? "var(--primary-color)" : "#777777",
                 fontWeight: "600",
                 fontSize: "15px",
                 cursor: "pointer",
@@ -177,8 +177,8 @@ export default function AdminDashboard() {
                 padding: "12px 24px",
                 background: "none",
                 border: "none",
-                borderBottom: activeTab === "navigation" ? "3px solid #8c7355" : "none",
-                color: activeTab === "navigation" ? "#8c7355" : "#777777",
+                borderBottom: activeTab === "navigation" ? "3px solid var(--primary-color)" : "none",
+                color: activeTab === "navigation" ? "var(--primary-color)" : "#777777",
                 fontWeight: "600",
                 fontSize: "15px",
                 cursor: "pointer",
@@ -191,7 +191,7 @@ export default function AdminDashboard() {
 
           {loading ? (
             <div style={{ textAlign: "center", padding: "80px 0" }}>
-              <p style={{ color: "#8c7355", fontSize: "16px", fontWeight: "600" }}>Cargando configuración del CMS...</p>
+              <p style={{ color: "var(--primary-color)", fontSize: "16px", fontWeight: "600" }}>Cargando configuración del CMS...</p>
             </div>
           ) : (
             <div>
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
                   
                   {/* Spanish Content */}
                   <div>
-                    <h3 style={{ color: "#2f4137", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
+                    <h3 style={{ color: "var(--subtitle-text)", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
                       Contenido en Español (ES)
                     </h3>
                     <div style={{ display: "grid", gap: "20px" }}>
@@ -220,7 +220,7 @@ export default function AdminDashboard() {
 
                   {/* English Content */}
                   <div>
-                    <h3 style={{ color: "#2f4137", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
+                    <h3 style={{ color: "var(--subtitle-text)", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
                       Contenido en Inglés (EN)
                     </h3>
                     <div style={{ display: "grid", gap: "20px" }}>
@@ -246,7 +246,7 @@ export default function AdminDashboard() {
                   
                   {/* Media Content */}
                   <div>
-                    <h3 style={{ color: "#2f4137", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
+                    <h3 style={{ color: "var(--subtitle-text)", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
                       Multimedia (Imágenes, Galería y Videos)
                     </h3>
                     <div style={{ display: "grid", gap: "20px" }}>
@@ -265,7 +265,7 @@ export default function AdminDashboard() {
 
                   {/* Links and general contact info */}
                   <div>
-                    <h3 style={{ color: "#2f4137", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
+                    <h3 style={{ color: "var(--subtitle-text)", fontFamily: "var(--font-gilda, serif)", borderBottom: "1px solid rgba(47, 65, 55, 0.1)", paddingBottom: "10px", marginBottom: "20px" }}>
                       Enlaces, Datos de Contacto y Redes Sociales
                     </h3>
                     <div style={{ display: "grid", gap: "20px" }}>
@@ -326,7 +326,7 @@ function SettingCard({ setting, onChange, onUpdate, isUpdating, feedback }: Sett
               fontWeight: "bold",
               textTransform: "uppercase",
               letterSpacing: "1px",
-              color: "#8c7355",
+              color: "var(--primary-color)",
             }}
           >
             {setting.key}
@@ -375,7 +375,7 @@ function SettingCard({ setting, onChange, onUpdate, isUpdating, feedback }: Sett
           disabled={isUpdating}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#8c7355",
+            backgroundColor: "var(--primary-color)",
             color: "#ffffff",
             border: "none",
             borderRadius: "6px",
@@ -385,8 +385,8 @@ function SettingCard({ setting, onChange, onUpdate, isUpdating, feedback }: Sett
             transition: "background-color 0.2s",
             height: "40px",
           }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#725b41"}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#8c7355"}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--primary-color-dark)"}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "var(--primary-color)"}
         >
           {isUpdating ? "Guardando..." : "Guardar"}
         </button>
@@ -396,7 +396,7 @@ function SettingCard({ setting, onChange, onUpdate, isUpdating, feedback }: Sett
         <span
           style={{
             fontSize: "13px",
-            color: feedback.type === "success" ? "#2e7d32" : "#c62828",
+            color: feedback.type === "success" ? "var(--color-success)" : "var(--color-error)",
             fontWeight: "600",
           }}
         >

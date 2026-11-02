@@ -19,8 +19,15 @@ async function ensureDefaultSettings() {
           description: item.description,
         },
       });
-    } else if (item.key === "contact_phone" || item.key === "whatsapp_number") {
-      // Force update known global contact defaults to match latest code configuration
+    } else if (
+      item.key === "contact_phone" ||
+      item.key === "whatsapp_number" ||
+      item.key === "es_coupon_text" ||
+      item.key === "es_coupon_code" ||
+      item.key === "en_coupon_text" ||
+      item.key === "en_coupon_code"
+    ) {
+      // Force update known global defaults to match latest code configuration
       if (existing.value !== item.value) {
         console.log(`Updating default CMS setting key: ${item.key} to new default ${item.value}`);
         await prisma.cmsSetting.update({

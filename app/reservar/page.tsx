@@ -2,7 +2,6 @@ import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
-import BookingWidget from "@/components/BookingWidget";
 import Link from "next/link";
 
 import type { Metadata } from "next";
@@ -58,7 +57,21 @@ export default async function ReservarPage() {
               <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
             </div>
             <div className="reservar-widget-wrap">
-              <BookingWidget />
+              <iframe
+                src="https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905"
+                width="100%"
+                height="800px"
+                frameBorder="0"
+                style={{
+                  border: "2px solid #10b981",
+                  borderRadius: "12px",
+                  display: "block",
+                  width: "100%",
+                  minHeight: "800px",
+                  backgroundColor: "#ffffff",
+                }}
+                title="Motor de Reservas Hothelia - Fundo Achamaqui"
+              />
             </div>
           </div>
         </section>

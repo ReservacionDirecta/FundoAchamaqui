@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 
 export default function HotheliaBookingModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [iframeSrc, setIframeSrc] = useState(
+    "https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905?embed=1"
+  );
 
   useEffect(() => {
     // Handler for global Escape key
@@ -13,7 +16,7 @@ export default function HotheliaBookingModal() {
       }
     };
 
-    // Handler to allow any link or button with data-open-hothelia or class open-hothelia to open the modal
+    // Handler to allow any link or button with data-open-hothelia to open the modal
     const handleClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("[data-open-hothelia]");
       if (target) {
@@ -22,12 +25,23 @@ export default function HotheliaBookingModal() {
       }
     };
 
+    // Handler for custom events passing dynamic search dates/guests
+    const handleCustomOpen = (e: Event) => {
+      const customEvent = e as CustomEvent<{ url?: string }>;
+      if (customEvent.detail?.url) {
+        setIframeSrc(customEvent.detail.url);
+      }
+      openModal();
+    };
+
     window.addEventListener("keydown", handleKeyDown);
     document.addEventListener("click", handleClick);
+    window.addEventListener("open-hothelia-modal", handleCustomOpen);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("click", handleClick);
+      window.removeEventListener("open-hothelia-modal", handleCustomOpen);
     };
   }, []);
 
@@ -81,11 +95,20 @@ export default function HotheliaBookingModal() {
         }}
         title="Reservar en Fundo Achamaqui"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
         Reservar Ahora
       </a>
@@ -130,11 +153,11 @@ export default function HotheliaBookingModal() {
             aria-label="Cerrar motor de reservas"
             style={{
               position: "absolute",
-              top: "12px",
-              right: "12px",
+              top: "10px",
+              right: "10px",
               zIndex: 100,
-              width: "36px",
-              height: "36px",
+              width: "34px",
+              height: "34px",
               borderRadius: "9999px",
               border: "1px solid rgba(0,0,0,.1)",
               background: "#ffffff",
@@ -143,7 +166,7 @@ export default function HotheliaBookingModal() {
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
-              fontSize: "22px",
+              fontSize: "20px",
               lineHeight: 1,
               color: "#1e293b",
               transition: "transform 0.2s, background-color 0.2s",
@@ -162,7 +185,7 @@ export default function HotheliaBookingModal() {
 
           {/* Hothelia Embedded Engine */}
           <iframe
-            src="https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905?embed=1"
+            src={iframeSrc}
             style={{
               width: "100%",
               height: "100%",

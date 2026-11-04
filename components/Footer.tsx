@@ -554,14 +554,14 @@ export default function Footer() {
           </p>
 
           <div style={{ fontSize: "12px", color: "#8d877c" }}>
-            Desarrollado con dedicación por{" "}
+            {language === "en" ? "Crafted with care by " : "Desarrollado con dedicación por "}
             <a
-              href="https://www.reservaciondirecta.com"
+              href="https://chamba.digital"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#c9a96e", textDecoration: "none" }}
+              style={{ color: "#c9a96e", textDecoration: "none", fontWeight: 600 }}
             >
-              Reservación Directa
+              Chamba Digital
             </a>
           </div>
         </div>

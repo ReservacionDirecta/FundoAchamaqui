@@ -22,7 +22,7 @@ const fallbackRooms: RoomData[] = [
     slug: "cuadruple-king",
     price: 400,
     capacity: 4,
-    mainImage: "/images/IMG_20230823_143927.jpg",
+    mainImage: "/images/room-cuadruple-king.webp",
     description: "Espaciosa suite familiar con cama King size y camas adicionales. Vistas al valle y balcón tradicional.",
     amenities: [
       { id: "1", name: "Cama King", icon: "bed" },
@@ -37,7 +37,7 @@ const fallbackRooms: RoomData[] = [
     slug: "matrimonial-king",
     price: 250,
     capacity: 2,
-    mainImage: "/images/IMG_20230823_144940.jpg",
+    mainImage: "/images/room-matrimonial-king.webp",
     description: "Habitación colonial romántica con cama King de lujo, techos altos de madera y vistas al jardín central.",
     amenities: [
       { id: "1", name: "Cama King", icon: "bed" },
@@ -52,7 +52,7 @@ const fallbackRooms: RoomData[] = [
     slug: "matrimonial-queen",
     price: 230,
     capacity: 2,
-    mainImage: "/images/IMG_20230823_151045-1.jpg",
+    mainImage: "/images/room-matrimonial-queen.webp",
     description: "Cálida y acogedora estancia equipada con cama Queen, baño privado y acabados rústicos de la hacienda.",
     amenities: [
       { id: "1", name: "Cama Queen", icon: "bed" },
@@ -67,7 +67,7 @@ const fallbackRooms: RoomData[] = [
     slug: "doble-twin",
     price: 220,
     capacity: 2,
-    mainImage: "/images/IMG_20230823_144310.jpg",
+    mainImage: "/images/room-doble-twin.webp",
     description: "Ideal para amigos o colegas. Cuenta con dos confortables camas individuales y ambiente sereno.",
     amenities: [
       { id: "1", name: "2 Camas Twin", icon: "bed" },
@@ -82,7 +82,7 @@ const fallbackRooms: RoomData[] = [
     slug: "triple",
     price: 300,
     capacity: 3,
-    mainImage: "/images/IMG_20230823_145548_DxO-1082x1440.jpg",
+    mainImage: "/images/room-triple.webp",
     description: "Capacidad para 3 personas con distribución óptima, luz natural y balcón con brisa del río Utcubamba.",
     amenities: [
       { id: "1", name: "3 Huéspedes", icon: "bed" },

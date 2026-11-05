@@ -49,11 +49,15 @@ export default function HotheliaBookingModal() {
     if (e) e.preventDefault();
     setIsOpen(true);
     document.body.style.overflow = "hidden";
+    // Notify floating widgets (webchat & whatsapp) to hide while modal is active
+    window.dispatchEvent(new CustomEvent("booking-modal-change", { detail: { open: true } }));
   };
 
   const closeModal = () => {
     setIsOpen(false);
     document.body.style.overflow = "";
+    // Restore floating widgets when modal is closed
+    window.dispatchEvent(new CustomEvent("booking-modal-change", { detail: { open: false } }));
   };
 
   return (

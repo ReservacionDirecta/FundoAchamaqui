@@ -1,12 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export default function WhatsAppWidget() {
   const { language, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
   const [inquiryType, setInquiryType] = useState<"booking" | "general">("booking");
+
+  useEffect(() => {
+    const handleBookingModalChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ open?: boolean }>;
+      setIsModalActive(!!customEvent.detail?.open);
+    };
+
+    window.addEventListener("booking-modal-change", handleBookingModalChange);
+    return () => {
+      window.removeEventListener("booking-modal-change", handleBookingModalChange);
+    };
+  }, []);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [adults, setAdults] = useState("2");
@@ -34,6 +47,10 @@ export default function WhatsAppWidget() {
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
     setIsOpen(false);
   };
+
+  if (isModalActive) {
+    return null;
+  }
 
   return (
     <div className="whatsapp-widget-container">

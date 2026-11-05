@@ -49,13 +49,18 @@ export default function HotheliaWebchat() {
       "  position: fixed;",
       "  z-index: 2147483647;",
       "  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);",
-      "  pointer-events: none;",
+      "  pointer-events: auto;",
       "  background: transparent;",
       "  overflow: visible;",
+      "}",
+      "#hothelia-webchat-iframe.hothelia-hidden {",
+      "  display: none !important;",
+      "  pointer-events: none !important;",
       "}",
       "#hothelia-webchat-iframe.hothelia-collapsed {",
       "  width: 90px;",
       "  height: 90px;",
+      "  pointer-events: auto;",
       isBottom ? "  bottom: 12px;" : "  top: 12px;",
       isRight ? "  right: 12px;" : "  left: 12px;",
       "}",
@@ -74,6 +79,7 @@ export default function HotheliaWebchat() {
       "    height: 68px !important;",
       "    bottom: 16px !important;",
       "    right: 16px !important;",
+      "    pointer-events: auto !important;",
       "  }",
       "  #hothelia-webchat-iframe.hothelia-expanded {",
       "    width: 100vw !important;",
@@ -137,8 +143,27 @@ export default function HotheliaWebchat() {
 
     window.addEventListener("message", handleMessage);
 
+    // Listen to booking modal events to hide webchat when booking engine modal is open
+    let wasExpandedBeforeModal = false;
+    const handleBookingModalChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ open?: boolean }>;
+      const isModalOpen = !!customEvent.detail?.open;
+      if (isModalOpen) {
+        wasExpandedBeforeModal = iframe.classList.contains("hothelia-expanded");
+        iframe.classList.add("hothelia-hidden");
+      } else {
+        iframe.classList.remove("hothelia-hidden");
+        if (wasExpandedBeforeModal) {
+          iframe.className = "hothelia-expanded";
+        }
+      }
+    };
+
+    window.addEventListener("booking-modal-change", handleBookingModalChange);
+
     return () => {
       window.removeEventListener("message", handleMessage);
+      window.removeEventListener("booking-modal-change", handleBookingModalChange);
       window.removeEventListener("pointerdown", markInteracted, { capture: true });
       window.removeEventListener("touchstart", markInteracted, { capture: true });
       try {

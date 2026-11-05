@@ -30,12 +30,32 @@ export default function HotheliaWebchat() {
     const FRONTEND_URL = "https://secured.hothelia.com";
     const BACKEND_URL = "https://hothelia-master-backend-multi-tenant-production.up.railway.app";
     const POSITION = "bottom-right";
-    const WIDGET_CONFIG = {};
+    const WIDGET_CONFIG = {
+      title: "Achamaqui",
+      primaryColor: "#059669",
+      welcomeMessage: "¡Hola! 👋 Soy el concierge virtual. ¿En qué puedo ayudarte?",
+      language: "es",
+      whatsappNumber: "+51 954 754 650",
+      bubble: {
+        icon: "bell",
+        size: "md",
+        text: "¿Ayuda con tu reserva?",
+        shape: "circle",
+        style: "glass",
+        borderStyle: "none",
+        showTooltip: false,
+        tooltipText: "👋 ¡Hola! Cotiza y reserva en vivo",
+        showOnlineBadge: true
+      },
+      position: "bottom-right"
+    };
+
+    const parentOrigin = window.location.origin;
     const WIDGET_URL = `${FRONTEND_URL}/widget?tenantId=${TENANT_ID}&position=${POSITION}&backendUrl=${encodeURIComponent(
       BACKEND_URL
     )}&config=${encodeURIComponent(JSON.stringify(WIDGET_CONFIG))}&origin=${encodeURIComponent(
-      window.location.origin
-    )}`;
+      parentOrigin
+    )}&parentOrigin=${encodeURIComponent(parentOrigin)}`;
 
     const isBottom = POSITION.indexOf("bottom") !== -1;
     const isRight = POSITION.indexOf("right") !== -1;
@@ -48,8 +68,7 @@ export default function HotheliaWebchat() {
       "  border: none;",
       "  position: fixed;",
       "  z-index: 2147483647;",
-      "  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);",
-      "  pointer-events: auto;",
+      "  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);",
       "  background: transparent;",
       "  overflow: visible;",
       "}",
@@ -67,18 +86,21 @@ export default function HotheliaWebchat() {
       "#hothelia-webchat-iframe.hothelia-expanded {",
       "  width: 410px;",
       "  height: 640px;",
+      "  max-width: calc(100vw - 24px);",
+      "  max-height: calc(100vh - 24px);",
+      "  max-height: calc(100dvh - 24px);",
       "  pointer-events: auto;",
       isBottom ? "  bottom: 16px;" : "  top: 16px;",
       isRight ? "  right: 16px;" : "  left: 16px;",
       "  border-radius: 20px;",
       "  box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);",
       "}",
-      "@media (max-width: 768px) {",
+      "@media (max-width: 480px) {",
       "  #hothelia-webchat-iframe.hothelia-collapsed {",
-      "    width: 68px !important;",
-      "    height: 68px !important;",
-      "    bottom: 16px !important;",
-      "    right: 16px !important;",
+      "    width: 76px !important;",
+      "    height: 76px !important;",
+      "    bottom: 14px !important;",
+      "    right: 14px !important;",
       "    pointer-events: auto !important;",
       "  }",
       "  #hothelia-webchat-iframe.hothelia-expanded {",
@@ -89,6 +111,8 @@ export default function HotheliaWebchat() {
       "    left: 0 !important;",
       "    bottom: 0 !important;",
       "    right: 0 !important;",
+      "    max-width: 100vw !important;",
+      "    max-height: 100dvh !important;",
       "    border-radius: 0 !important;",
       "    box-shadow: none !important;",
       "    pointer-events: auto !important;",
@@ -97,25 +121,16 @@ export default function HotheliaWebchat() {
     ].join("\n");
     document.head.appendChild(style);
 
-    // Create iframe
+    // Create iframe - starts as expanded to accommodate Hothelia's initial open state,
+    // or as collapsed if minimized.
     const iframe = document.createElement("iframe");
     iframe.src = WIDGET_URL;
     iframe.id = "hothelia-webchat-iframe";
-    iframe.className = "hothelia-collapsed";
+    iframe.className = "hothelia-expanded";
     iframe.setAttribute("title", "Chat Fundo Achamaqui");
     iframe.setAttribute("allow", "autoplay");
     iframe.setAttribute("loading", "lazy");
     document.body.appendChild(iframe);
-
-    let hasUserInteracted = false;
-
-    // Detect user interactions on the iframe container or launcher
-    const markInteracted = () => {
-      hasUserInteracted = true;
-    };
-
-    window.addEventListener("pointerdown", markInteracted, { capture: true, passive: true });
-    window.addEventListener("touchstart", markInteracted, { capture: true, passive: true });
 
     // Listen to resize messages sent from Hothelia webchat
     const handleMessage = (event: MessageEvent) => {
@@ -125,19 +140,16 @@ export default function HotheliaWebchat() {
       } catch {
         // ignore
       }
-      if (event.origin !== FRONTEND_URL && event.origin !== widgetOrigin) return;
-      if (!event.data || event.data.type !== "hothelia-resize") return;
-
-      const isMobile = window.innerWidth <= 768;
-      const willExpand = !!event.data.expanded;
-
-      // If on mobile and this expansion was triggered by an automatic timer rather than a user tap,
-      // keep it collapsed so it does not hijack the user's screen or cause missclicks!
-      if (isMobile && willExpand && !hasUserInteracted) {
-        iframe.className = "hothelia-collapsed";
+      if (
+        event.origin !== FRONTEND_URL &&
+        event.origin !== widgetOrigin &&
+        !event.origin.includes("hothelia.com")
+      ) {
         return;
       }
+      if (!event.data || event.data.type !== "hothelia-resize") return;
 
+      const willExpand = !!event.data.expanded;
       iframe.className = willExpand ? "hothelia-expanded" : "hothelia-collapsed";
     };
 
@@ -164,8 +176,6 @@ export default function HotheliaWebchat() {
     return () => {
       window.removeEventListener("message", handleMessage);
       window.removeEventListener("booking-modal-change", handleBookingModalChange);
-      window.removeEventListener("pointerdown", markInteracted, { capture: true });
-      window.removeEventListener("touchstart", markInteracted, { capture: true });
       try {
         iframe.remove();
         style.remove();

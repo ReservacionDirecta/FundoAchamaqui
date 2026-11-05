@@ -1,18 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import BookingWidget from "@/components/BookingWidget";
+import React from "react";
 
 export default function ReservarEngineSection() {
-  const [iframeUrl, setIframeUrl] = useState(
-    "https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905"
-  );
-
-  const handleDatesSelected = (url: string) => {
-    // Replace embed url or direct url for the page iframe
-    const cleanUrl = url.replace("embed=1&", "").replace("?embed=1", "");
-    setIframeUrl(cleanUrl);
-  };
+  const iframeUrl = "https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905";
 
   return (
     <div className="reservar-booking-section">
@@ -23,10 +14,6 @@ export default function ReservarEngineSection() {
         </div>
         <h2>Completa tu reserva</h2>
         <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
-      </div>
-
-      <div style={{ maxWidth: "860px", margin: "0 auto 28px", width: "100%" }}>
-        <BookingWidget onSearchDirect={handleDatesSelected} isEmbeddedTarget={true} />
       </div>
 
       <div className="reservar-widget-wrap">

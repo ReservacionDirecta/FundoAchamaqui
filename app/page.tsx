@@ -5,6 +5,12 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import BookingWidget from "@/components/BookingWidget";
+import HomeRoomsShowcase from "@/components/HomeRoomsShowcase";
+import HomeHaciendaExperiences from "@/components/HomeHaciendaExperiences";
+import HomeToursBase from "@/components/HomeToursBase";
+import HomeGalleryMosaic from "@/components/HomeGalleryMosaic";
+import HomeReviews from "@/components/HomeReviews";
+import HomeDirectBookingPerks from "@/components/HomeDirectBookingPerks";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -13,6 +19,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        {/* 1. Hero Banner */}
         <section className="banner-home-1">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="div-block-20 banner-home-1-wrapper" data-parallax="0.08">
@@ -36,6 +43,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 2. Integrated Booking Engine Bar */}
         <section className="booking-bar-section">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="book-banner-wrap" style={{ opacity: 1 }}>
@@ -53,6 +61,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* 3. Welcome & Heritage Story */}
         <section className="section naturaleza">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="about-section reveal">
@@ -84,6 +94,10 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 4. Luxury Rooms & Suites Showcase */}
+        <HomeRoomsShowcase />
+
+        {/* 5. Key Hotel Highlights Band */}
         <section className="section img">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="w-layout-grid about-hotel">
@@ -107,83 +121,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section light-background">
-          <div className="w-layout-blockcontainer base-container w-container">
-            <div className="title-wrap">
-              <div className="div-block-8 div-block-9 left-subtitle" style={{ opacity: 1 }}>
-                <h6 className="heading-2">{t("services_subtitle")}<br /></h6>
-              </div>
-              <div className="right-title">
-                <h2 style={{ opacity: 1 }}>{t("services_title")}</h2>
-                <p className="paragraph-2" style={{ opacity: 1 }}>
-                  {t("services_paragraph")}
-                </p>
-              </div>
-            </div>
-            <div className="w-layout-grid services-wrap-home-1">
-              <Link href="/rooms" className="service-home reveal-scale reveal-delay-1">
-                <div className="service-img-wrap">
-                  <img src="/images/IMG_20230823_145150.webp" loading="lazy" alt="Habitaciones" className="service-img" />
-                </div>
-                <div className="service-card-body">
-                  <h4><strong>Habitaciones</strong></h4>
-                  <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
-                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
-                </div>
-              </Link>
-              <Link href="/actividades" className="service-home reveal-scale reveal-delay-2">
-                <div className="service-img-wrap">
-                  <img src="/images/IMG_20231010_082516_478.webp" loading="lazy" alt="Gastronomía" className="service-img" />
-                </div>
-                <div className="service-card-body">
-                  <h4><strong>Gastronomía Achamaqui</strong></h4>
-                  <p>Sabores auténticos de la región en nuestro restaurante. Degusta platos peruanos tradicionales y cocina internacional.</p>
-                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
-                </div>
-              </Link>
-              <Link href="/actividades" className="service-home reveal-scale reveal-delay-3">
-                <div className="service-img-wrap">
-                  <img src="/images/received_1753229811842785.jpeg" loading="lazy" alt="Actividades" className="service-img" />
-                </div>
-                <div className="service-card-body">
-                  <h4><strong>Actividades y Aventuras</strong></h4>
-                  <p>Embárcate en una aventura para descubrir la riqueza de la región. Te aguardan la majestuosa Catarata Gocta y la imponente Fortaleza de Kuélap.</p>
-                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
-                </div>
-              </Link>
-            </div>
-            <div className="button-margin" style={{ opacity: 1 }}>
-              <Link href="/actividades" className="primary-button">{t("about_btn")}</Link>
-            </div>
-          </div>
-        </section>
+        {/* 6. Hacienda Life & Resort Experiences */}
+        <HomeHaciendaExperiences />
 
-        <section className="section primary-color-background">
-          <div className="w-layout-blockcontainer base-container w-container">
-            <div className="title-wrap testimonial">
-              <div className="div-block-8 div-block-9 left-subtitle light" style={{ opacity: 1 }}>
-                <h6 className="heading-2">{t("reviews_subtitle")}<br /></h6>
-              </div>
-              <div className="right-title" style={{ opacity: 1 }}>
-                <h2 className="white-text">{t("reviews_title")}</h2>
-              </div>
-            </div>
-            <div className="testimonials-slider-con">
-              {/* Slider implementation would go here. For now, we'll keep the structure */}
-              <div className="testimonials-item-wrapper" style={{ opacity: 1 }}>
-                <img src="/images/Stars_1.png" loading="lazy" alt="Stars" className="stars-testimonials" />
-                <p className="testimonials-quote">“Una experiencia mágica en medio de la naturaleza. Achamaqui es un verdadero paraíso lejos del bullicio de la ciudad. El personal es cálido y acogedor, las instalaciones son impecables, y las actividades son una delicia.”</p>
-                <div className="testimonials-quote-author">
-                  <div className="author-img-con"><img src="/images/Member-Photo-Close-up-6_1Member-Photo-Close-up-6.webp" loading="lazy" alt="Arianna LR" className="testimonials-image" /></div>
-                  <div className="testimonials-author">
-                    <h5 className="white-text">Arianna LR</h5>
-                    <p className="author-position">TripAdvisor</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 7. Strategic Exploration Base (Kuélap, Gocta, Karajía, Sonche) */}
+        <HomeToursBase />
+
+        {/* 8. Visual Journey & Photo Mosaic */}
+        <HomeGalleryMosaic />
+
+        {/* 9. Verified Guest Reviews & Trust Badges */}
+        <HomeReviews />
+
+        {/* 10. Direct Booking Advantages */}
+        <HomeDirectBookingPerks />
       </main>
       <Footer />
     </>

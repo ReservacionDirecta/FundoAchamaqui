@@ -64,6 +64,7 @@ export default function HotheliaBookingModal() {
         target="_blank"
         rel="noopener noreferrer"
         id="hb-book-trigger"
+        className="hb-floating-trigger"
         onClick={openModal}
         style={{
           position: "fixed",

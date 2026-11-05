@@ -177,28 +177,49 @@ export default function Navbar() {
               </div>
             </nav>
 
-            {/* Hamburger Button Mobile */}
-            <button 
-              onClick={toggleMenu} 
-              className="mobile-menu-toggle"
-              style={{
-                display: "none",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                background: "rgba(140, 115, 85, 0.05)",
-                border: "none",
-                borderRadius: "50%",
-                cursor: "pointer",
-                padding: "8px",
-                width: "44px",
-                height: "44px",
-                gap: "5px",
-                zIndex: 1001,
-                transition: "background-color 0.3s ease"
-              }}
-              aria-label="Toggle Menu"
-            >
+            {/* Reservar Button Mobile Header */}
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Link
+                href="/reservar"
+                className="mobile-header-book-btn"
+                style={{
+                  display: "none",
+                  backgroundColor: "var(--primary-color)",
+                  color: "#ffffff",
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  padding: "8px 14px",
+                  borderRadius: "20px",
+                  textDecoration: "none",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                {t("nav_book")}
+              </Link>
+
+              {/* Hamburger Button Mobile */}
+              <button 
+                onClick={toggleMenu} 
+                className="mobile-menu-toggle"
+                style={{
+                  display: "none",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  background: "rgba(140, 115, 85, 0.05)",
+                  border: "none",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  padding: "8px",
+                  width: "44px",
+                  height: "44px",
+                  gap: "5px",
+                  zIndex: 1001,
+                  transition: "background-color 0.3s ease"
+                }}
+                aria-label="Toggle Menu"
+              >
               <span 
                 style={{
                   width: "18px",
@@ -231,6 +252,7 @@ export default function Navbar() {
                 }}
               />
             </button>
+            </div>
 
           </div>
         </div>

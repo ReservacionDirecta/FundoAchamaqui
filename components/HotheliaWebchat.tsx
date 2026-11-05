@@ -7,8 +7,16 @@ import React, { useEffect } from "react";
  * Tenant: Fundo Achamaqui (645d7798-3e8b-4111-8946-96dac1a6f905)
  * Position: bottom-right
  * 
- * Supports both the direct official embed and self-healing URL fallback
- * in case the upstream railway endpoint contains typographical errors.
+ * Strategy:
+ * - On desktop: Standard bottom-right launcher that opens into a floating concierge card.
+ * - On mobile (<= 768px): To avoid overcrowding the viewport, blocking form inputs,
+ *   and triggering accidental taps (missclicks):
+ *   1. The redundant left floating "Reservar Ahora" pill is removed on mobile (already accessible
+ *      via the Hero booking bar, room buttons, and the top navbar button).
+ *   2. The webchat iframe remains strictly collapsed to a sleek 64x64px launcher circle at the
+ *      bottom-right corner. It ONLY expands to fullscreen when the guest consciously taps the bubble.
+ *   3. Secondary WhatsApp option is comfortably separated right above it, providing effortless
+ *      one-tap access without overlap.
  */
 export default function HotheliaWebchat() {
   useEffect(() => {
@@ -46,10 +54,10 @@ export default function HotheliaWebchat() {
       "  overflow: visible;",
       "}",
       "#hothelia-webchat-iframe.hothelia-collapsed {",
-      "  width: 360px;",
-      "  height: 150px;",
-      isBottom ? "  bottom: 0px;" : "  top: 0px;",
-      isRight ? "  right: 0px;" : "  left: 0px;",
+      "  width: 90px;",
+      "  height: 90px;",
+      isBottom ? "  bottom: 12px;" : "  top: 12px;",
+      isRight ? "  right: 12px;" : "  left: 12px;",
       "}",
       "#hothelia-webchat-iframe.hothelia-expanded {",
       "  width: 410px;",
@@ -60,10 +68,12 @@ export default function HotheliaWebchat() {
       "  border-radius: 20px;",
       "  box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);",
       "}",
-      "@media (max-width: 480px) {",
+      "@media (max-width: 768px) {",
       "  #hothelia-webchat-iframe.hothelia-collapsed {",
-      "    width: 280px;",
-      "    height: 110px;",
+      "    width: 68px !important;",
+      "    height: 68px !important;",
+      "    bottom: 16px !important;",
+      "    right: 16px !important;",
       "  }",
       "  #hothelia-webchat-iframe.hothelia-expanded {",
       "    width: 100vw !important;",
@@ -75,12 +85,7 @@ export default function HotheliaWebchat() {
       "    right: 0 !important;",
       "    border-radius: 0 !important;",
       "    box-shadow: none !important;",
-      "  }",
-      "}",
-      "@media (min-width: 481px) and (max-width: 768px) {",
-      "  #hothelia-webchat-iframe.hothelia-expanded {",
-      "    width: 370px;",
-      "    height: 560px;",
+      "    pointer-events: auto !important;",
       "  }",
       "}",
     ].join("\n");
@@ -96,6 +101,16 @@ export default function HotheliaWebchat() {
     iframe.setAttribute("loading", "lazy");
     document.body.appendChild(iframe);
 
+    let hasUserInteracted = false;
+
+    // Detect user interactions on the iframe container or launcher
+    const markInteracted = () => {
+      hasUserInteracted = true;
+    };
+
+    window.addEventListener("pointerdown", markInteracted, { capture: true, passive: true });
+    window.addEventListener("touchstart", markInteracted, { capture: true, passive: true });
+
     // Listen to resize messages sent from Hothelia webchat
     const handleMessage = (event: MessageEvent) => {
       let widgetOrigin = "";
@@ -106,13 +121,26 @@ export default function HotheliaWebchat() {
       }
       if (event.origin !== FRONTEND_URL && event.origin !== widgetOrigin) return;
       if (!event.data || event.data.type !== "hothelia-resize") return;
-      iframe.className = event.data.expanded ? "hothelia-expanded" : "hothelia-collapsed";
+
+      const isMobile = window.innerWidth <= 768;
+      const willExpand = !!event.data.expanded;
+
+      // If on mobile and this expansion was triggered by an automatic timer rather than a user tap,
+      // keep it collapsed so it does not hijack the user's screen or cause missclicks!
+      if (isMobile && willExpand && !hasUserInteracted) {
+        iframe.className = "hothelia-collapsed";
+        return;
+      }
+
+      iframe.className = willExpand ? "hothelia-expanded" : "hothelia-collapsed";
     };
 
     window.addEventListener("message", handleMessage);
 
     return () => {
       window.removeEventListener("message", handleMessage);
+      window.removeEventListener("pointerdown", markInteracted, { capture: true });
+      window.removeEventListener("touchstart", markInteracted, { capture: true });
       try {
         iframe.remove();
         style.remove();

@@ -493,6 +493,52 @@ p, .body-text {
   height: clamp(46px, 7vw, 52px) !important;
 }
 
+/* ── Mobile Floating Elements Cleanup (Avoid overcrowding & missclicks) ── */
+
+@media (max-width: 768px) {
+  /* Hide the redundant left floating pill on mobile; users already have
+     the booking bar in hero, room buttons, and the navbar header CTA */
+  #hb-book-trigger,
+  .hb-floating-trigger {
+    display: none !important;
+  }
+
+  /* Show elegant header book button on mobile navbar */
+  .mobile-header-book-btn {
+    display: inline-flex !important;
+    align-items: center;
+  }
+
+  /* WhatsApp Floating Button on Mobile: Compact, placed on bottom-right stacked cleanly */
+  .whatsapp-widget-container {
+    bottom: 78px !important;
+    right: 16px !important;
+    z-index: 999 !important;
+  }
+
+  .whatsapp-fab {
+    width: 44px !important;
+    height: 44px !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
+  }
+
+  .whatsapp-fab svg {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .whatsapp-popup {
+    width: calc(100vw - 32px) !important;
+    right: -2px !important;
+    bottom: 54px !important;
+  }
+
+  /* Add safety spacing to sections so floating buttons never cover action buttons */
+  .booking-bar-section {
+    padding-bottom: 20px !important;
+  }
+}
+
 /* ── Footer ── */
 
 @media (max-width: 767px) {

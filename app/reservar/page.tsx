@@ -56,29 +56,48 @@ export default async function ReservarPage() {
                   <p>Cada habitación ofrece comodidad, privacidad y vistas únicas a la naturaleza de Chachapoyas.</p>
                 </div>
               </div>
-              <div className="reservar-rooms-grid">
-                {rooms.map((room) => (
-                  <Link key={room.id} href={`/rooms/${room.slug}`} className="reservar-room-card">
-                    <div className="reservar-room-img-wrap">
-                      <img
-                        src={room.mainImage}
-                        alt={room.name}
-                        className="reservar-room-img"
-                        loading="lazy"
-                      />
-                      <div className="reservar-room-price">
-                        <span className="reservar-price-amount">S/. {room.price}</span>
-                        <span className="reservar-price-period">/ noche</span>
+              <div className="reservar-rooms-bento">
+                {rooms.map((room, index) => {
+                  const isFeatured = index === 0;
+                  return (
+                    <Link
+                      key={room.id}
+                      href={`/rooms/${room.slug}`}
+                      className={`reservar-bento-card ${isFeatured ? "reservar-bento-featured" : ""}`}
+                    >
+                      <div className="reservar-bento-media">
+                        <img
+                          src={room.mainImage}
+                          alt={room.name}
+                          className="reservar-bento-img"
+                          loading="lazy"
+                        />
+                        <div className="reservar-bento-overlay" />
+                        <div className="reservar-room-price">
+                          <span className="reservar-price-amount">S/. {room.price}</span>
+                          <span className="reservar-price-period">/ noche</span>
+                        </div>
+                        {isFeatured && (
+                          <span className="reservar-bento-badge">Recomendada</span>
+                        )}
                       </div>
-                    </div>
-                    <div className="reservar-room-body">
-                      <h3 className="reservar-room-name">{room.name}</h3>
-                      <div className="reservar-room-facts">
-                        <span>{room.capacity} personas</span>
+                      <div className="reservar-bento-content">
+                        <div className="reservar-bento-meta">
+                          <span className="reservar-bento-capacity">
+                            👥 {room.capacity} personas
+                          </span>
+                        </div>
+                        <h3 className="reservar-room-name">{room.name}</h3>
+                        <p className="reservar-bento-desc">
+                          {room.description ? room.description.substring(0, 90) + "..." : ""}
+                        </p>
+                        <span className="reservar-bento-cta">
+                          Ver detalles y fotos →
+                        </span>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </section>

@@ -327,7 +327,7 @@ select:focus-visible,
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   background: var(--color-bg-secondary, #f0ebe3);
 }
 
@@ -531,7 +531,7 @@ select:focus-visible,
 .room-gallery-main {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: clamp(8px, 1.5vw, 14px);
   background: var(--color-bg-secondary, #f0ebe3);

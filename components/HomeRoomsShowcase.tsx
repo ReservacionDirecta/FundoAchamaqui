@@ -135,7 +135,7 @@ export default function HomeRoomsShowcase({ rooms = fallbackRooms }: { rooms?: R
         .room-media {
           position: relative;
           width: 100%;
-          height: 240px;
+          aspect-ratio: 3 / 4;
           overflow: hidden;
           background: #e6dfd5;
         }

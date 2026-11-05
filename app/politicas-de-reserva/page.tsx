@@ -308,16 +308,16 @@ export default function PoliticasReservaPage() {
                 </div>
               </div>
 
-              {/* Piscina */}
+              {/* Areas Naturales y Senderos */}
               <div style={{ background: "#ffffff", borderRadius: "8px", border: "1px solid #eae3d7", padding: "20px 24px" }}>
                 <div style={{ display: "flex", gap: "12px" }}>
                   <span style={{ color: "#c9a96e", fontWeight: "700", fontSize: "18px" }}>11.</span>
                   <div>
                     <strong style={{ color: "#2f4137", fontSize: "16px", display: "block", marginBottom: "4px" }}>
-                      Política de Uso de Piscina y Condiciones Climáticas
+                      Uso de Áreas Naturales y Senderos
                     </strong>
                     <p style={{ margin: 0, color: "#555", fontSize: "14px", lineHeight: "1.7" }}>
-                      Ofrecemos el acceso a nuestra piscina como una parte adicional de su estadía. Sin embargo, la disponibilidad y operación de la piscina pueden estar sujetas a variaciones debido a las condiciones climáticas y estacionales. Al reservar, acepta que es responsable por la seguridad e integridad personal y la de sus acompañantes. El hotel no se hace responsable por accidentes sufridos por los huéspedes, fuera o dentro del hotel.
+                      Ofrecemos acceso a nuestros senderos naturales, jardines y orilla del río Utcubamba como parte de la experiencia en Fundo Achamaqui. Al transitar por senderos y áreas al aire libre, los huéspedes deben velar por su seguridad e integridad personal y la de sus acompañantes. El hotel no se hace responsable por accidentes o caídas en zonas agrestes o naturales.
                     </p>
                   </div>
                 </div>

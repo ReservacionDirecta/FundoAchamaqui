@@ -657,11 +657,12 @@ select:focus-visible,
   font-weight: 600;
 }
 
-.room-book-btn {
+.room-book-btn,
+.room-book-btn-primary {
   display: block;
   text-align: center;
   padding: 14px 22px;
-  background: var(--color-whatsapp);
+  background: var(--primary-color, #415f44);
   color: #ffffff;
   font-weight: 600;
   font-size: 15px;
@@ -669,13 +670,39 @@ select:focus-visible,
   border-radius: var(--radius-md);
   border-bottom: 0;
   transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 4px 14px rgba(65, 95, 68, 0.25);
 }
 
-.room-book-btn:hover {
-  background: var(--color-whatsapp-dark);
+.room-book-btn:hover,
+.room-book-btn-primary:hover {
+  background: #2f4532;
+  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 8px 22px rgba(65, 95, 68, 0.35);
+}
+
+.room-book-btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 13px 22px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.room-book-btn-whatsapp:hover {
+  background: #1eb956;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
 .room-book-btn-secondary {

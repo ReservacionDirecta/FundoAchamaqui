@@ -27,8 +27,8 @@ export default async function ActividadesPage() {
       image: "/images/360900551_DxO.jpg",
     },
     {
-      name: "Piscina: Relajación en el Agua",
-      description: "Refréscate y relájate en nuestra piscina, donde podrás disfrutar de un chapuzón revitalizante mientras te rodeas de la belleza natural que nos rodea.",
+      name: "Jardines y Senderos Botánicos",
+      description: "Recorre y relájate en nuestros amplios jardines florales, donde podrás contemplar la flora nativa y respirar aire puro mientras te rodeas de la imponente geografía de Chachapoyas.",
       image: "/images/casa-hacienda-achamaqui.jpg",
     },
     {

@@ -29,7 +29,7 @@ const reviews = [
     avatar: "/images/Member-Photo-Close-up-4_1Member-Photo-Close-up-4.webp",
   },
   {
-    quote: "Excelente servicio de todo el equipo. Nos organizaron el tour a las cataratas y pudimos relajarnos en la piscina con una vista a la montaña incomparable. Totalmente recomendado para ir en familia o pareja.",
+    quote: "Excelente servicio de todo el equipo. Nos organizaron el tour a las cataratas y pudimos relajarnos en sus jardines con una vista a la montaña incomparable. Totalmente recomendado para ir en familia o pareja.",
     author: "David & Carmen R.",
     location: "Santiago, Chile",
     source: "TripAdvisor",

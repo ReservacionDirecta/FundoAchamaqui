@@ -116,7 +116,7 @@ export default function TerminosCondicionesPage() {
                       <strong>Estacionamiento:</strong> El servicio de estacionamiento es de cortesía. El hotel no asume responsabilidad por daños o pérdidas de objetos dejados en el interior de los vehículos.
                     </li>
                     <li style={{ marginTop: "8px" }}>
-                      <strong>Instalaciones al aire libre y piscina:</strong> El uso de la piscina y los senderos naturales en las inmediaciones del río Utcubamba se realiza bajo la responsabilidad exclusiva del huésped y sus acompañantes. Los menores de edad deben estar siempre supervisados por un adulto.
+                      <strong>Instalaciones al aire libre y senderos:</strong> El recorrido por jardines y senderos naturales en las inmediaciones del río Utcubamba se realiza bajo la responsabilidad exclusiva del huésped y sus acompañantes. Los menores de edad deben estar siempre supervisados por un adulto.
                     </li>
                     <li style={{ marginTop: "8px" }}>
                       <strong>Conducta y Derecho de Admisión:</strong> Fundo Achamaqui se reserva el derecho de resolver el contrato de hospedaje y retirar del establecimiento a personas que generen desorden, muestren estado de ebriedad severa o porten armas de cualquier tipo.

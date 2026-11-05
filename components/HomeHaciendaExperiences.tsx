@@ -9,11 +9,11 @@ export default function HomeHaciendaExperiences() {
 
   const experiences = [
     {
-      title: language === "en" ? "Outdoor Swimming Pool" : "Piscina al Aire Libre & Solarium",
-      tag: language === "en" ? "Relaxation" : "Relax & Bienestar",
+      title: language === "en" ? "Botanical Gardens & Sunsets" : "Jardines Florales & Mirador del Valle",
+      tag: language === "en" ? "Serenity" : "Paz & Naturaleza",
       description: language === "en"
-        ? "Immerse yourself in our crystalline pool nestled between majestic Andean mountains, surrounded by native gardens and soothing breezes."
-        : "Refréscate y descansa en nuestra piscina rodeada por el imponente cañón del Utcubamba y jardines florales en floración todo el año.",
+        ? "Relax in our lush native gardens nestled between majestic Andean mountains, surrounded by endemic flora and soothing valley breezes."
+        : "Descansa y desconéctate en nuestros extensos jardines rodeados por el imponente cañón del Utcubamba y flores nativas en floración todo el año.",
       image: "/images/casa-hacienda-achamaqui.jpg",
       link: "/actividades",
     },
@@ -156,8 +156,8 @@ export default function HomeHaciendaExperiences() {
           </h2>
           <p style={{ maxWidth: "700px", margin: "0 auto", color: "#5a5a5a", fontSize: "15px" }}>
             {language === "en"
-              ? "Discover our vast gardens, riverbank trails, heated swimming pool, and ancestral gastronomy rooted in the fertile lands of Amazonas."
-              : "Conéctate con el encanto colonial de nuestra casona tradicional, sus hectáreas de naturaleza virgen, su piscina al aire libre y la calidez de nuestra gente."}
+              ? "Discover our vast gardens, riverbank trails, organic farm, and ancestral gastronomy rooted in the fertile lands of Amazonas."
+              : "Conéctate con el encanto colonial de nuestra casona tradicional, sus hectáreas de naturaleza virgen, su huerto orgánico y la calidez de nuestra gente."}
           </p>
         </div>
 

@@ -117,7 +117,7 @@ async function main() {
     {
       name: 'Cuádruple | King',
       slug: 'cuadruple-king',
-      description: 'Nuestra habitación cuádruple en el primer piso, con vistas al jardín y acceso a la piscina, es perfecta para familias y grupos.',
+      description: 'Nuestra habitación cuádruple en el primer piso, con vistas al jardín y vistas al jardin y a la naturaleza, es perfecta para familias y grupos.',
       price: 400,
       capacity: 4,
       mainImage: '/images/IMG_20230823_143927.jpg',

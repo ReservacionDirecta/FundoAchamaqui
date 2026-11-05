@@ -10,7 +10,7 @@ export default function HomeGalleryMosaic() {
   const photos = [
     { src: "/images/dji_fly_20230823_092730_87_1692800992341_pano_optimized-EDIT-1.jpg", alt: "Vista Panorámica del Fundo", span: "large" },
     { src: "/images/IMG_20230823_082703-EDIT_DxO_DxO-1918x1440.jpg", alt: "Casona Colonial", span: "normal" },
-    { src: "/images/casa-hacienda-achamaqui.jpg", alt: "Piscina y Jardines", span: "normal" },
+    { src: "/images/casa-hacienda-achamaqui.jpg", alt: "Casona y Jardines Florales", span: "normal" },
     { src: "/images/DJI_0111_DxO-1920x1440.jpg", alt: "Río Utcubamba", span: "normal" },
     { src: "/images/360900551_DxO.jpg", alt: "Gastronomía", span: "normal" },
   ];

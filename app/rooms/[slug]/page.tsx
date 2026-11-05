@@ -125,17 +125,20 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
                     )}
                   </ul>
 
+                  <Link
+                    href={`/reservar?room=${encodeURIComponent(room.slug)}`}
+                    className="room-book-btn-primary"
+                  >
+                    Reservar ahora
+                  </Link>
                   <a
                     href={`https://wa.me/${whatsappNumber}?text=Hola%2C%20me%20interesa%20la%20habitaci%C3%B3n%20${encodeURIComponent(room.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="room-book-btn"
+                    className="room-book-btn-whatsapp"
                   >
-                    Reservar por WhatsApp
+                    Consultar por WhatsApp
                   </a>
-                  <Link href="/reservar" className="room-book-btn-secondary">
-                    Ver disponibilidad
-                  </Link>
                 </div>
               </aside>
             </div>

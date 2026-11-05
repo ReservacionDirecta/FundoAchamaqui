@@ -68,7 +68,7 @@ export default function HotheliaBookingModal() {
         style={{
           position: "fixed",
           bottom: "24px",
-          right: "24px",
+          left: "24px",
           zIndex: 9999,
           background: "#10b981",
           color: "#ffffff",

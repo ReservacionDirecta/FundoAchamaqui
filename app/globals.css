@@ -344,19 +344,19 @@ p {
   color: var(--color-text-primary, #1a1a1a);
 }
 
-/* ── WhatsApp Widget ── */
+/* ── WhatsApp Widget (Secondary chat option) ── */
 
 .whatsapp-widget-container {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 96px;
+  right: 24px;
   z-index: 1000;
   font-family: var(--font-body, "Inter", sans-serif);
 }
 
 .whatsapp-fab {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: transparent;
   border: none;
@@ -371,7 +371,7 @@ p {
 }
 
 .whatsapp-fab:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 

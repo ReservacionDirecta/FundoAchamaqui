@@ -476,21 +476,21 @@ p, .body-text {
   }
 }
 
-/* ── WhatsApp Widget ── */
+/* ── WhatsApp Widget (Secondary chat option) ── */
 
 .whatsapp-widget-container {
-  bottom: clamp(16px, 3vw, 25px) !important;
-  right: clamp(16px, 3vw, 25px) !important;
+  bottom: clamp(92px, 14vw, 102px) !important;
+  right: clamp(16px, 3vw, 24px) !important;
 }
 
 .whatsapp-fab {
-  width: clamp(50px, 8vw, 60px) !important;
-  height: clamp(50px, 8vw, 60px) !important;
+  width: clamp(46px, 7vw, 52px) !important;
+  height: clamp(46px, 7vw, 52px) !important;
 }
 
 .whatsapp-fab svg {
-  width: clamp(50px, 8vw, 60px) !important;
-  height: clamp(50px, 8vw, 60px) !important;
+  width: clamp(46px, 7vw, 52px) !important;
+  height: clamp(46px, 7vw, 52px) !important;
 }
 
 /* ── Footer ── */

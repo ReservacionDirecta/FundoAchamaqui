@@ -36,15 +36,23 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="book-banner-wrap" style={{ opacity: 1 }}>
-          <div className="booking-engine">
-            <h1 className="white-text coupon">
-              {t("coupon_text")}<br />‍<br />
-              <span className="text-span-2"><strong>{t("coupon_code")}</strong></span><br />
-            </h1>
+        <section className="booking-bar-section">
+          <div className="w-layout-blockcontainer base-container w-container">
+            <div className="book-banner-wrap" style={{ opacity: 1 }}>
+              <div className="booking-promo-badge">
+                <span className="booking-promo-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  </svg>
+                  {t("coupon_code")}
+                </span>
+                <span className="booking-promo-desc">{t("coupon_text")}</span>
+              </div>
+              <BookingWidget />
+            </div>
           </div>
-          <BookingWidget />
-        </div>
+        </section>
         <section className="section naturaleza">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="about-section reveal">
@@ -114,22 +122,34 @@ export default function Home() {
             </div>
             <div className="w-layout-grid services-wrap-home-1">
               <Link href="/rooms" className="service-home reveal-scale reveal-delay-1">
-                <img src="/images/IMG_20230823_145150.webp" loading="lazy" alt="Habitaciones" className="service-img" />
-                <h4 className="mt-20"><strong>Habitaciones</strong></h4>
-                <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
-                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                <div className="service-img-wrap">
+                  <img src="/images/IMG_20230823_145150.webp" loading="lazy" alt="Habitaciones" className="service-img" />
+                </div>
+                <div className="service-card-body">
+                  <h4><strong>Habitaciones</strong></h4>
+                  <p>Descanso y comodidad en nuestras habitaciones. Elige entre habitaciones matrimoniales, dobles, triples y cuádruples.</p>
+                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                </div>
               </Link>
               <Link href="/actividades" className="service-home reveal-scale reveal-delay-2">
-                <img src="/images/IMG_20231010_082516_478.webp" loading="lazy" alt="Gastronomía" className="service-img" />
-                <h4 className="mt-20"><strong>Gastronomía<br />Achamaqui</strong></h4>
-                <p>Sabores auténticos de la región en nuestro restaurante. Degusta platos peruanos tradicionales y cocina internacional.</p>
-                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                <div className="service-img-wrap">
+                  <img src="/images/IMG_20231010_082516_478.webp" loading="lazy" alt="Gastronomía" className="service-img" />
+                </div>
+                <div className="service-card-body">
+                  <h4><strong>Gastronomía Achamaqui</strong></h4>
+                  <p>Sabores auténticos de la región en nuestro restaurante. Degusta platos peruanos tradicionales y cocina internacional.</p>
+                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                </div>
               </Link>
               <Link href="/actividades" className="service-home reveal-scale reveal-delay-3">
-                <img src="/images/received_1753229811842785.jpeg" loading="lazy" alt="Actividades" className="service-img" />
-                <h4 className="mt-20"><strong>Actividades y Aventuras</strong></h4>
-                <p>Embárcate en una aventura para descubrir la riqueza de la región. Te aguardan la majestuosa Catarata Gocta y la imponente Fortaleza de Kuélap.</p>
-                <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                <div className="service-img-wrap">
+                  <img src="/images/received_1753229811842785.jpeg" loading="lazy" alt="Actividades" className="service-img" />
+                </div>
+                <div className="service-card-body">
+                  <h4><strong>Actividades y Aventuras</strong></h4>
+                  <p>Embárcate en una aventura para descubrir la riqueza de la región. Te aguardan la majestuosa Catarata Gocta y la imponente Fortaleza de Kuélap.</p>
+                  <span className="service-card-cta">{t("card_cta")} <span className="cta-arrow" aria-hidden="true">→</span></span>
+                </div>
               </Link>
             </div>
             <div className="button-margin" style={{ opacity: 1 }}>

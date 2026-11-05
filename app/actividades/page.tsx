@@ -69,9 +69,13 @@ export default async function ActividadesPage() {
             <div className="w-layout-grid services-wrap-home-1 services">
               {displayActivities.map((activity, index) => (
                 <div key={index} className="service-home" style={{ opacity: 1 }}>
-                  <img src={activity.image} loading="lazy" alt="" className="service-img" />
-                  <h4 className="mt-20">{activity.name}</h4>
-                  <p>{activity.description}</p>
+                  <div className="service-img-wrap">
+                    <img src={activity.image} loading="lazy" alt={activity.name} className="service-img" />
+                  </div>
+                  <div className="service-card-body">
+                    <h4><strong>{activity.name}</strong></h4>
+                    <p>{activity.description}</p>
+                  </div>
                 </div>
               ))}
             </div>

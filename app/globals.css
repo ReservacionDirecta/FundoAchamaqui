@@ -528,6 +528,6 @@ p {
 
 @media screen and (min-width: 1280px) {
   .banner-home-1-wrapper {
-    top: -135px !important;
+    top: 0 !important;
   }
 }

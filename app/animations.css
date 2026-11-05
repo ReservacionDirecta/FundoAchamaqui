@@ -848,73 +848,93 @@ select:focus-visible,
 }
 
 .reservar-booking-section-full {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   display: flex;
   justify-content: center;
-  padding: 0 24px;
+  padding: clamp(16px, 2.5vw, 32px) clamp(12px, 2vw, 24px) clamp(40px, 4vw, 60px);
   box-sizing: border-box;
+  background: #fbfaf8;
 }
 
 .reservar-booking-section {
   width: 100%;
-  max-width: 960px;
+  max-width: 100%;
 }
 
-.reservar-booking-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.reservar-booking-header h2 {
-  margin: 16px 0 10px;
-  font-family: var(--font-heading, "Gilda Display", serif);
-  font-size: clamp(1.375rem, 3vw + 0.25rem, 2.25rem);
-  color: var(--color-text-primary, #1a1a1a);
-}
-
-.reservar-booking-header p {
-  color: var(--color-text-secondary, #5a5a5a);
-  font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
-  line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.reservar-coupon-badge {
-  display: inline-flex;
-  flex-direction: column;
+.reservar-coupon-strip {
+  display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--color-accent, #c9a96e), #b8944f);
-  border-radius: var(--radius-sm, 6px);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  padding: 10px 18px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coupon-tag {
+  background: var(--color-accent, #c9a96e);
   color: #ffffff;
-  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.06));
-}
-
-.reservar-coupon-label {
-  font-family: var(--font-body, "Inter", sans-serif);
   font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.9;
-}
-
-.reservar-coupon-code {
-  font-family: var(--font-body);
-  font-size: clamp(1.125rem, 2vw + 0.25rem, 1.375rem);
   font-weight: 700;
   letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.coupon-text {
+  font-size: 13.5px;
+  color: #3f4e42;
+}
+
+.coupon-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4efe6;
+  border: 1px dashed #c9a96e;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coupon-pill-btn:hover {
+  background: #ede3d2;
+  transform: translateY(-1px);
+}
+
+.coupon-code {
+  font-weight: 800;
+  font-size: 13px;
+  color: #2b3d30;
+  letter-spacing: 0.08em;
+}
+
+.coupon-copy-hint {
+  font-size: 11px;
+  color: #8c734b;
+  font-weight: 600;
 }
 
 .reservar-widget-wrap {
   background: var(--color-bg-card, #ffffff);
   border: 1px solid var(--color-border, rgba(0, 0, 0, 0.08));
   border-radius: var(--radius-lg, 16px);
-  padding: 36px;
-  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0, 0, 0, 0.08));
+  padding: 8px;
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0, 0, 0, 0.06));
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .reservar-trust-grid {
@@ -977,20 +997,17 @@ select:focus-visible,
   .reservar-booking-section-full {
     margin-left: 0 !important;
     width: 100% !important;
-    padding: 0 12px !important;
+    padding: 12px 6px 36px !important;
   }
 
   .reservar-widget-wrap {
-    padding: 24px 16px;
+    padding: 4px;
+    border-radius: 12px;
   }
 
   .reservar-trust-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .reservar-booking-header h2 {
-    font-size: 26px;
   }
 }
 

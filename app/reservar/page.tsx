@@ -40,13 +40,6 @@ export default async function ReservarPage() {
     <>
       <Navbar />
       <main>
-        <HeroBanner
-          title="Reserva tu Estancia"
-          subtitle="Disponibilidad"
-          paragraph="Elige tu habitación ideal y reserva en línea. Ofrecemos cómodas habitaciones para parejas, familias y grupos en plena naturaleza."
-          className="contacts-banner"
-        />
-
         <section className="section reservar-booking-section-full">
           <ReservarEngineSection />
         </section>

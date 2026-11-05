@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
+import ReservarEngineSection from "@/components/ReservarEngineSection";
 import Link from "next/link";
 
 import type { Metadata } from "next";
@@ -47,33 +48,7 @@ export default async function ReservarPage() {
         />
 
         <section className="section reservar-booking-section-full">
-          <div className="reservar-booking-section">
-            <div className="reservar-booking-header reveal">
-              <div className="reservar-coupon-badge">
-                <span className="reservar-coupon-label">Cupón 10% OFF (Hasta 28/02/2027)</span>
-                <span className="reservar-coupon-code">FACEBOOK</span>
-              </div>
-              <h2>Completa tu reserva</h2>
-              <p>Selecciona tus fechas y número de huéspedes para verificar disponibilidad en tiempo real.</p>
-            </div>
-            <div className="reservar-widget-wrap">
-              <iframe
-                src="https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905"
-                width="100%"
-                height="800px"
-                frameBorder="0"
-                style={{
-                  border: "2px solid #10b981",
-                  borderRadius: "12px",
-                  display: "block",
-                  width: "100%",
-                  minHeight: "800px",
-                  backgroundColor: "#ffffff",
-                }}
-                title="Motor de Reservas Hothelia - Fundo Achamaqui"
-              />
-            </div>
-          </div>
+          <ReservarEngineSection />
         </section>
 
         {rooms.length > 0 && (

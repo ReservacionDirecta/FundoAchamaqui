@@ -34,7 +34,7 @@ const dictionary: Record<Language, Record<string, string>> = {
 
     // Booking coupon
     coupon_text: "¡Disfruta de la magia de Chachapoyas con un 10% de descuento en el Hotel Fundo Achamaqui! Válido para reservas del 19/06/2026 al 28/02/2027.",
-    coupon_code: "Cupón de descuento: FACEBOOK (10% OFF)",
+    coupon_code: "Cupón de descuento: CANALDIRECTO (10% OFF)",
 
     // Home Section About
     about_subtitle: "Naturaleza y comodidad",
@@ -133,7 +133,7 @@ const dictionary: Record<Language, Record<string, string>> = {
 
     // Booking coupon
     coupon_text: "Experience the magic of Chachapoyas with a 10% discount at Hotel Fundo Achamaqui! Valid for bookings from 19/06/2026 to 28/02/2027.",
-    coupon_code: "Discount Code: FACEBOOK (10% OFF)",
+    coupon_code: "Discount Code: CANALDIRECTO (10% OFF)",
 
     // Home Section About
     about_subtitle: "Nature & Comfort",

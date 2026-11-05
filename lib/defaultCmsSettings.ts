@@ -113,7 +113,7 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   },
   {
     key: "es_coupon_code",
-    value: "Cupón de descuento: FACEBOOK (10% OFF)",
+    value: "Cupón de descuento: CANALDIRECTO (10% OFF)",
     description: "Código de cupón de descuento visible (Español)",
   },
   {
@@ -155,7 +155,7 @@ export const defaultCmsSettings: CmsSettingSeed[] = [
   },
   {
     key: "en_coupon_code",
-    value: "Discount Code: FACEBOOK (10% OFF)",
+    value: "Discount Code: CANALDIRECTO (10% OFF)",
     description: "Código de cupón de descuento visible (Inglés)",
   },
   {

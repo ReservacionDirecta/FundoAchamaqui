@@ -35,10 +35,6 @@ export default function Home() {
               <p className="white-paragraph banner-paragraph">
                 {t("hero_subtitle")}
               </p>
-              <div className="banner-cta-row">
-                <Link href="/reservar" className="primary-button">{t("hero_cta_book")}</Link>
-                <Link href="/rooms" className="primary-button-white">{t("hero_cta_rooms")}</Link>
-              </div>
             </div>
           </div>
         </section>

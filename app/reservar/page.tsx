@@ -1,7 +1,6 @@
 import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroBanner from "@/components/HeroBanner";
 import ReservarEngineSection from "@/components/ReservarEngineSection";
 import Link from "next/link";
 
@@ -37,14 +36,11 @@ export default async function ReservarPage() {
   }
 
   return (
-    <>
+    <div className="reservar-page-shell">
       <Navbar />
-      <main>
-        <section className="section reservar-booking-section-full">
-          <ReservarEngineSection />
-        </section>
-
-        {rooms.length > 0 && (
+      <main className="reservar-main">
+        <ReservarEngineSection>
+          {rooms.length > 0 && (
           <section className="section light-background" style={{ paddingTop: 0 }}>
             <div className="w-layout-blockcontainer base-container w-container">
               <div className="title-wrap reveal">
@@ -155,8 +151,9 @@ export default async function ReservarPage() {
             </div>
           </div>
         </section>
+          <Footer />
+        </ReservarEngineSection>
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }

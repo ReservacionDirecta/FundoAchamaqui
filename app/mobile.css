@@ -687,10 +687,6 @@ p, .body-text {
   .booking-engine h1 {
     font-size: clamp(1rem, 2vw + 0.25rem, 1.25rem) !important;
   }
-
-  .reservar-widget-wrap {
-    padding: 4px !important;
-  }
 }
 
 @media (min-width: 768px) {

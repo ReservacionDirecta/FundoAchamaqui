@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function HotheliaBookingModal() {
+  const pathname = usePathname();
+  const isReservarPage = pathname === "/reservar";
   const [isOpen, setIsOpen] = useState(false);
   const [iframeSrc, setIframeSrc] = useState(
     "https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905?embed=1"
@@ -62,8 +65,9 @@ export default function HotheliaBookingModal() {
 
   return (
     <>
-      {/* Floating Trigger Button */}
-      <a
+      {/* Floating Trigger Button - hidden on /reservar since engine is already active */}
+      {!isReservarPage && (
+        <a
         href="https://secured.hothelia.com/book/645d7798-3e8b-4111-8946-96dac1a6f905"
         target="_blank"
         rel="noopener noreferrer"
@@ -115,8 +119,9 @@ export default function HotheliaBookingModal() {
           <line x1="8" y1="2" x2="8" y2="6" />
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
-        Reservar Ahora
-      </a>
+          Reservar Ahora
+        </a>
+      )}
 
       {/* Modal Popup with Hothelia Engine Iframe */}
       <div
